@@ -6,54 +6,54 @@ from flask_login import login_user, login_required, logout_user, current_user
 import pickle
 import numpy as np
 
-popular_df = pickle.load(open('popular.pkl','rb'))
-pt = pickle.load(open('pt.pkl','rb'))
-books = pickle.load(open('books.pkl','rb'))
-similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
+# popular_df = pickle.load(open('popular.pkl','rb'))
+# pt = pickle.load(open('pt.pkl','rb'))
+# books = pickle.load(open('books.pkl','rb'))
+# similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
 
 auth = Blueprint('auth', __name__)
 
 @auth.route('/')
 def index():
-    return render_template('index.html',
-                           book_name = list(popular_df['Book-Title'].values),
-                           author=list(popular_df['Book-Author'].values),
-                           image=list(popular_df['Image-URL-M'].values),
-                           votes=list(popular_df['num_ratings'].values),
-                           rating=list(popular_df['avg_rating'].values)
+    return render_template('index.html'
+                        #    book_name = list(popular_df['Book-Title'].values),
+                        #    author=list(popular_df['Book-Author'].values),
+                        #    image=list(popular_df['Image-URL-M'].values),
+                        #    votes=list(popular_df['num_ratings'].values),
+                        #    rating=list(popular_df['avg_rating'].values)
     )
 
 from urllib.parse import unquote
 
-@auth.route('/book/<book_title>')
-@login_required
-def track_click(book_title):
-    book_title = unquote(book_title)
+# @auth.route('/book/<book_title>')
+# @login_required
+# def track_click(book_title):
+#     book_title = unquote(book_title)
 
-    try:
-        index = np.where(pt.index == book_title)[0][0]
-        similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:11]
+#     try:
+#         index = np.where(pt.index == book_title)[0][0]
+#         similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:11]
 
-        recommended_books = []
-        for i in similar_items:
-            temp_df = books[books['Book-Title'] == pt.index[i[0]]]
-            item = [
-                temp_df.drop_duplicates('Book-Title')['Book-Title'].values[0],
-                temp_df.drop_duplicates('Book-Title')['Book-Author'].values[0],
-                temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values[0]
-            ]
-            recommended_books.append(item)
+#         recommended_books = []
+#         for i in similar_items:
+#             temp_df = books[books['Book-Title'] == pt.index[i[0]]]
+#             item = [
+#                 temp_df.drop_duplicates('Book-Title')['Book-Title'].values[0],
+#                 temp_df.drop_duplicates('Book-Title')['Book-Author'].values[0],
+#                 temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values[0]
+#             ]
+#             recommended_books.append(item)
         
-        return render_template("dashboard.html", data=recommended_books, clicked_book=book_title)
+#         return render_template("dashboard.html", data=recommended_books, clicked_book=book_title)
 
-    except:
-        flash("Sorry, we couldn't generate recommendations for this book.", "error")
-        return redirect(url_for('auth.index'))
+#     except:
+#         flash("Sorry, we couldn't generate recommendations for this book.", "error")
+#         return redirect(url_for('auth.index'))
 
 
-@auth.route('/recommend')
-def recommend_ui():
-    return render_template('recommend.html')
+# @auth.route('/recommend')
+# def recommend_ui():
+#     return render_template('recommend.html')
 
 @auth.route('/contact')
 def contact():
