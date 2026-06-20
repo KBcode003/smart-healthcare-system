@@ -55,6 +55,10 @@ from urllib.parse import unquote
 # def recommend_ui():
 #     return render_template('recommend.html')
 
+@auth.route('/symptom')
+def symptom():
+    return render_template('symptom.html')
+
 @auth.route('/contact')
 def contact():
     return render_template('contact.html')

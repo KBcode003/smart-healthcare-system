@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Healthcare Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f2f2f2; }
+        h1 { text-align: center; }
+        form { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+        input, textarea, select { width: 100%; padding: 10px; margin: 5px 0 15px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { padding: 10px 20px; border: none; border-radius: 5px; background: #4CAF50; color: white; cursor: pointer; }
+        button:hover { background: #45a049; }
+        #result { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    </style>
+</head>
+<body>
+    <h1>AI Healthcare Prediction</h1>
+    <form id="healthForm">
+        <label>Age:</label>
+        <input type="number" name="age" required>
+
+        <label>Gender:</label>
+        <select name="gender" required>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
+        </select>
+
+        <label>Height (cm):</label>
+        <input type="number" name="height" required>
+
+        <label>Weight (kg):</label>
+        <input type="number" name="weight" required>
+
+        <label>Previous Medical Conditions:</label>
+        <input type="text" name="previous_conditions" placeholder="e.g., Diabetes, Hypertension">
+
+        <label>Current Medical Conditions:</label>
+        <input type="text" name="current_conditions" placeholder="e.g., None, Fever">
+
+        <label>Symptoms:</label>
+        <textarea name="symptoms" placeholder="e.g., cough, sneezing" required></textarea>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        const form = document.getElementById('healthForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+
+            resultDiv.innerHTML = "Predicting...";
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                resultDiv.innerHTML = `
+                    <h2>Prediction Result:</h2>
+                    <p><strong>Disease:</strong> ${result.disease}</p>
+                    <p><strong>Home Remedy:</strong> ${result.home_remedy}</p>
+                    <p><strong>Medicine:</strong> ${result.medicine}</p>
+                    <p><strong>Doctor Required:</strong> ${result.doctor_required}</p>
+                    <p><strong>Note:</strong> ${result.note}</p>
+                `;
+            } catch (err) {
+                resultDiv.innerHTML = "Error connecting to backend. Make sure Flask is running.";
+            }
+        });
+    </script>
+</body>
+</html>

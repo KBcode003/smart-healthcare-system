@@ -1,0 +1,1801 @@
+disease,severity,home_remedy,common_medicine,doctor_required,age,gender,height,weight,previous_conditions,current_conditions,symptoms
+Common Cold,Low,Tulsi tea,Paracetamol,No,74,O,183,81,Hypertension,None,"sneezing, mild fever"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,12,M,152,88,Hypertension,mild fever,sneezing
+Common Cold,Low,Steam inhalation,Paracetamol,No,73,M,176,66,Diabetes,cough,"sneezing, mild fever"
+Common Cold,Low,Tulsi tea,Paracetamol,No,7,O,105,95,None,None,"sneezing, mild fever"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,13,M,105,39,Asthma,sneezing,"runny nose, cough, mild fever"
+Common Cold,Low,Steam inhalation,Paracetamol,No,39,M,126,99,Hypertension,None,"sneezing, cough"
+Common Cold,Low,Steam inhalation,Paracetamol,No,64,M,110,39,None,runny nose,"sneezing, runny nose, cough"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,4,F,135,91,None,runny nose,runny nose
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,45,O,128,59,Diabetes,None,"runny nose, cough"
+Common Cold,Low,Steam inhalation,Paracetamol,No,30,O,144,61,Asthma,cough,runny nose
+Common Cold,Low,Steam inhalation,Paracetamol,No,16,F,186,96,Hypertension,cough,mild fever
+Common Cold,Low,Steam inhalation,Paracetamol,No,7,F,106,94,None,runny nose,"runny nose, sneezing"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,26,F,167,79,Anemia,sneezing,sneezing
+Common Cold,Low,Steam inhalation,Paracetamol,No,74,F,142,80,Asthma,cough,"cough, sneezing, mild fever"
+Common Cold,Low,Tulsi tea,Paracetamol,No,60,M,158,61,None,sneezing,cough
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,8,M,114,53,Hypertension,runny nose,"cough, runny nose"
+Common Cold,Low,Tulsi tea,Paracetamol,No,24,F,145,49,Asthma,cough,"mild fever, runny nose, cough"
+Common Cold,Low,Steam inhalation,Paracetamol,No,80,M,122,31,Diabetes,None,"sneezing, mild fever, cough"
+Common Cold,Low,Steam inhalation,Paracetamol,No,70,F,105,44,Hypertension,mild fever,mild fever
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,41,O,173,68,Anemia,None,"mild fever, runny nose, sneezing"
+Common Cold,Low,Tulsi tea,Paracetamol,No,45,O,178,48,None,sneezing,"cough, mild fever, sneezing"
+Common Cold,Low,Tulsi tea,Paracetamol,No,4,M,174,95,Diabetes,runny nose,"cough, mild fever"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,38,O,154,63,Anemia,mild fever,"mild fever, runny nose, cough"
+Common Cold,Low,Steam inhalation,Paracetamol,No,69,O,100,85,Asthma,mild fever,"sneezing, cough, mild fever"
+Common Cold,Low,Steam inhalation,Paracetamol,No,49,M,173,50,Diabetes,runny nose,mild fever
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,17,F,124,97,Asthma,sneezing,runny nose
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,53,F,113,55,Hypertension,None,"mild fever, runny nose"
+Common Cold,Low,Steam inhalation,Paracetamol,No,19,O,117,85,Anemia,cough,"runny nose, cough"
+Common Cold,Low,Steam inhalation,Paracetamol,No,3,M,130,40,Hypertension,cough,"mild fever, cough"
+Common Cold,Low,Tulsi tea,Paracetamol,No,80,M,115,65,Anemia,None,"mild fever, runny nose"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,17,F,142,56,Hypertension,mild fever,runny nose
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,79,M,175,38,None,None,"runny nose, cough, mild fever"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,63,O,139,51,Hypertension,sneezing,"cough, runny nose, mild fever"
+Common Cold,Low,Steam inhalation,Paracetamol,No,53,O,108,55,Hypertension,mild fever,sneezing
+Common Cold,Low,Tulsi tea,Paracetamol,No,73,M,189,82,None,runny nose,runny nose
+Common Cold,Low,Steam inhalation,Paracetamol,No,45,F,155,45,Asthma,sneezing,runny nose
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,29,M,181,98,None,mild fever,"runny nose, cough, sneezing"
+Common Cold,Low,Tulsi tea,Paracetamol,No,75,O,138,39,Diabetes,sneezing,"sneezing, runny nose, cough"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,20,M,135,42,Hypertension,runny nose,"runny nose, cough"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,15,M,190,64,None,None,"mild fever, runny nose, sneezing"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,70,F,168,73,Hypertension,None,"cough, sneezing"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,36,O,190,53,Diabetes,None,cough
+Common Cold,Low,Steam inhalation,Paracetamol,No,62,F,131,57,Hypertension,cough,"cough, mild fever"
+Common Cold,Low,Tulsi tea,Paracetamol,No,66,M,103,68,Asthma,None,sneezing
+Common Cold,Low,Tulsi tea,Paracetamol,No,16,O,184,36,Asthma,sneezing,"cough, sneezing, runny nose"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,38,F,187,97,Diabetes,runny nose,"cough, mild fever, runny nose"
+Common Cold,Low,Steam inhalation,Paracetamol,No,11,O,139,31,Asthma,cough,mild fever
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,49,M,171,36,None,sneezing,"sneezing, cough, mild fever"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,54,M,169,65,Hypertension,cough,"sneezing, mild fever"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,65,F,154,51,None,runny nose,"cough, mild fever"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,54,F,128,78,Asthma,None,"cough, mild fever, sneezing"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,35,F,109,59,Anemia,cough,cough
+Common Cold,Low,Tulsi tea,Paracetamol,No,9,F,186,68,None,mild fever,sneezing
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,37,F,168,56,Diabetes,None,cough
+Common Cold,Low,Steam inhalation,Paracetamol,No,67,F,122,100,None,runny nose,"cough, mild fever, runny nose"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,17,O,170,35,Diabetes,runny nose,"cough, mild fever, sneezing"
+Common Cold,Low,Steam inhalation,Paracetamol,No,1,O,115,83,Anemia,None,runny nose
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,65,O,106,54,Diabetes,None,"cough, runny nose, sneezing"
+Common Cold,Low,Steam inhalation,Paracetamol,No,13,O,184,63,Asthma,sneezing,runny nose
+Common Cold,Low,Tulsi tea,Paracetamol,No,11,F,165,44,Diabetes,None,"sneezing, runny nose"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,37,F,149,94,Anemia,sneezing,cough
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,77,O,109,55,Hypertension,sneezing,"sneezing, mild fever"
+Common Cold,Low,Tulsi tea,Paracetamol,No,64,F,105,49,Hypertension,runny nose,"sneezing, runny nose"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,34,M,190,90,None,cough,"runny nose, sneezing"
+Common Cold,Low,Tulsi tea,Paracetamol,No,79,O,132,43,Hypertension,sneezing,cough
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,11,F,171,53,None,mild fever,"cough, mild fever, runny nose"
+Common Cold,Low,Tulsi tea,Paracetamol,No,66,M,131,44,None,None,"sneezing, mild fever, runny nose"
+Common Cold,Low,Tulsi tea,Paracetamol,No,65,M,171,87,None,runny nose,sneezing
+Common Cold,Low,Tulsi tea,Paracetamol,No,42,F,188,85,Anemia,cough,"cough, sneezing, runny nose"
+Common Cold,Low,Tulsi tea,Paracetamol,No,32,F,165,49,None,runny nose,"mild fever, cough"
+Common Cold,Low,Steam inhalation,Paracetamol,No,70,F,178,66,Asthma,mild fever,runny nose
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,52,M,145,60,None,sneezing,"cough, runny nose"
+Common Cold,Low,Tulsi tea,Paracetamol,No,4,F,159,37,Asthma,None,runny nose
+Common Cold,Low,Tulsi tea,Paracetamol,No,69,O,111,61,Anemia,cough,runny nose
+Common Cold,Low,Steam inhalation,Paracetamol,No,46,M,162,97,Anemia,runny nose,"sneezing, mild fever, cough"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,12,F,117,62,None,mild fever,"mild fever, runny nose"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,54,F,181,61,Diabetes,runny nose,runny nose
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,20,O,116,77,Asthma,mild fever,"cough, sneezing, mild fever"
+Common Cold,Low,Steam inhalation,Paracetamol,No,23,F,109,59,Asthma,cough,"mild fever, sneezing"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,8,M,110,96,Anemia,runny nose,"sneezing, runny nose, mild fever"
+Common Cold,Low,Tulsi tea,Paracetamol,No,37,M,111,49,Hypertension,None,"runny nose, sneezing"
+Common Cold,Low,Tulsi tea,Paracetamol,No,44,F,143,61,Hypertension,sneezing,"runny nose, sneezing"
+Common Cold,Low,Tulsi tea,Paracetamol,No,37,O,123,74,Asthma,None,runny nose
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,71,M,134,58,Hypertension,mild fever,"runny nose, sneezing"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,33,F,181,92,Hypertension,sneezing,runny nose
+Common Cold,Low,Steam inhalation,Paracetamol,No,75,F,174,80,Asthma,cough,"runny nose, sneezing, mild fever"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,15,M,126,62,Hypertension,sneezing,"cough, runny nose"
+Common Cold,Low,Steam inhalation,Paracetamol,No,75,M,155,53,Hypertension,sneezing,"runny nose, sneezing"
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,57,F,129,71,None,sneezing,"cough, runny nose"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,21,M,159,52,Diabetes,None,"sneezing, mild fever"
+Common Cold,Low,Tulsi tea,Paracetamol,No,65,M,103,59,Hypertension,cough,"sneezing, cough, runny nose"
+Common Cold,Low,Steam inhalation,Paracetamol,No,67,F,128,70,Anemia,cough,"mild fever, sneezing"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,31,O,101,44,Asthma,cough,sneezing
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,61,F,131,47,Diabetes,None,"sneezing, mild fever"
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,1,M,149,50,Anemia,runny nose,sneezing
+Common Cold,Low,"Steam inhalation, Tulsi tea",Paracetamol,No,57,F,119,87,Asthma,cough,sneezing
+Common Cold,Low,Tulsi tea,Paracetamol,No,3,F,153,49,Asthma,mild fever,mild fever
+Common Cold,Low,Steam inhalation,Paracetamol,No,38,O,147,72,Anemia,sneezing,runny nose
+Common Cold,Low,"Tulsi tea, Steam inhalation",Paracetamol,No,57,F,104,60,Anemia,cough,"cough, runny nose"
+Common Cold,Low,Tulsi tea,Paracetamol,No,15,F,137,91,Hypertension,sneezing,"mild fever, sneezing, runny nose"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,12,M,137,93,Hypertension,None,fever
+Flu,Low,Ginger tea,Paracetamol,No,72,O,159,79,Hypertension,fatigue,body ache
+Flu,Low,Ginger tea,Paracetamol,No,69,M,178,67,Diabetes,fatigue,fever
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,79,M,122,57,Asthma,None,"cough, fever, fatigue"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,34,F,133,69,Diabetes,fever,"body ache, fatigue, cough"
+Flu,Low,Ginger tea,Paracetamol,No,13,M,123,50,Diabetes,fever,"fever, fatigue"
+Flu,Low,Ginger tea,Paracetamol,No,22,M,115,36,Hypertension,fever,"fatigue, body ache, fever"
+Flu,Low,Ginger tea,Paracetamol,No,12,M,152,89,None,cough,fever
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,57,F,157,30,Hypertension,cough,"fever, cough, body ache"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,56,O,189,52,Anemia,None,fatigue
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,35,M,132,38,Asthma,body ache,"fever, cough, body ache"
+Flu,Low,Ginger tea,Paracetamol,No,47,M,158,78,Diabetes,None,"fever, cough"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,32,O,135,80,Hypertension,body ache,body ache
+Flu,Low,Hydration,Paracetamol,No,73,F,125,97,Anemia,body ache,"cough, fatigue"
+Flu,Low,Ginger tea,Paracetamol,No,57,F,146,73,Diabetes,fever,cough
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,3,M,109,96,Hypertension,body ache,"fever, fatigue, body ache"
+Flu,Low,Ginger tea,Paracetamol,No,5,F,133,56,Diabetes,body ache,body ache
+Flu,Low,Ginger tea,Paracetamol,No,24,F,167,99,Diabetes,cough,"body ache, fever"
+Flu,Low,Ginger tea,Paracetamol,No,9,O,107,54,Hypertension,fatigue,cough
+Flu,Low,Ginger tea,Paracetamol,No,12,M,118,81,Diabetes,None,"body ache, cough"
+Flu,Low,Hydration,Paracetamol,No,31,M,141,86,Asthma,None,body ache
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,48,F,151,92,Hypertension,None,"fatigue, fever"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,76,O,162,52,Hypertension,None,"body ache, fatigue, cough"
+Flu,Low,Hydration,Paracetamol,No,60,F,143,56,None,fever,body ache
+Flu,Low,Hydration,Paracetamol,No,33,F,139,49,Diabetes,fever,"fatigue, fever, cough"
+Flu,Low,Ginger tea,Paracetamol,No,41,F,165,89,Diabetes,cough,cough
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,18,M,144,58,Hypertension,fever,"cough, body ache"
+Flu,Low,Hydration,Paracetamol,No,54,F,143,96,Hypertension,body ache,"cough, fatigue"
+Flu,Low,Hydration,Paracetamol,No,16,F,117,44,Anemia,fever,fatigue
+Flu,Low,Hydration,Paracetamol,No,25,O,139,63,Anemia,body ache,"fever, fatigue"
+Flu,Low,Hydration,Paracetamol,No,30,O,107,72,None,body ache,"fever, cough, body ache"
+Flu,Low,Ginger tea,Paracetamol,No,24,F,179,95,Anemia,body ache,"body ache, cough, fever"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,40,M,190,40,Asthma,fatigue,"body ache, fatigue, fever"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,64,O,161,62,Anemia,cough,"fever, cough, body ache"
+Flu,Low,Hydration,Paracetamol,No,54,F,143,33,Anemia,body ache,fatigue
+Flu,Low,Ginger tea,Paracetamol,No,65,M,183,61,Diabetes,fever,body ache
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,8,O,134,60,Anemia,cough,"fever, body ache, fatigue"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,37,M,184,50,Diabetes,fatigue,fatigue
+Flu,Low,Ginger tea,Paracetamol,No,33,M,138,95,Diabetes,fever,cough
+Flu,Low,Ginger tea,Paracetamol,No,41,F,142,90,Diabetes,fever,"fever, cough, body ache"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,53,F,124,100,Anemia,cough,"fatigue, cough, body ache"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,45,M,113,48,None,cough,"fatigue, body ache, fever"
+Flu,Low,Hydration,Paracetamol,No,16,M,180,70,Diabetes,None,body ache
+Flu,Low,Ginger tea,Paracetamol,No,64,F,110,73,Diabetes,cough,"fever, cough, body ache"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,42,M,119,72,Anemia,None,"fever, cough, body ache"
+Flu,Low,Hydration,Paracetamol,No,19,F,119,75,Anemia,None,"fatigue, body ache, fever"
+Flu,Low,Ginger tea,Paracetamol,No,79,M,140,59,Anemia,fever,fatigue
+Flu,Low,Hydration,Paracetamol,No,19,F,136,84,None,None,"cough, fatigue"
+Flu,Low,Hydration,Paracetamol,No,10,O,163,68,Hypertension,cough,"cough, fatigue, fever"
+Flu,Low,Ginger tea,Paracetamol,No,26,M,153,79,Diabetes,cough,"body ache, cough"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,62,O,129,80,Hypertension,fever,"cough, fatigue"
+Flu,Low,Hydration,Paracetamol,No,13,F,182,55,Anemia,None,"fatigue, fever"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,80,M,139,67,Anemia,body ache,cough
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,42,F,128,71,Asthma,cough,fever
+Flu,Low,Ginger tea,Paracetamol,No,6,F,176,30,Hypertension,cough,"fatigue, cough, body ache"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,65,M,123,49,Hypertension,body ache,"fever, body ache"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,42,F,100,72,Hypertension,fever,fever
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,1,O,146,66,Diabetes,None,"fatigue, fever, body ache"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,14,O,131,81,None,fever,"body ache, fever"
+Flu,Low,Ginger tea,Paracetamol,No,75,F,150,58,Hypertension,None,"fatigue, cough"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,14,F,169,76,Asthma,fatigue,fever
+Flu,Low,Ginger tea,Paracetamol,No,57,O,120,48,Asthma,cough,"fatigue, body ache, cough"
+Flu,Low,Ginger tea,Paracetamol,No,44,O,183,40,Asthma,fever,"cough, fever"
+Flu,Low,Hydration,Paracetamol,No,63,O,147,85,Diabetes,None,fever
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,41,F,117,95,Diabetes,None,body ache
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,48,F,106,38,Asthma,fatigue,"fatigue, body ache"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,26,M,139,98,None,fatigue,body ache
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,73,M,162,50,Diabetes,None,"fatigue, body ache, cough"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,17,M,137,32,Anemia,body ache,body ache
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,65,F,134,87,Asthma,fatigue,fatigue
+Flu,Low,Ginger tea,Paracetamol,No,32,M,145,99,Hypertension,cough,fever
+Flu,Low,Ginger tea,Paracetamol,No,45,M,141,96,Diabetes,fatigue,fever
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,29,F,150,76,Diabetes,cough,cough
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,21,O,138,74,Anemia,fatigue,"body ache, fever"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,68,F,152,46,Hypertension,None,cough
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,14,O,144,32,Asthma,cough,body ache
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,62,F,166,34,Hypertension,cough,"fever, body ache, fatigue"
+Flu,Low,Ginger tea,Paracetamol,No,14,O,170,88,Diabetes,cough,cough
+Flu,Low,Hydration,Paracetamol,No,59,F,137,65,Anemia,fever,fever
+Flu,Low,Hydration,Paracetamol,No,77,M,126,43,Diabetes,fever,"body ache, fever, cough"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,1,O,180,38,Hypertension,cough,fatigue
+Flu,Low,Ginger tea,Paracetamol,No,32,M,118,88,Hypertension,fever,"body ache, fatigue"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,26,F,172,94,Anemia,fatigue,fatigue
+Flu,Low,Hydration,Paracetamol,No,64,F,132,95,None,body ache,body ache
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,59,F,132,80,Asthma,body ache,cough
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,16,O,115,79,Anemia,fatigue,"cough, fever"
+Flu,Low,Hydration,Paracetamol,No,59,M,145,63,Diabetes,cough,fever
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,73,F,123,86,Anemia,fatigue,"cough, fever"
+Flu,Low,Ginger tea,Paracetamol,No,37,O,181,57,Asthma,body ache,"cough, fever"
+Flu,Low,"Ginger tea, Hydration",Paracetamol,No,80,M,182,74,Diabetes,cough,"cough, fatigue"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,15,O,102,30,Anemia,fatigue,"fatigue, body ache"
+Flu,Low,"Hydration, Ginger tea",Paracetamol,No,45,O,125,51,Asthma,fatigue,cough
+Flu,Low,Hydration,Paracetamol,No,39,F,109,58,Diabetes,None,body ache
+Flu,Low,Hydration,Paracetamol,No,10,O,177,100,Diabetes,None,body ache
+Flu,Low,Ginger tea,Paracetamol,No,46,F,110,74,Anemia,None,"fever, cough"
+Flu,Low,Ginger tea,Paracetamol,No,17,M,131,78,Hypertension,fatigue,"cough, body ache, fever"
+Flu,Low,Ginger tea,Paracetamol,No,1,M,170,88,Asthma,fever,"fever, fatigue, body ache"
+Flu,Low,Hydration,Paracetamol,No,50,M,148,65,Asthma,fatigue,fatigue
+Flu,Low,Hydration,Paracetamol,No,11,F,189,91,Hypertension,fatigue,fever
+Flu,Low,Hydration,Paracetamol,No,50,F,101,61,Diabetes,fever,"fatigue, cough, body ache"
+Headache,Low,Ginger tea,Paracetamol,No,74,M,148,88,Diabetes,headache,"migraine, headache"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,12,F,153,55,Hypertension,migraine,"migraine, headache, mild nausea"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,23,M,135,32,Diabetes,headache,"migraine, mild nausea, headache"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,39,F,134,37,None,None,migraine
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,12,O,120,70,Hypertension,mild nausea,"headache, migraine, mild nausea"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,78,O,134,51,Anemia,None,"headache, migraine"
+Headache,Low,Ginger tea,Paracetamol,No,19,F,119,65,Hypertension,mild nausea,"headache, migraine"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,13,O,135,94,None,mild nausea,"headache, migraine"
+Headache,Low,Dark room,Paracetamol,No,58,O,120,85,Anemia,headache,migraine
+Headache,Low,Ginger tea,Paracetamol,No,78,O,140,99,None,migraine,"headache, migraine"
+Headache,Low,Dark room,Paracetamol,No,65,O,135,98,None,mild nausea,"headache, mild nausea"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,36,O,104,95,None,migraine,"mild nausea, migraine, headache"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,24,M,109,80,Diabetes,headache,mild nausea
+Headache,Low,Ginger tea,Paracetamol,No,17,F,171,82,Diabetes,None,"headache, mild nausea, migraine"
+Headache,Low,Ginger tea,Paracetamol,No,24,M,176,46,Diabetes,mild nausea,headache
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,50,M,106,40,Asthma,headache,migraine
+Headache,Low,Ginger tea,Paracetamol,No,12,O,168,68,None,migraine,"migraine, mild nausea"
+Headache,Low,Dark room,Paracetamol,No,79,O,107,36,Asthma,migraine,migraine
+Headache,Low,Dark room,Paracetamol,No,4,F,164,94,None,migraine,"headache, mild nausea, migraine"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,26,O,170,38,Hypertension,mild nausea,headache
+Headache,Low,Dark room,Paracetamol,No,57,O,101,50,None,headache,headache
+Headache,Low,Ginger tea,Paracetamol,No,54,M,178,62,Diabetes,mild nausea,"mild nausea, headache"
+Headache,Low,Ginger tea,Paracetamol,No,34,O,132,85,Hypertension,headache,"mild nausea, headache"
+Headache,Low,Dark room,Paracetamol,No,30,F,159,94,None,mild nausea,"mild nausea, migraine, headache"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,33,M,152,33,None,migraine,mild nausea
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,4,M,158,100,Anemia,migraine,"migraine, mild nausea"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,22,F,180,43,Anemia,migraine,migraine
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,45,O,114,60,Hypertension,migraine,"migraine, mild nausea, headache"
+Headache,Low,Dark room,Paracetamol,No,60,F,127,70,Diabetes,None,"headache, mild nausea, migraine"
+Headache,Low,Ginger tea,Paracetamol,No,30,M,112,95,Diabetes,headache,"headache, migraine, mild nausea"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,49,F,120,63,Diabetes,migraine,"mild nausea, migraine"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,63,M,174,53,None,migraine,"migraine, headache"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,9,F,148,80,None,headache,mild nausea
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,28,M,143,90,Anemia,mild nausea,"mild nausea, migraine, headache"
+Headache,Low,Ginger tea,Paracetamol,No,59,O,132,31,Diabetes,headache,migraine
+Headache,Low,Dark room,Paracetamol,No,66,F,146,89,Anemia,None,"headache, migraine, mild nausea"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,44,F,122,44,Asthma,mild nausea,"headache, migraine"
+Headache,Low,Dark room,Paracetamol,No,19,M,126,76,None,None,migraine
+Headache,Low,Dark room,Paracetamol,No,3,F,106,65,Diabetes,migraine,"mild nausea, headache"
+Headache,Low,Dark room,Paracetamol,No,74,M,158,79,Diabetes,migraine,"migraine, headache, mild nausea"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,30,F,147,99,Anemia,migraine,"migraine, headache"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,22,M,115,69,Hypertension,headache,"migraine, mild nausea"
+Headache,Low,Ginger tea,Paracetamol,No,51,M,156,83,Anemia,mild nausea,"mild nausea, migraine, headache"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,32,M,107,57,Diabetes,mild nausea,"migraine, headache"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,38,M,140,41,Diabetes,headache,"mild nausea, migraine"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,23,O,155,79,Anemia,None,migraine
+Headache,Low,Dark room,Paracetamol,No,40,O,139,78,None,None,mild nausea
+Headache,Low,Ginger tea,Paracetamol,No,22,F,150,45,None,headache,migraine
+Headache,Low,Ginger tea,Paracetamol,No,80,M,106,85,Anemia,None,migraine
+Headache,Low,Dark room,Paracetamol,No,32,F,156,47,Anemia,headache,"mild nausea, headache, migraine"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,36,O,148,89,Hypertension,mild nausea,headache
+Headache,Low,Ginger tea,Paracetamol,No,53,M,163,93,Diabetes,mild nausea,migraine
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,27,F,144,48,None,mild nausea,"headache, mild nausea"
+Headache,Low,Ginger tea,Paracetamol,No,68,F,105,48,Asthma,migraine,"migraine, mild nausea, headache"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,77,F,170,77,None,migraine,"headache, migraine"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,20,M,152,96,Hypertension,None,"migraine, headache"
+Headache,Low,Ginger tea,Paracetamol,No,62,F,119,49,Anemia,headache,"mild nausea, migraine, headache"
+Headache,Low,Dark room,Paracetamol,No,60,O,115,95,None,mild nausea,"headache, mild nausea, migraine"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,8,F,183,39,Asthma,mild nausea,"mild nausea, headache"
+Headache,Low,Ginger tea,Paracetamol,No,30,M,128,84,None,headache,"mild nausea, headache, migraine"
+Headache,Low,Dark room,Paracetamol,No,63,M,139,60,None,headache,"mild nausea, migraine, headache"
+Headache,Low,Ginger tea,Paracetamol,No,44,M,153,39,None,None,headache
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,58,O,126,56,Asthma,None,"mild nausea, headache, migraine"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,57,F,105,88,Diabetes,headache,headache
+Headache,Low,Dark room,Paracetamol,No,57,O,173,32,None,headache,"migraine, headache"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,13,O,183,78,Asthma,mild nausea,headache
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,15,M,177,39,Hypertension,headache,"migraine, headache"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,69,F,131,59,Diabetes,mild nausea,headache
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,37,F,115,75,Anemia,mild nausea,"headache, migraine, mild nausea"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,77,M,143,35,Hypertension,migraine,mild nausea
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,75,F,174,32,None,headache,headache
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,40,M,179,39,None,mild nausea,"migraine, mild nausea, headache"
+Headache,Low,Dark room,Paracetamol,No,7,F,100,77,Diabetes,headache,"mild nausea, migraine, headache"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,5,F,116,44,Diabetes,None,migraine
+Headache,Low,Dark room,Paracetamol,No,3,O,188,63,Hypertension,None,"migraine, headache"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,57,M,101,50,Anemia,None,"mild nausea, headache, migraine"
+Headache,Low,Ginger tea,Paracetamol,No,33,F,173,34,None,None,headache
+Headache,Low,Dark room,Paracetamol,No,39,O,151,99,None,mild nausea,"migraine, mild nausea"
+Headache,Low,Dark room,Paracetamol,No,26,O,183,61,Asthma,mild nausea,"headache, migraine"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,19,O,151,55,Diabetes,headache,"migraine, mild nausea"
+Headache,Low,Ginger tea,Paracetamol,No,25,F,167,75,Asthma,migraine,"headache, migraine"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,22,O,159,53,Hypertension,migraine,mild nausea
+Headache,Low,Ginger tea,Paracetamol,No,63,F,132,90,Diabetes,None,headache
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,68,O,152,57,Diabetes,mild nausea,migraine
+Headache,Low,Dark room,Paracetamol,No,31,O,105,47,Anemia,migraine,migraine
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,61,M,114,89,Hypertension,migraine,"migraine, mild nausea"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,9,O,169,69,None,headache,headache
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,80,O,157,65,Hypertension,None,mild nausea
+Headache,Low,Ginger tea,Paracetamol,No,25,M,169,75,Anemia,mild nausea,"migraine, mild nausea, headache"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,60,O,132,39,Anemia,headache,"mild nausea, headache, migraine"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,35,O,130,54,Anemia,None,"headache, migraine, mild nausea"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,19,M,133,79,Asthma,migraine,headache
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,57,O,184,33,Asthma,None,mild nausea
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,28,O,180,97,Hypertension,mild nausea,"mild nausea, migraine, headache"
+Headache,Low,Ginger tea,Paracetamol,No,76,O,140,54,Asthma,migraine,"headache, mild nausea, migraine"
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,47,O,111,63,Diabetes,migraine,migraine
+Headache,Low,Dark room,Paracetamol,No,3,M,136,92,Asthma,None,"headache, migraine, mild nausea"
+Headache,Low,"Ginger tea, Dark room",Paracetamol,No,42,M,111,92,Diabetes,mild nausea,migraine
+Headache,Low,"Dark room, Ginger tea",Paracetamol,No,38,O,166,35,Diabetes,mild nausea,"headache, migraine"
+Headache,Low,Dark room,Paracetamol,No,8,O,132,62,None,None,"migraine, headache, mild nausea"
+Vomiting,Low,Light meals,Ondansetron,No,57,M,128,80,Hypertension,vomiting,"vomiting, nausea"
+Vomiting,Low,Light meals,Ondansetron,No,62,F,171,49,None,None,vomiting
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,20,O,121,54,Diabetes,nausea,nausea
+Vomiting,Low,Ginger tea,Ondansetron,No,36,M,149,70,Anemia,nausea,"vomiting, nausea"
+Vomiting,Low,Light meals,Ondansetron,No,40,M,176,99,Asthma,None,"nausea, vomiting"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,34,M,123,100,Asthma,nausea,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,29,M,162,86,Asthma,nausea,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,37,O,155,51,Anemia,nausea,nausea
+Vomiting,Low,Ginger tea,Ondansetron,No,69,F,125,69,Asthma,vomiting,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,12,F,168,41,Asthma,vomiting,vomiting
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,65,O,177,88,Anemia,None,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,61,F,119,89,Asthma,vomiting,"vomiting, nausea"
+Vomiting,Low,Ginger tea,Ondansetron,No,8,M,126,61,Anemia,vomiting,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,20,F,112,66,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,73,O,118,72,None,None,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,12,O,128,55,None,None,"vomiting, nausea"
+Vomiting,Low,Ginger tea,Ondansetron,No,3,F,125,80,Diabetes,nausea,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,58,F,162,59,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,73,M,171,75,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,79,M,184,91,Hypertension,vomiting,"vomiting, nausea"
+Vomiting,Low,Light meals,Ondansetron,No,48,M,189,30,Diabetes,vomiting,"nausea, vomiting"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,17,F,185,30,Anemia,vomiting,"nausea, vomiting"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,24,O,152,56,Anemia,None,"vomiting, nausea"
+Vomiting,Low,Ginger tea,Ondansetron,No,10,O,160,42,Anemia,None,nausea
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,56,O,169,60,Asthma,None,nausea
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,4,F,126,39,Anemia,nausea,"nausea, vomiting"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,66,F,106,30,None,None,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,52,O,152,33,Hypertension,None,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,38,O,146,98,Hypertension,vomiting,vomiting
+Vomiting,Low,Light meals,Ondansetron,No,53,M,188,59,Hypertension,None,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,80,F,151,90,Hypertension,None,nausea
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,66,F,101,96,Diabetes,vomiting,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,12,F,101,32,Anemia,nausea,vomiting
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,76,M,108,67,None,vomiting,vomiting
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,41,F,153,37,Hypertension,None,"vomiting, nausea"
+Vomiting,Low,Ginger tea,Ondansetron,No,10,M,151,87,Asthma,nausea,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,53,F,119,71,Anemia,None,"vomiting, nausea"
+Vomiting,Low,Ginger tea,Ondansetron,No,15,M,178,43,Diabetes,nausea,"vomiting, nausea"
+Vomiting,Low,Ginger tea,Ondansetron,No,10,F,128,53,None,None,nausea
+Vomiting,Low,Ginger tea,Ondansetron,No,20,M,141,45,Hypertension,vomiting,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,49,O,106,68,Anemia,vomiting,nausea
+Vomiting,Low,Light meals,Ondansetron,No,26,F,166,76,Diabetes,nausea,vomiting
+Vomiting,Low,Light meals,Ondansetron,No,28,F,136,98,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,20,O,166,88,Asthma,None,nausea
+Vomiting,Low,Ginger tea,Ondansetron,No,62,M,119,39,Diabetes,vomiting,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,27,O,184,78,Anemia,nausea,"vomiting, nausea"
+Vomiting,Low,Light meals,Ondansetron,No,79,F,170,73,Asthma,nausea,vomiting
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,51,M,104,52,Anemia,None,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,14,M,117,81,Hypertension,vomiting,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,29,M,127,54,Diabetes,nausea,nausea
+Vomiting,Low,Light meals,Ondansetron,No,50,M,178,38,Asthma,None,nausea
+Vomiting,Low,Light meals,Ondansetron,No,71,M,165,81,Hypertension,vomiting,vomiting
+Vomiting,Low,Light meals,Ondansetron,No,3,O,112,57,None,None,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,18,M,156,83,Diabetes,vomiting,"vomiting, nausea"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,66,M,160,39,None,None,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,74,O,165,72,Diabetes,nausea,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,61,O,136,63,None,vomiting,"vomiting, nausea"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,44,O,121,53,Diabetes,nausea,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,23,M,143,58,None,None,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,44,M,129,52,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,8,M,136,74,Diabetes,vomiting,vomiting
+Vomiting,Low,Light meals,Ondansetron,No,2,M,121,58,Anemia,vomiting,"vomiting, nausea"
+Vomiting,Low,Light meals,Ondansetron,No,77,O,108,37,Anemia,nausea,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,62,M,112,93,Hypertension,nausea,nausea
+Vomiting,Low,Ginger tea,Ondansetron,No,1,F,150,57,Diabetes,nausea,nausea
+Vomiting,Low,Light meals,Ondansetron,No,50,F,180,41,Anemia,nausea,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,27,M,179,59,Diabetes,nausea,"vomiting, nausea"
+Vomiting,Low,Light meals,Ondansetron,No,59,M,174,56,Diabetes,vomiting,nausea
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,27,M,103,64,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,63,O,164,70,Hypertension,nausea,nausea
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,24,M,125,41,None,vomiting,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,1,M,167,36,Hypertension,None,vomiting
+Vomiting,Low,Light meals,Ondansetron,No,3,O,103,42,Asthma,None,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,45,F,175,48,Anemia,vomiting,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,72,O,113,66,Diabetes,vomiting,nausea
+Vomiting,Low,Ginger tea,Ondansetron,No,6,M,141,83,None,nausea,"nausea, vomiting"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,48,O,144,51,Hypertension,nausea,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,45,O,136,33,None,nausea,vomiting
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,33,M,145,58,Asthma,vomiting,nausea
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,54,F,160,33,None,nausea,nausea
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,47,O,109,78,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,42,F,150,50,None,None,vomiting
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,2,F,183,95,Diabetes,nausea,vomiting
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,76,O,119,47,None,nausea,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,47,F,169,56,None,None,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,1,O,147,89,Diabetes,nausea,"nausea, vomiting"
+Vomiting,Low,Light meals,Ondansetron,No,61,M,179,32,Anemia,None,nausea
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,67,M,172,73,Diabetes,None,vomiting
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,36,F,183,57,Asthma,None,nausea
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,14,M,126,50,Anemia,nausea,nausea
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,68,F,187,34,Hypertension,vomiting,"vomiting, nausea"
+Vomiting,Low,Ginger tea,Ondansetron,No,42,F,142,47,Asthma,vomiting,"nausea, vomiting"
+Vomiting,Low,Ginger tea,Ondansetron,No,14,F,153,69,Diabetes,None,nausea
+Vomiting,Low,Ginger tea,Ondansetron,No,48,M,172,39,Asthma,vomiting,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,37,F,161,90,Diabetes,None,"nausea, vomiting"
+Vomiting,Low,"Light meals, Ginger tea",Ondansetron,No,32,M,107,72,None,vomiting,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,41,M,186,46,Anemia,vomiting,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,40,M,131,71,None,nausea,vomiting
+Vomiting,Low,Ginger tea,Ondansetron,No,67,M,154,79,None,None,"vomiting, nausea"
+Vomiting,Low,"Ginger tea, Light meals",Ondansetron,No,36,F,128,92,Asthma,vomiting,"nausea, vomiting"
+Body Pain,Low,Rest,Paracetamol,No,28,M,148,95,Hypertension,joint pain,"muscle ache, body pain, joint pain"
+Body Pain,Low,Rest,Paracetamol,No,11,O,130,47,None,joint pain,"joint pain, body pain"
+Body Pain,Low,Rest,Ibuprofen,No,7,M,109,60,Asthma,None,"muscle ache, body pain, joint pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,31,M,143,96,Diabetes,joint pain,"body pain, muscle ache"
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,27,O,189,85,Anemia,None,"body pain, muscle ache"
+Body Pain,Low,Rest,Ibuprofen,No,54,M,114,35,Asthma,muscle ache,body pain
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,43,O,153,95,Hypertension,joint pain,body pain
+Body Pain,Low,Warm compress,Ibuprofen,No,63,O,166,48,Asthma,None,"muscle ache, joint pain, body pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,77,F,170,96,None,None,"body pain, muscle ache"
+Body Pain,Low,"Rest, Warm compress",Paracetamol,No,66,F,101,51,Asthma,None,"body pain, muscle ache"
+Body Pain,Low,Rest,Paracetamol,No,75,M,124,57,Diabetes,joint pain,body pain
+Body Pain,Low,Rest,Paracetamol,No,76,M,126,93,None,muscle ache,"body pain, muscle ache, joint pain"
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,4,M,158,88,Asthma,body pain,"body pain, joint pain"
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,21,O,185,98,Diabetes,joint pain,muscle ache
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,7,M,167,59,None,joint pain,"joint pain, body pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,7,M,142,100,Diabetes,joint pain,muscle ache
+Body Pain,Low,Rest,Paracetamol,No,44,M,152,63,Asthma,joint pain,"joint pain, body pain"
+Body Pain,Low,Rest,Ibuprofen,No,72,M,109,83,Asthma,joint pain,body pain
+Body Pain,Low,Rest,Ibuprofen,No,39,M,120,74,Diabetes,body pain,"joint pain, body pain, muscle ache"
+Body Pain,Low,"Rest, Warm compress",Paracetamol,No,55,F,128,98,Hypertension,joint pain,"body pain, muscle ache, joint pain"
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,37,O,178,34,Asthma,None,"body pain, joint pain"
+Body Pain,Low,Rest,Paracetamol,No,21,O,110,40,Asthma,joint pain,"muscle ache, joint pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,5,O,155,73,None,None,body pain
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,33,O,121,87,Hypertension,muscle ache,"muscle ache, joint pain, body pain"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,77,M,139,59,Anemia,muscle ache,"joint pain, body pain"
+Body Pain,Low,Rest,Ibuprofen,No,12,M,170,40,Asthma,joint pain,"joint pain, body pain"
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,17,M,123,66,Asthma,muscle ache,"joint pain, muscle ache"
+Body Pain,Low,Rest,Paracetamol,No,2,F,169,72,None,joint pain,body pain
+Body Pain,Low,Warm compress,Paracetamol,No,5,M,143,65,Anemia,joint pain,"joint pain, muscle ache, body pain"
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,26,F,103,40,Hypertension,joint pain,"muscle ache, body pain"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,30,F,135,96,Hypertension,body pain,"muscle ache, body pain, joint pain"
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,77,F,144,83,Diabetes,body pain,"muscle ache, body pain, joint pain"
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,69,M,160,53,None,muscle ache,body pain
+Body Pain,Low,Rest,Paracetamol,No,16,F,149,47,Hypertension,body pain,joint pain
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,64,O,184,55,Anemia,None,"muscle ache, body pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,18,O,165,65,Asthma,muscle ache,"muscle ache, joint pain, body pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,24,M,148,61,Anemia,joint pain,body pain
+Body Pain,Low,Warm compress,Ibuprofen,No,36,M,106,36,None,joint pain,"joint pain, body pain"
+Body Pain,Low,Warm compress,Paracetamol,No,38,F,151,30,Anemia,muscle ache,body pain
+Body Pain,Low,Warm compress,Paracetamol,No,1,O,120,55,None,body pain,"muscle ache, body pain"
+Body Pain,Low,Rest,Paracetamol,No,51,O,124,97,Diabetes,muscle ache,"muscle ache, joint pain, body pain"
+Body Pain,Low,Rest,Ibuprofen,No,73,O,149,32,Asthma,muscle ache,muscle ache
+Body Pain,Low,"Rest, Warm compress",Paracetamol,No,61,F,112,94,Diabetes,body pain,"body pain, muscle ache"
+Body Pain,Low,Warm compress,Paracetamol,No,59,M,108,40,Asthma,body pain,"body pain, muscle ache"
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,47,M,107,56,Anemia,None,"muscle ache, body pain"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,25,O,111,64,Diabetes,body pain,body pain
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,22,M,166,80,Anemia,muscle ache,"muscle ache, joint pain, body pain"
+Body Pain,Low,Rest,Paracetamol,No,76,F,184,98,Asthma,muscle ache,"body pain, muscle ache, joint pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,40,O,139,74,Diabetes,muscle ache,joint pain
+Body Pain,Low,Warm compress,Paracetamol,No,69,F,145,95,Hypertension,muscle ache,"muscle ache, body pain, joint pain"
+Body Pain,Low,Warm compress,Paracetamol,No,49,M,119,80,Anemia,None,"muscle ache, body pain"
+Body Pain,Low,Warm compress,Paracetamol,No,72,O,138,30,Anemia,body pain,"joint pain, body pain"
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,18,F,181,37,Hypertension,body pain,"body pain, muscle ache, joint pain"
+Body Pain,Low,"Rest, Warm compress",Paracetamol,No,17,M,171,74,None,joint pain,"joint pain, body pain, muscle ache"
+Body Pain,Low,Warm compress,Paracetamol,No,54,O,183,77,Hypertension,body pain,"muscle ache, joint pain"
+Body Pain,Low,Rest,Ibuprofen,No,7,O,174,63,Hypertension,None,"muscle ache, joint pain, body pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,24,O,174,58,Anemia,joint pain,"muscle ache, joint pain"
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,32,M,139,42,Hypertension,body pain,"body pain, joint pain"
+Body Pain,Low,"Rest, Warm compress",Paracetamol,No,71,F,117,60,Anemia,None,"body pain, joint pain, muscle ache"
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,55,O,184,77,Hypertension,joint pain,body pain
+Body Pain,Low,Rest,Ibuprofen,No,76,O,130,52,None,muscle ache,"joint pain, body pain, muscle ache"
+Body Pain,Low,Warm compress,Paracetamol,No,11,M,120,45,Asthma,body pain,muscle ache
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,29,M,145,72,Anemia,muscle ache,"muscle ache, joint pain, body pain"
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,52,F,125,52,Diabetes,muscle ache,muscle ache
+Body Pain,Low,Warm compress,Ibuprofen,No,57,O,157,48,Diabetes,None,"muscle ache, joint pain, body pain"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,73,M,168,37,Hypertension,joint pain,"joint pain, muscle ache, body pain"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,43,O,122,76,Asthma,muscle ache,"muscle ache, joint pain, body pain"
+Body Pain,Low,Rest,Paracetamol,No,23,M,119,39,Diabetes,None,"muscle ache, joint pain, body pain"
+Body Pain,Low,Rest,Ibuprofen,No,64,M,138,70,Hypertension,body pain,"joint pain, muscle ache"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,23,O,134,85,Anemia,body pain,"joint pain, muscle ache"
+Body Pain,Low,"Rest, Warm compress",Paracetamol,No,37,O,179,30,Anemia,None,muscle ache
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,30,O,111,52,None,body pain,muscle ache
+Body Pain,Low,Rest,Ibuprofen,No,21,M,142,81,Asthma,muscle ache,joint pain
+Body Pain,Low,Rest,Paracetamol,No,23,F,176,54,Diabetes,joint pain,"body pain, joint pain, muscle ache"
+Body Pain,Low,Rest,Ibuprofen,No,4,M,139,78,Diabetes,body pain,"muscle ache, body pain"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,34,O,170,55,None,joint pain,"muscle ache, body pain"
+Body Pain,Low,Warm compress,Paracetamol,No,4,F,169,48,Hypertension,None,"body pain, joint pain, muscle ache"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,5,M,103,80,None,None,"joint pain, body pain, muscle ache"
+Body Pain,Low,Warm compress,Ibuprofen,No,10,M,169,96,Asthma,None,"muscle ache, joint pain, body pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,25,F,139,89,Hypertension,body pain,body pain
+Body Pain,Low,Rest,Paracetamol,No,17,M,166,76,Diabetes,body pain,"joint pain, muscle ache, body pain"
+Body Pain,Low,Warm compress,Ibuprofen,No,77,O,136,46,Diabetes,joint pain,"body pain, joint pain, muscle ache"
+Body Pain,Low,Rest,Paracetamol,No,79,F,175,71,Hypertension,body pain,"joint pain, muscle ache, body pain"
+Body Pain,Low,Warm compress,Paracetamol,No,60,M,163,41,Anemia,joint pain,"joint pain, muscle ache, body pain"
+Body Pain,Low,Rest,Paracetamol,No,40,F,189,34,Asthma,joint pain,muscle ache
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,47,F,177,44,Diabetes,None,joint pain
+Body Pain,Low,Rest,Ibuprofen,No,32,O,186,78,Asthma,None,body pain
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,32,O,142,45,Anemia,None,joint pain
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,40,F,155,81,None,body pain,body pain
+Body Pain,Low,Warm compress,Ibuprofen,No,32,O,189,37,Diabetes,joint pain,"joint pain, muscle ache, body pain"
+Body Pain,Low,Rest,Ibuprofen,No,75,O,107,39,Hypertension,joint pain,"body pain, joint pain, muscle ache"
+Body Pain,Low,Rest,Ibuprofen,No,25,F,174,83,None,None,body pain
+Body Pain,Low,Warm compress,Paracetamol,No,50,F,100,81,Diabetes,None,body pain
+Body Pain,Low,"Rest, Warm compress",Ibuprofen,No,77,M,107,86,Asthma,body pain,body pain
+Body Pain,Low,Warm compress,Paracetamol,No,6,F,163,99,Anemia,muscle ache,"body pain, joint pain, muscle ache"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,76,F,168,43,Anemia,muscle ache,joint pain
+Body Pain,Low,Warm compress,Paracetamol,No,75,F,132,30,Hypertension,joint pain,"muscle ache, body pain, joint pain"
+Body Pain,Low,"Warm compress, Rest",Ibuprofen,No,49,O,114,33,Diabetes,None,body pain
+Body Pain,Low,Rest,Ibuprofen,No,69,O,165,96,Diabetes,body pain,"joint pain, body pain"
+Body Pain,Low,"Warm compress, Rest",Paracetamol,No,77,O,101,95,Hypertension,muscle ache,"joint pain, muscle ache, body pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,27,F,105,92,Diabetes,eye irritation,"red eyes, eye irritation, itchy eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,7,M,129,82,None,red eyes,"eye irritation, red eyes, eye pain"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,52,M,144,71,Diabetes,red eyes,"itchy eyes, eye pain"
+Eye Pain,Low,Avoid strain,Artificial tears,No,43,M,130,65,None,red eyes,"itchy eyes, red eyes, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,68,F,117,71,Hypertension,eye pain,"red eyes, eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,32,F,129,87,Asthma,red eyes,red eyes
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,28,M,128,57,Asthma,eye pain,"eye pain, itchy eyes, eye irritation"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,14,O,113,74,Asthma,itchy eyes,eye pain
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,11,O,143,65,Asthma,eye pain,"itchy eyes, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,9,M,187,30,Anemia,eye irritation,"eye irritation, itchy eyes, red eyes"
+Eye Pain,Low,Wash eyes,Artificial tears,No,55,M,147,74,None,eye pain,"eye irritation, eye pain, itchy eyes"
+Eye Pain,Low,Wash eyes,Artificial tears,No,48,O,106,67,Asthma,red eyes,eye irritation
+Eye Pain,Low,Wash eyes,Artificial tears,No,77,M,131,47,Asthma,eye irritation,"eye irritation, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,23,O,109,59,Anemia,eye irritation,"red eyes, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,64,O,155,88,Hypertension,red eyes,"eye irritation, red eyes, eye pain"
+Eye Pain,Low,Avoid strain,Artificial tears,No,11,O,158,58,None,red eyes,red eyes
+Eye Pain,Low,Wash eyes,Artificial tears,No,25,F,182,35,Anemia,red eyes,"red eyes, eye irritation"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,61,O,123,52,None,None,"itchy eyes, eye pain, red eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,46,O,121,31,Diabetes,None,"eye irritation, eye pain, red eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,34,O,115,55,None,eye pain,"red eyes, eye pain"
+Eye Pain,Low,Avoid strain,Artificial tears,No,37,O,144,68,Asthma,None,"red eyes, eye irritation, itchy eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,2,F,177,62,Diabetes,red eyes,"eye irritation, red eyes, itchy eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,21,M,143,66,Diabetes,itchy eyes,red eyes
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,19,O,108,78,Hypertension,eye irritation,"eye pain, eye irritation"
+Eye Pain,Low,Avoid strain,Artificial tears,No,9,O,132,52,Hypertension,eye irritation,"eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,68,O,173,66,Asthma,eye pain,"eye pain, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,58,M,174,54,Diabetes,red eyes,red eyes
+Eye Pain,Low,Wash eyes,Artificial tears,No,55,F,113,37,Anemia,None,red eyes
+Eye Pain,Low,Wash eyes,Artificial tears,No,37,F,177,38,None,None,eye pain
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,76,O,112,98,Hypertension,None,itchy eyes
+Eye Pain,Low,Avoid strain,Artificial tears,No,30,M,141,60,Diabetes,None,eye pain
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,72,O,112,53,None,red eyes,"eye irritation, red eyes"
+Eye Pain,Low,Avoid strain,Artificial tears,No,27,O,160,67,Asthma,itchy eyes,"eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,18,O,160,79,Asthma,itchy eyes,"red eyes, eye pain"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,1,M,133,50,Hypertension,None,itchy eyes
+Eye Pain,Low,Avoid strain,Artificial tears,No,57,O,170,93,Anemia,eye pain,"red eyes, eye pain, itchy eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,3,O,165,66,Diabetes,eye pain,"itchy eyes, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,79,F,167,52,Diabetes,None,eye irritation
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,4,M,115,52,Hypertension,None,"eye irritation, eye pain"
+Eye Pain,Low,Wash eyes,Artificial tears,No,18,F,120,94,None,red eyes,eye pain
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,6,M,179,48,Anemia,eye irritation,"eye pain, eye irritation"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,47,M,160,39,Diabetes,itchy eyes,eye pain
+Eye Pain,Low,Avoid strain,Artificial tears,No,4,O,170,62,Asthma,eye pain,eye pain
+Eye Pain,Low,Avoid strain,Artificial tears,No,66,M,188,99,Anemia,eye pain,"itchy eyes, red eyes"
+Eye Pain,Low,Avoid strain,Artificial tears,No,15,M,143,80,Asthma,None,"red eyes, itchy eyes"
+Eye Pain,Low,Avoid strain,Artificial tears,No,17,O,167,74,Hypertension,eye irritation,"red eyes, eye pain, eye irritation"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,59,M,117,84,Hypertension,eye pain,"itchy eyes, eye irritation"
+Eye Pain,Low,Avoid strain,Artificial tears,No,4,F,118,80,None,None,"itchy eyes, eye pain, eye irritation"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,12,F,120,48,Asthma,red eyes,"eye irritation, eye pain"
+Eye Pain,Low,Avoid strain,Artificial tears,No,26,O,186,47,Anemia,red eyes,"eye irritation, eye pain, red eyes"
+Eye Pain,Low,Avoid strain,Artificial tears,No,63,O,167,80,Anemia,itchy eyes,"red eyes, itchy eyes, eye pain"
+Eye Pain,Low,Avoid strain,Artificial tears,No,53,F,152,62,Diabetes,itchy eyes,"itchy eyes, eye irritation"
+Eye Pain,Low,Wash eyes,Artificial tears,No,44,M,111,58,None,eye irritation,"eye irritation, red eyes, itchy eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,40,F,164,84,Hypertension,None,"itchy eyes, red eyes"
+Eye Pain,Low,Avoid strain,Artificial tears,No,36,M,158,33,Asthma,eye pain,"eye irritation, eye pain, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,20,F,168,82,Hypertension,eye pain,"red eyes, itchy eyes, eye pain"
+Eye Pain,Low,Avoid strain,Artificial tears,No,48,O,136,34,Hypertension,eye irritation,itchy eyes
+Eye Pain,Low,Wash eyes,Artificial tears,No,44,F,160,35,None,eye pain,"itchy eyes, red eyes, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,2,M,157,36,Diabetes,itchy eyes,eye pain
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,29,F,133,54,Diabetes,eye pain,red eyes
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,22,M,106,96,Diabetes,eye irritation,"itchy eyes, eye pain, eye irritation"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,2,O,105,31,Asthma,eye pain,"eye irritation, itchy eyes, red eyes"
+Eye Pain,Low,Avoid strain,Artificial tears,No,15,M,158,80,Hypertension,red eyes,"eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,18,O,152,44,Anemia,None,"red eyes, itchy eyes, eye irritation"
+Eye Pain,Low,Wash eyes,Artificial tears,No,15,M,107,85,Diabetes,None,"eye irritation, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,67,O,114,57,Asthma,None,"eye pain, red eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,39,F,101,38,Hypertension,red eyes,"eye irritation, red eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,17,F,147,71,Diabetes,red eyes,eye irritation
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,48,M,132,72,Diabetes,eye irritation,"eye irritation, itchy eyes"
+Eye Pain,Low,Wash eyes,Artificial tears,No,79,M,123,96,None,eye pain,"red eyes, itchy eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,25,M,173,85,None,None,red eyes
+Eye Pain,Low,Avoid strain,Artificial tears,No,3,O,164,65,None,None,"red eyes, eye pain, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,33,M,138,82,Hypertension,eye pain,"eye pain, eye irritation, itchy eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,22,M,179,64,None,red eyes,eye pain
+Eye Pain,Low,Wash eyes,Artificial tears,No,65,F,109,86,Hypertension,red eyes,eye pain
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,32,M,113,41,Asthma,eye irritation,"red eyes, eye irritation"
+Eye Pain,Low,Wash eyes,Artificial tears,No,62,M,135,60,Asthma,None,"itchy eyes, eye irritation, red eyes"
+Eye Pain,Low,Avoid strain,Artificial tears,No,79,M,161,97,Asthma,None,"eye pain, eye irritation"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,59,O,172,78,Diabetes,itchy eyes,"red eyes, itchy eyes, eye pain"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,19,M,155,33,Anemia,eye pain,"eye pain, eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,5,O,188,81,Diabetes,None,eye irritation
+Eye Pain,Low,Wash eyes,Artificial tears,No,26,M,137,92,Hypertension,eye irritation,"eye pain, itchy eyes, eye irritation"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,58,F,116,69,None,red eyes,itchy eyes
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,13,F,152,86,Hypertension,None,red eyes
+Eye Pain,Low,Wash eyes,Artificial tears,No,26,M,122,61,Asthma,itchy eyes,red eyes
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,59,O,150,45,None,None,"itchy eyes, red eyes, eye pain"
+Eye Pain,Low,Wash eyes,Artificial tears,No,51,M,122,81,Hypertension,eye pain,red eyes
+Eye Pain,Low,Avoid strain,Artificial tears,No,78,O,172,65,Anemia,itchy eyes,red eyes
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,26,F,110,87,Hypertension,None,"eye pain, red eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,41,F,161,72,Asthma,eye pain,itchy eyes
+Eye Pain,Low,Avoid strain,Artificial tears,No,56,M,128,91,Anemia,red eyes,itchy eyes
+Eye Pain,Low,Avoid strain,Artificial tears,No,59,M,153,75,Diabetes,itchy eyes,"eye irritation, eye pain, red eyes"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,38,M,107,35,Hypertension,None,"eye irritation, eye pain, red eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,59,O,102,35,Diabetes,None,eye irritation
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,11,F,139,63,Anemia,itchy eyes,"eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,28,F,181,63,None,eye irritation,"eye pain, eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,45,M,117,50,Anemia,itchy eyes,"eye pain, eye irritation, itchy eyes"
+Eye Pain,Low,"Wash eyes, Avoid strain",Artificial tears,No,53,M,160,77,Diabetes,eye pain,"eye irritation, eye pain"
+Eye Pain,Low,"Avoid strain, Wash eyes",Artificial tears,No,22,F,118,48,Asthma,None,"itchy eyes, eye pain"
+Eye Pain,Low,Wash eyes,Artificial tears,No,5,M,115,33,Hypertension,eye irritation,"eye pain, eye irritation"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,74,F,146,76,None,ear pain,ear ache
+Ear Pain,Low,Warm compress,Painkillers,No,48,M,166,76,Diabetes,ear infection,ear infection
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,26,F,118,72,Diabetes,ear ache,"ear pain, ear ache"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,31,F,189,80,None,ear ache,"ear pain, ear ache, ear infection"
+Ear Pain,Low,Ear drops if mild,Painkillers,No,21,M,129,94,Hypertension,ear infection,"ear pain, ear infection, ear ache"
+Ear Pain,Low,Ear drops if mild,Ear drops,No,2,O,141,91,Hypertension,None,ear infection
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,35,O,172,75,Hypertension,ear infection,"ear ache, ear infection, ear pain"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,79,M,127,77,Diabetes,ear pain,ear ache
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,35,F,183,34,None,None,"ear pain, ear ache, ear infection"
+Ear Pain,Low,Ear drops if mild,Painkillers,No,58,M,158,66,Anemia,ear infection,"ear ache, ear infection"
+Ear Pain,Low,Warm compress,Ear drops,No,46,M,139,47,Asthma,ear ache,"ear pain, ear ache, ear infection"
+Ear Pain,Low,Warm compress,Ear drops,No,75,F,145,84,Diabetes,None,"ear infection, ear pain"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,44,O,155,83,Asthma,None,"ear pain, ear infection, ear ache"
+Ear Pain,Low,Warm compress,Painkillers,No,35,M,175,46,Diabetes,ear infection,ear ache
+Ear Pain,Low,Ear drops if mild,Painkillers,No,49,F,109,30,Asthma,ear ache,"ear infection, ear pain"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,23,O,105,39,Hypertension,ear pain,"ear infection, ear ache"
+Ear Pain,Low,Warm compress,Ear drops,No,39,F,176,70,Hypertension,ear pain,"ear ache, ear pain"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,47,F,100,53,Diabetes,ear ache,"ear ache, ear pain"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,52,F,160,33,Asthma,None,"ear pain, ear ache"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,3,O,135,82,Asthma,None,ear ache
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,35,F,161,90,Diabetes,ear pain,"ear pain, ear infection, ear ache"
+Ear Pain,Low,Ear drops if mild,Painkillers,No,36,F,115,73,Anemia,ear ache,ear pain
+Ear Pain,Low,Ear drops if mild,Painkillers,No,65,M,113,76,Diabetes,ear ache,"ear infection, ear ache, ear pain"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,26,F,108,53,None,None,ear ache
+Ear Pain,Low,Warm compress,Painkillers,No,75,O,184,34,Anemia,ear pain,ear ache
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,49,F,148,61,Diabetes,None,"ear pain, ear infection"
+Ear Pain,Low,Warm compress,Ear drops,No,44,M,173,48,None,ear pain,"ear ache, ear infection"
+Ear Pain,Low,Warm compress,Ear drops,No,24,F,127,38,None,ear pain,"ear infection, ear pain, ear ache"
+Ear Pain,Low,Warm compress,Painkillers,No,79,F,149,84,None,None,"ear ache, ear infection, ear pain"
+Ear Pain,Low,Ear drops if mild,Ear drops,No,42,M,172,95,Asthma,None,ear infection
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,68,M,122,88,Asthma,ear ache,ear infection
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,16,F,170,88,Asthma,ear ache,"ear infection, ear pain"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,59,M,115,97,Diabetes,ear pain,"ear infection, ear ache"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,71,M,100,86,Asthma,ear infection,ear pain
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,11,M,190,31,Hypertension,ear pain,ear infection
+Ear Pain,Low,Warm compress,Painkillers,No,63,M,116,49,Diabetes,ear ache,"ear pain, ear infection, ear ache"
+Ear Pain,Low,Ear drops if mild,Painkillers,No,62,O,162,83,Anemia,ear infection,"ear infection, ear pain"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,53,O,164,55,None,None,"ear ache, ear pain, ear infection"
+Ear Pain,Low,Warm compress,Painkillers,No,34,M,139,78,Diabetes,None,ear pain
+Ear Pain,Low,Warm compress,Ear drops,No,40,O,183,46,Anemia,ear ache,"ear ache, ear infection, ear pain"
+Ear Pain,Low,Warm compress,Painkillers,No,22,F,131,79,Asthma,ear infection,ear pain
+Ear Pain,Low,Ear drops if mild,Painkillers,No,42,F,176,60,Diabetes,ear infection,"ear pain, ear infection, ear ache"
+Ear Pain,Low,Warm compress,Ear drops,No,34,O,161,88,None,ear pain,"ear pain, ear infection, ear ache"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,62,M,178,52,Hypertension,ear pain,"ear ache, ear infection"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,4,M,175,35,Diabetes,ear pain,ear ache
+Ear Pain,Low,Ear drops if mild,Ear drops,No,67,F,116,96,Asthma,ear pain,ear pain
+Ear Pain,Low,Ear drops if mild,Painkillers,No,55,O,119,36,Diabetes,ear pain,ear infection
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,59,O,187,33,Diabetes,None,"ear infection, ear pain, ear ache"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,53,M,125,95,Asthma,None,"ear infection, ear ache, ear pain"
+Ear Pain,Low,Ear drops if mild,Ear drops,No,26,M,117,90,Asthma,None,"ear infection, ear pain"
+Ear Pain,Low,Warm compress,Painkillers,No,67,M,176,37,Asthma,ear ache,ear ache
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,30,O,136,63,Diabetes,None,"ear pain, ear infection, ear ache"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,49,O,175,35,Asthma,ear infection,ear infection
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,53,O,100,59,Hypertension,ear infection,"ear infection, ear ache"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,74,M,118,75,Diabetes,ear infection,"ear ache, ear infection, ear pain"
+Ear Pain,Low,Warm compress,Painkillers,No,21,O,136,68,Diabetes,None,"ear ache, ear infection, ear pain"
+Ear Pain,Low,Warm compress,Painkillers,No,75,F,139,63,Asthma,ear ache,"ear pain, ear infection"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,51,O,101,90,None,ear infection,ear pain
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,46,F,122,99,Anemia,ear ache,ear infection
+Ear Pain,Low,Ear drops if mild,Ear drops,No,41,M,178,71,None,ear ache,ear pain
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,40,F,160,40,None,ear infection,ear pain
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,75,F,109,46,Asthma,None,"ear ache, ear infection, ear pain"
+Ear Pain,Low,Warm compress,Ear drops,No,36,M,169,30,Asthma,ear ache,ear infection
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,37,O,187,69,Hypertension,None,ear infection
+Ear Pain,Low,Ear drops if mild,Painkillers,No,21,M,175,61,Asthma,None,ear pain
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,56,M,132,77,Diabetes,ear infection,"ear infection, ear pain"
+Ear Pain,Low,Warm compress,Painkillers,No,77,F,114,82,Anemia,ear pain,"ear pain, ear infection, ear ache"
+Ear Pain,Low,Ear drops if mild,Ear drops,No,77,M,163,70,Hypertension,ear infection,"ear infection, ear pain, ear ache"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,26,M,167,82,Hypertension,ear pain,ear pain
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,32,M,160,41,Diabetes,None,"ear infection, ear ache, ear pain"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,63,O,178,71,None,None,ear pain
+Ear Pain,Low,Warm compress,Ear drops,No,40,O,159,32,Hypertension,ear ache,ear ache
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,30,F,101,84,Hypertension,ear infection,"ear ache, ear pain"
+Ear Pain,Low,Ear drops if mild,Ear drops,No,9,O,150,50,Anemia,ear pain,"ear pain, ear ache, ear infection"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,32,O,155,98,Asthma,ear ache,"ear pain, ear ache"
+Ear Pain,Low,Ear drops if mild,Painkillers,No,56,O,176,85,Asthma,ear infection,"ear infection, ear pain, ear ache"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,4,O,155,84,Diabetes,ear infection,"ear pain, ear ache"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,50,M,147,48,Hypertension,ear infection,"ear ache, ear infection"
+Ear Pain,Low,Warm compress,Ear drops,No,60,O,185,81,Anemia,ear ache,"ear pain, ear ache, ear infection"
+Ear Pain,Low,Warm compress,Painkillers,No,27,M,184,41,Asthma,ear pain,"ear infection, ear pain"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Painkillers,No,45,M,101,36,Anemia,None,"ear ache, ear pain"
+Ear Pain,Low,Ear drops if mild,Ear drops,No,26,F,119,92,Hypertension,ear infection,"ear ache, ear infection, ear pain"
+Ear Pain,Low,Ear drops if mild,Ear drops,No,66,F,133,92,Asthma,ear pain,"ear ache, ear infection, ear pain"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Ear drops,No,54,M,188,77,Anemia,ear ache,"ear pain, ear infection"
+Ear Pain,Low,Warm compress,Ear drops,No,27,O,141,40,Asthma,ear infection,"ear infection, ear ache"
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,43,F,142,31,Anemia,ear infection,ear ache
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,54,O,163,74,Diabetes,ear infection,"ear infection, ear pain"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,78,F,163,99,Anemia,ear infection,ear infection
+Ear Pain,Low,Ear drops if mild,Painkillers,No,36,F,101,56,Diabetes,None,"ear pain, ear infection, ear ache"
+Ear Pain,Low,Warm compress,Ear drops,No,77,F,180,90,Anemia,ear infection,"ear pain, ear infection"
+Ear Pain,Low,Ear drops if mild,Painkillers,No,38,F,178,46,Hypertension,None,ear infection
+Ear Pain,Low,Ear drops if mild,Ear drops,No,13,M,168,95,Hypertension,ear ache,ear pain
+Ear Pain,Low,Warm compress,Painkillers,No,22,F,153,64,Hypertension,None,ear pain
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,57,M,138,46,Asthma,ear infection,"ear infection, ear ache"
+Ear Pain,Low,Ear drops if mild,Painkillers,No,41,M,166,89,Diabetes,ear infection,ear pain
+Ear Pain,Low,Warm compress,Ear drops,No,24,F,119,97,None,ear infection,"ear pain, ear ache"
+Ear Pain,Low,Warm compress,Painkillers,No,9,F,112,50,Asthma,ear pain,"ear pain, ear infection"
+Ear Pain,Low,"Warm compress, Ear drops if mild",Painkillers,No,41,O,177,49,Diabetes,None,"ear infection, ear pain"
+Ear Pain,Low,Warm compress,Ear drops,No,77,F,151,94,Asthma,ear ache,ear ache
+Ear Pain,Low,"Ear drops if mild, Warm compress",Ear drops,No,30,O,143,36,Anemia,ear pain,"ear pain, ear infection"
+Diarrhea,Low,Banana,ORS,No,11,M,115,46,Anemia,loose stool,"diarrhea, stomach upset"
+Diarrhea,Low,Hydration,Probiotics,No,1,F,169,100,None,None,"diarrhea, stomach upset, loose stool"
+Diarrhea,Low,"ORS, Banana, Hydration",Probiotics,No,41,M,147,42,Asthma,diarrhea,"loose stool, stomach upset"
+Diarrhea,Low,Hydration,Probiotics,No,64,O,175,85,Asthma,loose stool,diarrhea
+Diarrhea,Low,Banana,ORS,No,5,F,181,30,Hypertension,loose stool,"stomach upset, loose stool"
+Diarrhea,Low,"ORS, Banana",Probiotics,No,23,O,120,51,Asthma,None,stomach upset
+Diarrhea,Low,"Hydration, ORS, Banana",ORS,No,27,M,170,62,Hypertension,None,"stomach upset, diarrhea, loose stool"
+Diarrhea,Low,"ORS, Banana, Hydration",ORS,No,46,M,183,76,Diabetes,diarrhea,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,ORS,Probiotics,No,46,M,149,83,Diabetes,stomach upset,"diarrhea, loose stool"
+Diarrhea,Low,ORS,ORS,No,19,F,175,43,Asthma,stomach upset,loose stool
+Diarrhea,Low,"ORS, Banana, Hydration",ORS,No,45,F,153,47,Hypertension,None,"stomach upset, loose stool, diarrhea"
+Diarrhea,Low,"Hydration, ORS",ORS,No,50,M,188,51,Asthma,None,"diarrhea, loose stool"
+Diarrhea,Low,"Hydration, Banana",ORS,No,29,O,110,87,Hypertension,diarrhea,loose stool
+Diarrhea,Low,"Hydration, Banana",Probiotics,No,13,O,120,36,None,None,"stomach upset, loose stool"
+Diarrhea,Low,"Hydration, ORS",ORS,No,3,O,120,89,Anemia,loose stool,"stomach upset, loose stool"
+Diarrhea,Low,ORS,Probiotics,No,70,F,126,46,None,None,"diarrhea, stomach upset, loose stool"
+Diarrhea,Low,ORS,ORS,No,29,F,159,57,Asthma,diarrhea,loose stool
+Diarrhea,Low,"Banana, ORS, Hydration",ORS,No,55,F,185,42,Diabetes,diarrhea,"loose stool, stomach upset"
+Diarrhea,Low,"ORS, Banana, Hydration",ORS,No,41,M,177,97,Hypertension,loose stool,"loose stool, diarrhea"
+Diarrhea,Low,"Banana, Hydration, ORS",ORS,No,11,F,160,86,Anemia,loose stool,loose stool
+Diarrhea,Low,"Banana, ORS, Hydration",Probiotics,No,43,O,108,45,None,loose stool,diarrhea
+Diarrhea,Low,"Banana, Hydration",Probiotics,No,58,M,124,84,Asthma,loose stool,diarrhea
+Diarrhea,Low,Banana,Probiotics,No,18,O,153,80,None,stomach upset,"stomach upset, loose stool"
+Diarrhea,Low,"Hydration, ORS, Banana",Probiotics,No,32,M,133,71,Anemia,None,diarrhea
+Diarrhea,Low,"ORS, Banana, Hydration",Probiotics,No,17,F,166,46,Diabetes,stomach upset,"diarrhea, loose stool, stomach upset"
+Diarrhea,Low,"Hydration, ORS, Banana",Probiotics,No,28,O,116,55,Anemia,None,"loose stool, stomach upset"
+Diarrhea,Low,"Banana, ORS",ORS,No,72,O,147,36,Asthma,loose stool,"loose stool, stomach upset, diarrhea"
+Diarrhea,Low,"ORS, Banana",Probiotics,No,37,O,122,98,Asthma,None,loose stool
+Diarrhea,Low,"Hydration, ORS, Banana",Probiotics,No,29,O,102,56,Asthma,diarrhea,"stomach upset, diarrhea, loose stool"
+Diarrhea,Low,Banana,Probiotics,No,33,O,189,71,Hypertension,loose stool,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,"Hydration, ORS, Banana",Probiotics,No,71,F,119,38,Diabetes,loose stool,loose stool
+Diarrhea,Low,Banana,Probiotics,No,79,M,179,42,Diabetes,stomach upset,"stomach upset, diarrhea, loose stool"
+Diarrhea,Low,Banana,Probiotics,No,78,M,180,98,Asthma,None,"loose stool, stomach upset"
+Diarrhea,Low,"Hydration, Banana",Probiotics,No,27,M,102,43,Anemia,diarrhea,"loose stool, stomach upset, diarrhea"
+Diarrhea,Low,"Hydration, ORS, Banana",ORS,No,52,O,179,51,None,None,diarrhea
+Diarrhea,Low,"Banana, Hydration, ORS",Probiotics,No,62,M,104,33,Diabetes,diarrhea,"diarrhea, stomach upset, loose stool"
+Diarrhea,Low,"ORS, Banana, Hydration",ORS,No,31,O,153,74,Diabetes,diarrhea,"diarrhea, stomach upset"
+Diarrhea,Low,"Banana, Hydration",ORS,No,31,F,176,40,Asthma,diarrhea,"stomach upset, loose stool, diarrhea"
+Diarrhea,Low,Banana,ORS,No,65,O,135,92,Asthma,loose stool,"stomach upset, diarrhea"
+Diarrhea,Low,ORS,ORS,No,43,O,109,82,Hypertension,diarrhea,loose stool
+Diarrhea,Low,ORS,Probiotics,No,69,M,170,44,Asthma,stomach upset,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,"Banana, Hydration",Probiotics,No,38,O,171,90,Anemia,stomach upset,diarrhea
+Diarrhea,Low,Hydration,Probiotics,No,18,M,151,66,Diabetes,loose stool,"diarrhea, loose stool, stomach upset"
+Diarrhea,Low,ORS,Probiotics,No,64,O,190,57,Anemia,diarrhea,"diarrhea, stomach upset, loose stool"
+Diarrhea,Low,"ORS, Banana, Hydration",ORS,No,73,O,182,61,None,None,loose stool
+Diarrhea,Low,Hydration,Probiotics,No,23,O,120,84,None,loose stool,diarrhea
+Diarrhea,Low,ORS,Probiotics,No,2,O,139,56,Anemia,diarrhea,stomach upset
+Diarrhea,Low,"Hydration, ORS, Banana",Probiotics,No,38,M,101,72,Diabetes,loose stool,"stomach upset, diarrhea, loose stool"
+Diarrhea,Low,"ORS, Hydration, Banana",ORS,No,36,O,126,56,None,loose stool,"loose stool, stomach upset, diarrhea"
+Diarrhea,Low,"Hydration, ORS, Banana",ORS,No,7,F,181,86,Diabetes,stomach upset,"loose stool, stomach upset"
+Diarrhea,Low,"ORS, Hydration, Banana",Probiotics,No,30,M,104,92,Diabetes,stomach upset,diarrhea
+Diarrhea,Low,Hydration,Probiotics,No,76,M,178,98,None,None,"diarrhea, stomach upset"
+Diarrhea,Low,"Banana, ORS, Hydration",ORS,No,76,O,139,95,Asthma,None,"diarrhea, loose stool, stomach upset"
+Diarrhea,Low,Banana,Probiotics,No,24,F,108,90,Asthma,stomach upset,loose stool
+Diarrhea,Low,"Banana, Hydration",Probiotics,No,10,F,143,79,None,stomach upset,"diarrhea, loose stool, stomach upset"
+Diarrhea,Low,"Hydration, Banana",ORS,No,57,M,190,31,Anemia,stomach upset,stomach upset
+Diarrhea,Low,ORS,Probiotics,No,80,F,126,68,Hypertension,None,"loose stool, diarrhea"
+Diarrhea,Low,"ORS, Banana, Hydration",ORS,No,28,M,185,64,Diabetes,loose stool,loose stool
+Diarrhea,Low,Banana,ORS,No,21,F,156,61,Anemia,stomach upset,"loose stool, stomach upset"
+Diarrhea,Low,Hydration,ORS,No,31,O,129,61,Hypertension,None,"loose stool, stomach upset"
+Diarrhea,Low,"Hydration, ORS",Probiotics,No,57,F,172,67,Asthma,None,"loose stool, diarrhea"
+Diarrhea,Low,"Hydration, Banana, ORS",ORS,No,46,O,117,75,Asthma,diarrhea,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,ORS,ORS,No,73,F,120,90,Asthma,diarrhea,loose stool
+Diarrhea,Low,Hydration,Probiotics,No,25,M,189,89,Hypertension,loose stool,loose stool
+Diarrhea,Low,Banana,ORS,No,25,F,183,68,None,None,loose stool
+Diarrhea,Low,"Banana, Hydration",Probiotics,No,66,O,148,47,Anemia,None,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,"ORS, Banana",ORS,No,41,F,145,62,Anemia,stomach upset,diarrhea
+Diarrhea,Low,ORS,Probiotics,No,50,M,131,47,Diabetes,loose stool,loose stool
+Diarrhea,Low,ORS,ORS,No,67,M,146,37,Hypertension,loose stool,"stomach upset, diarrhea"
+Diarrhea,Low,"ORS, Hydration",ORS,No,2,M,113,55,Hypertension,None,loose stool
+Diarrhea,Low,"Hydration, ORS, Banana",Probiotics,No,44,F,187,62,Hypertension,diarrhea,"stomach upset, diarrhea"
+Diarrhea,Low,"ORS, Banana, Hydration",Probiotics,No,14,M,118,64,Hypertension,diarrhea,loose stool
+Diarrhea,Low,Banana,Probiotics,No,37,F,144,90,Hypertension,loose stool,"loose stool, stomach upset"
+Diarrhea,Low,"ORS, Banana, Hydration",ORS,No,8,F,125,97,Anemia,diarrhea,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,Hydration,ORS,No,55,O,113,46,Anemia,None,"diarrhea, stomach upset, loose stool"
+Diarrhea,Low,Hydration,ORS,No,35,F,141,44,Anemia,stomach upset,diarrhea
+Diarrhea,Low,Banana,Probiotics,No,70,O,102,35,Hypertension,stomach upset,"loose stool, stomach upset"
+Diarrhea,Low,Hydration,Probiotics,No,74,M,108,60,Anemia,diarrhea,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,"Hydration, ORS",ORS,No,48,F,171,94,Diabetes,stomach upset,"stomach upset, diarrhea, loose stool"
+Diarrhea,Low,"Banana, ORS, Hydration",Probiotics,No,62,M,109,48,Hypertension,stomach upset,"loose stool, stomach upset, diarrhea"
+Diarrhea,Low,Hydration,Probiotics,No,71,O,114,59,None,loose stool,"stomach upset, diarrhea"
+Diarrhea,Low,Banana,ORS,No,32,M,166,100,Asthma,diarrhea,"loose stool, stomach upset, diarrhea"
+Diarrhea,Low,Banana,Probiotics,No,29,F,135,88,None,diarrhea,"diarrhea, loose stool"
+Diarrhea,Low,Hydration,Probiotics,No,31,O,178,75,Diabetes,loose stool,"loose stool, diarrhea"
+Diarrhea,Low,"Hydration, Banana",ORS,No,53,F,171,53,Hypertension,stomach upset,diarrhea
+Diarrhea,Low,"Hydration, ORS",Probiotics,No,40,F,109,75,Asthma,loose stool,"diarrhea, stomach upset, loose stool"
+Diarrhea,Low,"Banana, ORS, Hydration",Probiotics,No,60,M,122,34,Anemia,diarrhea,diarrhea
+Diarrhea,Low,"Banana, Hydration, ORS",Probiotics,No,18,M,132,66,Asthma,diarrhea,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,"Banana, ORS",ORS,No,46,M,190,50,Diabetes,loose stool,"loose stool, stomach upset"
+Diarrhea,Low,"Hydration, Banana, ORS",Probiotics,No,70,O,116,69,None,stomach upset,"diarrhea, stomach upset"
+Diarrhea,Low,Hydration,ORS,No,72,M,115,67,Asthma,stomach upset,"stomach upset, diarrhea, loose stool"
+Diarrhea,Low,"Hydration, ORS",Probiotics,No,22,O,125,59,Diabetes,stomach upset,"stomach upset, loose stool"
+Diarrhea,Low,Hydration,ORS,No,16,F,151,60,None,loose stool,"diarrhea, stomach upset, loose stool"
+Diarrhea,Low,"ORS, Hydration",Probiotics,No,47,M,103,76,Hypertension,stomach upset,"loose stool, diarrhea"
+Diarrhea,Low,"ORS, Banana, Hydration",Probiotics,No,8,F,174,53,Asthma,stomach upset,"stomach upset, loose stool, diarrhea"
+Diarrhea,Low,Hydration,Probiotics,No,34,F,158,85,Asthma,loose stool,"loose stool, stomach upset"
+Diarrhea,Low,"Banana, ORS, Hydration",ORS,No,79,F,173,71,None,loose stool,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,"Banana, ORS",ORS,No,3,M,161,73,Anemia,diarrhea,"loose stool, diarrhea, stomach upset"
+Diarrhea,Low,Hydration,Probiotics,No,3,O,109,77,Anemia,loose stool,"loose stool, diarrhea"
+Diarrhea,Low,"Hydration, ORS, Banana",Probiotics,No,80,O,167,92,Diabetes,diarrhea,"loose stool, diarrhea, stomach upset"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,3,F,181,39,Asthma,None,"constipation, hard stool"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,79,F,138,100,Diabetes,None,constipation
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,72,O,134,44,Asthma,constipation,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,71,F,162,68,None,hard stool,"hard stool, constipation"
+Constipation,Low,Hydration,Laxatives,No,24,M,157,96,None,None,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,59,F,189,50,Hypertension,None,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,16,F,142,67,None,None,hard stool
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,75,O,115,33,Hypertension,hard stool,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,46,M,131,90,Diabetes,constipation,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,8,M,171,86,Anemia,constipation,constipation
+Constipation,Low,Hydration,Laxatives,No,20,F,185,76,Hypertension,constipation,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,26,F,148,45,Asthma,None,"constipation, hard stool"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,35,M,115,79,Asthma,constipation,"constipation, hard stool"
+Constipation,Low,Fiber-rich diet,Laxatives,No,45,O,166,49,Diabetes,None,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,74,F,184,89,Asthma,hard stool,hard stool
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,80,O,130,86,Hypertension,None,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,1,O,153,56,None,hard stool,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,8,F,149,35,Asthma,hard stool,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,69,F,173,58,Asthma,constipation,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,17,O,124,74,None,constipation,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,34,M,170,30,Diabetes,constipation,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,34,M,181,71,Asthma,hard stool,"constipation, hard stool"
+Constipation,Low,Fiber-rich diet,Laxatives,No,13,F,113,63,Hypertension,hard stool,hard stool
+Constipation,Low,Fiber-rich diet,Laxatives,No,66,M,155,81,Diabetes,constipation,"constipation, hard stool"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,48,O,174,40,Anemia,None,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,37,F,119,64,Asthma,None,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,68,F,186,31,Hypertension,constipation,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,47,M,139,55,Hypertension,None,hard stool
+Constipation,Low,Fiber-rich diet,Laxatives,No,36,F,111,34,Diabetes,None,"constipation, hard stool"
+Constipation,Low,Hydration,Laxatives,No,18,O,181,74,None,constipation,constipation
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,63,O,181,72,Hypertension,hard stool,constipation
+Constipation,Low,Hydration,Laxatives,No,65,O,105,32,Asthma,None,"constipation, hard stool"
+Constipation,Low,Fiber-rich diet,Laxatives,No,65,M,152,83,Diabetes,constipation,hard stool
+Constipation,Low,Fiber-rich diet,Laxatives,No,45,M,146,64,Anemia,hard stool,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,76,M,112,51,Diabetes,None,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,21,M,159,60,Diabetes,constipation,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,54,F,170,97,Asthma,None,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,9,M,175,97,Asthma,hard stool,"constipation, hard stool"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,74,O,104,93,Hypertension,constipation,"constipation, hard stool"
+Constipation,Low,Hydration,Laxatives,No,67,F,156,52,Diabetes,None,constipation
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,47,F,117,52,Anemia,hard stool,"hard stool, constipation"
+Constipation,Low,Hydration,Laxatives,No,3,M,158,83,Anemia,None,"constipation, hard stool"
+Constipation,Low,Fiber-rich diet,Laxatives,No,62,O,115,53,Asthma,constipation,hard stool
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,29,F,150,72,None,None,"constipation, hard stool"
+Constipation,Low,Hydration,Laxatives,No,29,M,101,93,Diabetes,None,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,33,M,173,40,Anemia,constipation,constipation
+Constipation,Low,Hydration,Laxatives,No,71,F,114,30,None,hard stool,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,23,O,141,79,Asthma,hard stool,constipation
+Constipation,Low,Fiber-rich diet,Laxatives,No,36,O,123,84,None,constipation,hard stool
+Constipation,Low,Hydration,Laxatives,No,61,M,190,98,Diabetes,constipation,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,67,O,169,49,None,constipation,constipation
+Constipation,Low,Fiber-rich diet,Laxatives,No,62,F,157,60,Diabetes,None,"constipation, hard stool"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,25,M,180,39,None,constipation,hard stool
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,70,O,137,33,None,None,"hard stool, constipation"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,72,F,168,32,Diabetes,None,constipation
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,15,F,148,78,None,constipation,"hard stool, constipation"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,38,O,105,74,Anemia,hard stool,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,3,O,140,59,Anemia,hard stool,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,22,O,184,80,Diabetes,constipation,"hard stool, constipation"
+Constipation,Low,Hydration,Laxatives,No,38,O,127,79,None,hard stool,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,12,F,190,67,Hypertension,None,"hard stool, constipation"
+Constipation,Low,Hydration,Laxatives,No,63,F,147,88,Anemia,None,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,32,M,188,45,Anemia,constipation,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,24,F,126,47,Asthma,hard stool,constipation
+Constipation,Low,Fiber-rich diet,Laxatives,No,39,M,184,96,Hypertension,None,"constipation, hard stool"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,65,M,125,94,Hypertension,constipation,"constipation, hard stool"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,22,O,148,49,Asthma,hard stool,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,41,M,121,35,None,None,"constipation, hard stool"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,71,F,159,82,Hypertension,None,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,68,F,111,87,None,None,hard stool
+Constipation,Low,Hydration,Laxatives,No,31,M,155,40,Diabetes,hard stool,constipation
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,80,O,123,86,Anemia,constipation,"hard stool, constipation"
+Constipation,Low,Hydration,Laxatives,No,79,M,115,31,Anemia,hard stool,hard stool
+Constipation,Low,Fiber-rich diet,Laxatives,No,26,F,137,55,None,hard stool,"constipation, hard stool"
+Constipation,Low,Hydration,Laxatives,No,31,O,176,81,Diabetes,constipation,hard stool
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,26,M,180,85,Diabetes,None,"constipation, hard stool"
+Constipation,Low,Hydration,Laxatives,No,35,M,143,42,Diabetes,None,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,40,M,190,64,Asthma,None,hard stool
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,11,O,114,96,Anemia,constipation,"hard stool, constipation"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,8,O,114,57,Anemia,None,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,34,O,115,56,Diabetes,None,hard stool
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,40,F,172,51,Anemia,None,constipation
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,12,M,170,88,Diabetes,constipation,hard stool
+Constipation,Low,Fiber-rich diet,Laxatives,No,63,F,157,97,None,constipation,constipation
+Constipation,Low,Fiber-rich diet,Laxatives,No,38,O,128,77,Diabetes,None,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,48,O,142,54,Diabetes,None,"constipation, hard stool"
+Constipation,Low,Fiber-rich diet,Laxatives,No,10,O,154,54,None,hard stool,"hard stool, constipation"
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,48,F,115,43,None,hard stool,constipation
+Constipation,Low,Fiber-rich diet,Laxatives,No,22,O,175,63,None,constipation,hard stool
+Constipation,Low,Fiber-rich diet,Laxatives,No,53,M,177,35,Diabetes,constipation,"hard stool, constipation"
+Constipation,Low,Hydration,Laxatives,No,62,F,135,32,Diabetes,hard stool,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,1,F,124,85,None,constipation,"constipation, hard stool"
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,21,F,114,78,Diabetes,constipation,constipation
+Constipation,Low,"Fiber-rich diet, Hydration",Laxatives,No,17,O,145,47,None,constipation,constipation
+Constipation,Low,"Hydration, Fiber-rich diet",Laxatives,No,36,M,186,85,Anemia,hard stool,constipation
+Constipation,Low,Fiber-rich diet,Laxatives,No,15,O,163,42,Asthma,constipation,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,38,M,116,78,Asthma,None,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,47,O,104,31,Hypertension,hard stool,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,39,O,151,96,None,constipation,"hard stool, constipation"
+Constipation,Low,Fiber-rich diet,Laxatives,No,42,F,139,83,Asthma,hard stool,"hard stool, constipation"
+Indigestion,Low,Avoid oily food,Antacids,No,67,F,177,44,None,acidity,"indigestion, acidity"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,1,O,103,90,Asthma,indigestion,"indigestion, acidity, heartburn"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,76,O,161,38,Anemia,heartburn,"acidity, indigestion, heartburn"
+Indigestion,Low,Ginger tea,Antacids,No,30,F,119,86,Anemia,indigestion,"indigestion, acidity, heartburn"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,32,O,135,63,Asthma,indigestion,"indigestion, heartburn, acidity"
+Indigestion,Low,Avoid oily food,Antacids,No,4,O,147,37,Hypertension,indigestion,indigestion
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,57,F,117,95,Hypertension,acidity,"indigestion, acidity"
+Indigestion,Low,Avoid oily food,Antacids,No,30,F,126,84,None,acidity,"acidity, heartburn, indigestion"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,36,F,139,78,Diabetes,None,heartburn
+Indigestion,Low,Avoid oily food,Antacids,No,41,O,133,95,Asthma,None,"heartburn, acidity"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,37,O,127,36,Asthma,indigestion,"indigestion, acidity, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,74,O,137,91,Diabetes,None,"heartburn, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,14,O,137,33,Asthma,indigestion,acidity
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,55,M,160,41,None,None,"acidity, indigestion, heartburn"
+Indigestion,Low,Ginger tea,Antacids,No,69,O,160,59,Hypertension,heartburn,"indigestion, acidity"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,32,M,145,63,Asthma,None,acidity
+Indigestion,Low,Ginger tea,Antacids,No,2,M,129,56,Anemia,indigestion,"heartburn, indigestion"
+Indigestion,Low,Avoid oily food,Antacids,No,54,M,181,77,Diabetes,heartburn,heartburn
+Indigestion,Low,Avoid oily food,Antacids,No,37,M,154,52,Anemia,acidity,acidity
+Indigestion,Low,Avoid oily food,Antacids,No,66,M,162,81,Asthma,acidity,heartburn
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,54,F,117,100,Asthma,acidity,indigestion
+Indigestion,Low,Avoid oily food,Antacids,No,38,O,179,43,Anemia,heartburn,indigestion
+Indigestion,Low,Ginger tea,Antacids,No,38,M,104,86,Anemia,acidity,"acidity, heartburn, indigestion"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,72,F,163,41,Hypertension,acidity,"acidity, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,41,F,179,41,Hypertension,acidity,acidity
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,69,M,161,80,Anemia,indigestion,"indigestion, acidity"
+Indigestion,Low,Ginger tea,Antacids,No,22,O,157,49,Anemia,heartburn,acidity
+Indigestion,Low,Avoid oily food,Antacids,No,37,O,129,76,Hypertension,heartburn,"acidity, heartburn"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,16,F,158,73,Diabetes,acidity,"heartburn, indigestion"
+Indigestion,Low,Avoid oily food,Antacids,No,16,M,122,78,Hypertension,None,"acidity, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,15,F,102,56,Asthma,acidity,"indigestion, acidity"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,67,M,181,93,Hypertension,None,heartburn
+Indigestion,Low,Ginger tea,Antacids,No,49,F,176,52,Anemia,indigestion,"indigestion, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,23,O,127,71,Diabetes,indigestion,"indigestion, acidity, heartburn"
+Indigestion,Low,Ginger tea,Antacids,No,78,M,160,71,Anemia,acidity,acidity
+Indigestion,Low,Avoid oily food,Antacids,No,30,M,136,45,Hypertension,acidity,indigestion
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,15,O,132,49,None,heartburn,"heartburn, indigestion, acidity"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,45,F,117,58,Hypertension,None,heartburn
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,9,F,174,59,None,acidity,"indigestion, acidity"
+Indigestion,Low,Ginger tea,Antacids,No,43,F,177,62,Anemia,acidity,"heartburn, acidity, indigestion"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,51,F,158,73,Diabetes,None,"acidity, heartburn, indigestion"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,40,F,124,92,Anemia,heartburn,acidity
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,56,O,137,97,Anemia,None,indigestion
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,35,F,148,84,Hypertension,acidity,"indigestion, acidity"
+Indigestion,Low,Avoid oily food,Antacids,No,32,F,149,66,Diabetes,None,"acidity, indigestion, heartburn"
+Indigestion,Low,Ginger tea,Antacids,No,58,O,120,89,None,acidity,acidity
+Indigestion,Low,Ginger tea,Antacids,No,28,F,168,40,None,heartburn,acidity
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,35,F,165,30,Diabetes,indigestion,indigestion
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,32,O,124,74,Hypertension,None,indigestion
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,31,O,168,89,Hypertension,heartburn,"acidity, indigestion"
+Indigestion,Low,Avoid oily food,Antacids,No,37,M,118,38,Diabetes,heartburn,"indigestion, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,11,O,173,86,Diabetes,None,heartburn
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,41,O,118,60,Hypertension,indigestion,"acidity, indigestion, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,49,O,115,92,None,heartburn,"acidity, indigestion"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,76,M,151,40,Hypertension,None,"acidity, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,80,O,174,39,Hypertension,acidity,"heartburn, acidity, indigestion"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,77,F,123,74,Asthma,acidity,"indigestion, heartburn, acidity"
+Indigestion,Low,Avoid oily food,Antacids,No,46,F,179,36,Asthma,heartburn,"acidity, heartburn, indigestion"
+Indigestion,Low,Avoid oily food,Antacids,No,30,M,127,33,Asthma,None,acidity
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,69,F,140,84,Anemia,heartburn,"acidity, indigestion"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,28,M,143,39,None,acidity,"heartburn, acidity, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,32,O,145,37,Anemia,indigestion,"acidity, heartburn, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,39,O,117,97,Asthma,acidity,heartburn
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,75,O,138,67,Anemia,indigestion,"indigestion, heartburn, acidity"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,39,F,136,91,None,heartburn,heartburn
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,53,F,135,50,None,None,acidity
+Indigestion,Low,Ginger tea,Antacids,No,60,M,143,62,Asthma,heartburn,"acidity, heartburn, indigestion"
+Indigestion,Low,Avoid oily food,Antacids,No,28,M,163,99,Diabetes,None,"heartburn, indigestion, acidity"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,48,O,102,40,Anemia,indigestion,acidity
+Indigestion,Low,Ginger tea,Antacids,No,7,F,143,66,Hypertension,heartburn,"indigestion, heartburn, acidity"
+Indigestion,Low,Avoid oily food,Antacids,No,56,F,177,36,Anemia,None,acidity
+Indigestion,Low,Ginger tea,Antacids,No,34,M,151,95,Diabetes,heartburn,"indigestion, heartburn"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,27,M,107,76,Asthma,heartburn,"heartburn, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,24,O,145,79,Anemia,heartburn,"heartburn, indigestion, acidity"
+Indigestion,Low,Ginger tea,Antacids,No,5,M,114,99,Anemia,acidity,"indigestion, acidity, heartburn"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,25,O,115,63,Anemia,indigestion,"indigestion, acidity, heartburn"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,66,M,188,56,Anemia,indigestion,heartburn
+Indigestion,Low,Ginger tea,Antacids,No,4,O,148,33,None,heartburn,"acidity, indigestion"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,70,M,109,76,Anemia,acidity,"heartburn, indigestion, acidity"
+Indigestion,Low,Avoid oily food,Antacids,No,73,M,174,41,None,None,"acidity, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,1,O,118,80,Asthma,None,"acidity, heartburn, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,67,F,135,83,Diabetes,heartburn,heartburn
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,50,F,130,94,Anemia,heartburn,acidity
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,40,F,144,80,Asthma,indigestion,acidity
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,58,F,109,67,Anemia,acidity,"heartburn, indigestion, acidity"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,80,O,184,37,Anemia,heartburn,"heartburn, indigestion"
+Indigestion,Low,Ginger tea,Antacids,No,12,F,157,80,Diabetes,indigestion,"indigestion, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,6,F,170,87,Diabetes,heartburn,"indigestion, heartburn"
+Indigestion,Low,Ginger tea,Antacids,No,55,M,126,50,Asthma,acidity,"indigestion, heartburn"
+Indigestion,Low,Ginger tea,Antacids,No,31,F,142,35,Anemia,indigestion,"acidity, indigestion, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,23,M,185,83,None,acidity,"heartburn, acidity"
+Indigestion,Low,"Ginger tea, Avoid oily food",Antacids,No,23,O,163,51,Asthma,indigestion,"indigestion, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,69,O,168,49,Hypertension,None,heartburn
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,55,O,172,50,Hypertension,acidity,acidity
+Indigestion,Low,Avoid oily food,Antacids,No,13,O,154,86,None,heartburn,"acidity, indigestion"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,16,F,126,38,None,acidity,acidity
+Indigestion,Low,Ginger tea,Antacids,No,59,O,124,96,Anemia,acidity,"indigestion, acidity, heartburn"
+Indigestion,Low,Ginger tea,Antacids,No,70,O,166,48,Anemia,None,"acidity, indigestion, heartburn"
+Indigestion,Low,Avoid oily food,Antacids,No,41,O,141,91,Diabetes,None,"indigestion, heartburn"
+Indigestion,Low,"Avoid oily food, Ginger tea",Antacids,No,25,M,142,38,Anemia,heartburn,indigestion
+Sore Throat,Low,Honey,Paracetamol,No,75,M,102,64,Anemia,throat pain,throat pain
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,77,O,181,92,Anemia,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Honey,Paracetamol,No,52,O,139,43,Diabetes,None,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,67,F,101,57,Asthma,throat pain,sore throat
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,28,M,158,37,Anemia,throat pain,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,51,M,113,60,Diabetes,throat pain,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,12,O,119,98,Hypertension,throat pain,throat pain
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,66,F,103,75,Asthma,sore throat,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,78,O,187,73,Hypertension,None,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,48,M,103,44,Hypertension,sore throat,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,4,M,125,100,Hypertension,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,28,F,176,67,Anemia,throat pain,throat pain
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,52,F,139,48,Hypertension,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,30,M,144,50,Anemia,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,47,F,116,41,Asthma,None,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,73,F,187,46,Hypertension,sore throat,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,37,F,117,39,Anemia,None,sore throat
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,55,M,168,82,Diabetes,sore throat,"throat pain, sore throat"
+Sore Throat,Low,Honey,Paracetamol,No,34,M,138,79,Asthma,None,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,25,M,139,60,Anemia,sore throat,sore throat
+Sore Throat,Low,Honey,Paracetamol,No,34,F,154,40,Hypertension,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Honey,Paracetamol,No,23,O,130,84,None,sore throat,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,3,F,110,51,Anemia,throat pain,sore throat
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,29,F,146,81,Diabetes,None,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,44,F,126,32,Asthma,throat pain,throat pain
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,62,F,163,77,Diabetes,None,throat pain
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,41,O,113,45,Hypertension,sore throat,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,15,M,134,72,Anemia,throat pain,throat pain
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,31,O,148,81,Asthma,sore throat,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,52,F,113,78,Asthma,None,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,5,M,143,76,None,throat pain,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,15,O,153,33,Anemia,None,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,65,F,131,61,None,throat pain,sore throat
+Sore Throat,Low,Honey,Paracetamol,No,66,M,158,59,Hypertension,sore throat,"throat pain, sore throat"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,67,F,162,56,Diabetes,throat pain,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,44,M,112,89,Hypertension,None,throat pain
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,29,O,160,71,Hypertension,sore throat,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,45,F,131,36,Anemia,sore throat,throat pain
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,77,M,137,91,Asthma,sore throat,sore throat
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,34,M,128,58,None,throat pain,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,59,O,103,65,Diabetes,None,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,49,M,132,74,Hypertension,sore throat,sore throat
+Sore Throat,Low,Honey,Paracetamol,No,49,M,177,47,None,None,sore throat
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,42,F,132,74,Anemia,sore throat,sore throat
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,10,F,176,53,None,throat pain,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,43,F,184,46,None,throat pain,sore throat
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,48,F,108,77,Hypertension,throat pain,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,79,M,116,66,None,sore throat,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,9,M,141,36,None,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,32,O,126,89,None,sore throat,throat pain
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,61,F,108,49,Asthma,None,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,63,F,112,56,Diabetes,None,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,23,O,111,62,Hypertension,throat pain,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,27,M,108,89,None,None,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,23,M,128,73,Asthma,None,"sore throat, throat pain"
+Sore Throat,Low,Honey,Paracetamol,No,13,M,176,34,Anemia,throat pain,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,74,F,190,63,Diabetes,None,throat pain
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,8,F,139,91,None,None,"throat pain, sore throat"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,53,M,104,46,Anemia,sore throat,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,7,O,168,40,Anemia,throat pain,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,35,O,128,96,Diabetes,throat pain,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,66,O,181,39,Diabetes,sore throat,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,56,M,142,58,None,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,30,O,181,86,Hypertension,sore throat,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,54,F,113,65,Diabetes,None,throat pain
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,14,M,165,30,Asthma,throat pain,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,14,M,141,96,Asthma,None,sore throat
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,5,O,102,42,Hypertension,sore throat,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,37,M,128,90,Diabetes,sore throat,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,26,F,167,85,Asthma,sore throat,"throat pain, sore throat"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,44,M,143,76,Diabetes,throat pain,"throat pain, sore throat"
+Sore Throat,Low,Honey,Paracetamol,No,68,O,153,50,Asthma,None,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,49,O,105,70,Diabetes,None,sore throat
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,61,M,180,44,Anemia,sore throat,"sore throat, throat pain"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,72,F,184,55,Asthma,sore throat,throat pain
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,65,F,128,68,Anemia,throat pain,sore throat
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,44,O,150,95,Asthma,throat pain,throat pain
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,75,O,169,62,Anemia,None,throat pain
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,2,F,121,50,Diabetes,throat pain,"sore throat, throat pain"
+Sore Throat,Low,"Warm salt water gargle, Honey",Paracetamol,No,36,M,186,51,Diabetes,throat pain,"sore throat, throat pain"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,41,F,164,34,Hypertension,sore throat,throat pain
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,42,M,117,72,Anemia,None,sore throat
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,39,F,107,76,Diabetes,None,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,32,F,126,87,Anemia,None,throat pain
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,61,F,164,39,Hypertension,throat pain,sore throat
+Sore Throat,Low,Honey,Paracetamol,No,20,O,145,32,Diabetes,sore throat,throat pain
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,36,F,135,32,Diabetes,throat pain,sore throat
+Sore Throat,Low,Honey,Paracetamol,No,39,F,160,60,Hypertension,None,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,55,M,165,94,Diabetes,None,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,5,F,154,88,Asthma,sore throat,"sore throat, throat pain"
+Sore Throat,Low,"Honey, Warm salt water gargle",Paracetamol,No,40,F,125,61,Anemia,None,throat pain
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,43,F,135,65,Anemia,None,sore throat
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,22,O,137,95,Asthma,throat pain,sore throat
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,46,F,171,61,Asthma,throat pain,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,75,M,102,81,Hypertension,throat pain,"throat pain, sore throat"
+Sore Throat,Low,Honey,Paracetamol,No,63,F,114,64,Diabetes,None,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,62,M,165,78,Asthma,sore throat,"throat pain, sore throat"
+Sore Throat,Low,Warm salt water gargle,Paracetamol,No,37,M,151,95,Diabetes,None,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,63,F,100,82,Diabetes,throat pain,throat pain
+Sore Throat,Low,Honey,Paracetamol,No,29,O,111,62,None,sore throat,throat pain
+Skin Rash,Low,Cold compress,Antihistamines,No,53,F,109,77,Asthma,None,"itching, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,13,F,105,34,Diabetes,red spots,itching
+Skin Rash,Low,Cold compress,Antihistamines,No,55,M,184,54,Diabetes,None,"itching, rash, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,37,M,114,71,Asthma,rash,"itching, rash, red spots"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,32,O,181,66,Hypertension,red spots,"rash, red spots"
+Skin Rash,Low,Cold compress,Antihistamines,No,64,F,104,48,None,itching,"red spots, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,31,F,133,74,Diabetes,itching,red spots
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,8,F,172,84,Anemia,itching,"red spots, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,21,M,184,66,Anemia,red spots,"itching, red spots, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,76,F,117,100,Diabetes,itching,"red spots, itching, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,49,O,174,81,None,itching,"rash, itching, red spots"
+Skin Rash,Low,Cold compress,Antihistamines,No,39,M,112,42,Asthma,None,rash
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,42,O,143,56,Anemia,red spots,"rash, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,43,F,184,64,Hypertension,itching,"itching, red spots"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,33,O,141,93,Hypertension,red spots,"itching, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,2,O,168,86,Anemia,red spots,"red spots, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,22,F,190,81,Hypertension,None,"red spots, rash, itching"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,23,M,133,61,Diabetes,itching,"rash, itching, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,68,F,115,31,None,red spots,itching
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,36,M,171,31,Asthma,rash,red spots
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,69,F,182,30,Anemia,red spots,"itching, red spots"
+Skin Rash,Low,Cold compress,Antihistamines,No,10,O,181,66,None,None,"rash, red spots, itching"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,30,M,189,93,Asthma,itching,rash
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,64,M,182,63,None,rash,"rash, red spots, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,42,F,160,49,Diabetes,None,"red spots, rash, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,13,M,125,37,Diabetes,itching,"itching, red spots, rash"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,26,M,116,61,Asthma,red spots,"red spots, rash, itching"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,12,O,164,91,Hypertension,None,rash
+Skin Rash,Low,Cold compress,Antihistamines,No,77,M,168,81,Hypertension,None,"red spots, rash, itching"
+Skin Rash,Low,Cold compress,Antihistamines,No,50,O,161,84,Hypertension,None,"itching, red spots, rash"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,8,O,133,68,Hypertension,red spots,red spots
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,29,O,184,65,None,None,"rash, itching, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,33,F,188,50,Asthma,None,"itching, rash, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,3,M,152,97,Asthma,itching,rash
+Skin Rash,Low,Cold compress,Antihistamines,No,47,M,124,91,Diabetes,red spots,"itching, rash, red spots"
+Skin Rash,Low,Cold compress,Antihistamines,No,72,M,169,73,Diabetes,itching,rash
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,74,O,173,38,Anemia,red spots,"rash, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,12,O,109,93,Asthma,itching,"itching, rash, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,49,F,101,95,Asthma,rash,"itching, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,33,F,129,70,Hypertension,None,"itching, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,68,F,152,71,Asthma,red spots,"itching, red spots, rash"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,69,F,158,86,Hypertension,rash,"red spots, itching, rash"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,5,F,189,81,None,itching,"red spots, rash, itching"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,26,O,179,70,Diabetes,rash,"itching, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,2,O,173,90,Hypertension,red spots,"itching, red spots, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,31,M,105,30,Anemia,itching,rash
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,34,M,154,67,None,rash,"itching, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,16,O,143,32,None,rash,itching
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,65,F,150,63,Diabetes,red spots,red spots
+Skin Rash,Low,Cold compress,Antihistamines,No,58,F,108,33,Hypertension,itching,"rash, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,27,M,108,94,Asthma,itching,"red spots, itching, rash"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,68,M,109,67,Anemia,None,itching
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,75,F,144,85,Hypertension,rash,"red spots, rash"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,41,F,115,95,Asthma,rash,"rash, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,59,O,147,60,Asthma,red spots,rash
+Skin Rash,Low,Cold compress,Antihistamines,No,34,M,127,72,Asthma,None,"itching, rash"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,40,F,116,37,Hypertension,itching,itching
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,28,O,166,30,None,None,"red spots, rash"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,29,F,167,78,Hypertension,None,itching
+Skin Rash,Low,Cold compress,Antihistamines,No,32,F,103,68,Diabetes,rash,"itching, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,67,O,133,51,Anemia,itching,red spots
+Skin Rash,Low,Cold compress,Antihistamines,No,80,F,100,79,Asthma,itching,itching
+Skin Rash,Low,Cold compress,Antihistamines,No,61,F,106,74,Asthma,red spots,"itching, rash, red spots"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,38,O,122,40,Diabetes,rash,"red spots, itching, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,46,M,153,66,Hypertension,None,"rash, red spots"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,64,O,143,39,None,itching,"rash, red spots, itching"
+Skin Rash,Low,Cold compress,Antihistamines,No,41,M,181,30,Asthma,None,"itching, red spots, rash"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,69,O,190,43,Asthma,rash,"itching, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,40,F,162,37,Hypertension,itching,"red spots, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,72,O,186,95,Diabetes,None,rash
+Skin Rash,Low,Cold compress,Antihistamines,No,63,O,129,61,Diabetes,itching,itching
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,77,O,125,60,Anemia,red spots,"rash, itching, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,32,O,150,63,None,red spots,"itching, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,64,O,183,99,None,red spots,rash
+Skin Rash,Low,Cold compress,Antihistamines,No,22,M,184,35,Anemia,rash,"rash, red spots"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,44,F,141,53,Anemia,itching,"red spots, itching, rash"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,73,M,107,87,Anemia,None,"itching, rash, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,19,M,148,92,Diabetes,itching,"itching, red spots, rash"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,67,F,178,43,None,itching,"red spots, itching"
+Skin Rash,Low,Cold compress,Antihistamines,No,61,O,138,33,Asthma,red spots,red spots
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,1,O,188,77,Anemia,red spots,itching
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,61,O,127,64,Anemia,rash,"rash, itching, red spots"
+Skin Rash,Low,Cold compress,Antihistamines,No,55,F,102,72,Asthma,rash,"red spots, rash"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,23,M,155,42,Anemia,itching,"itching, rash, red spots"
+Skin Rash,Low,Cold compress,Antihistamines,No,7,M,109,74,None,rash,red spots
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,28,F,136,66,Hypertension,red spots,"rash, red spots"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,3,O,160,36,None,red spots,"red spots, rash, itching"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,13,O,174,34,Diabetes,rash,"rash, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,30,M,107,49,Anemia,red spots,"red spots, rash"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,63,O,155,36,None,rash,"red spots, itching"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,5,M,102,33,None,itching,"itching, red spots, rash"
+Skin Rash,Low,"Cold compress, Aloe vera gel",Antihistamines,No,16,O,121,42,Anemia,itching,red spots
+Skin Rash,Low,Cold compress,Antihistamines,No,27,O,175,67,Diabetes,rash,rash
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,72,F,156,74,Hypertension,red spots,rash
+Skin Rash,Low,Cold compress,Antihistamines,No,53,O,120,99,Asthma,itching,"itching, rash"
+Skin Rash,Low,Aloe vera gel,Antihistamines,No,47,F,138,97,Hypertension,itching,"red spots, itching, rash"
+Skin Rash,Low,Cold compress,Antihistamines,No,59,O,127,63,Asthma,red spots,"red spots, rash, itching"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,70,O,104,41,Asthma,red spots,"rash, itching, red spots"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,33,M,157,74,Diabetes,rash,"itching, rash, red spots"
+Skin Rash,Low,"Aloe vera gel, Cold compress",Antihistamines,No,60,F,174,94,Hypertension,itching,"itching, red spots, rash"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,75,M,162,34,Asthma,None,back pain
+Back Pain,Low,Hot water bag,Paracetamol,No,66,F,184,83,Diabetes,None,lower back ache
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,6,M,116,76,Diabetes,back pain,"lower back ache, back pain"
+Back Pain,Low,Rest,Ibuprofen,No,18,F,129,95,Asthma,back pain,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,64,M,148,55,Anemia,None,lower back ache
+Back Pain,Low,Rest,Paracetamol,No,35,F,187,81,Hypertension,lower back ache,lower back ache
+Back Pain,Low,Hot water bag,Ibuprofen,No,38,O,105,86,Diabetes,lower back ache,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,45,O,104,41,Asthma,lower back ache,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,36,M,155,68,Asthma,None,"back pain, lower back ache"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,10,F,185,95,Anemia,back pain,lower back ache
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,80,O,150,64,Anemia,None,"lower back ache, back pain"
+Back Pain,Low,Hot water bag,Ibuprofen,No,65,O,108,59,Hypertension,lower back ache,lower back ache
+Back Pain,Low,Hot water bag,Ibuprofen,No,77,O,112,37,Asthma,None,lower back ache
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,31,M,141,100,Asthma,back pain,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,69,F,173,42,Asthma,None,"lower back ache, back pain"
+Back Pain,Low,"Hot water bag, Rest",Ibuprofen,No,7,F,182,94,Hypertension,lower back ache,"lower back ache, back pain"
+Back Pain,Low,Rest,Paracetamol,No,22,M,154,87,Anemia,None,back pain
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,21,O,163,59,Diabetes,None,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Ibuprofen,No,77,M,174,65,None,back pain,back pain
+Back Pain,Low,Hot water bag,Paracetamol,No,20,M,174,90,Anemia,None,"lower back ache, back pain"
+Back Pain,Low,Hot water bag,Paracetamol,No,64,F,100,98,Hypertension,lower back ache,"lower back ache, back pain"
+Back Pain,Low,Rest,Ibuprofen,No,64,M,114,73,Asthma,back pain,back pain
+Back Pain,Low,Rest,Ibuprofen,No,59,O,131,30,Anemia,lower back ache,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,25,M,120,91,Diabetes,lower back ache,"lower back ache, back pain"
+Back Pain,Low,Hot water bag,Ibuprofen,No,4,M,129,46,Diabetes,back pain,"lower back ache, back pain"
+Back Pain,Low,Rest,Ibuprofen,No,75,M,114,97,Asthma,back pain,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,29,M,106,35,Anemia,None,back pain
+Back Pain,Low,Rest,Paracetamol,No,58,F,131,41,Diabetes,None,back pain
+Back Pain,Low,Rest,Paracetamol,No,34,O,125,50,None,back pain,"back pain, lower back ache"
+Back Pain,Low,Rest,Paracetamol,No,65,O,185,38,Hypertension,lower back ache,lower back ache
+Back Pain,Low,Rest,Ibuprofen,No,56,F,123,53,Asthma,None,"lower back ache, back pain"
+Back Pain,Low,Rest,Ibuprofen,No,5,O,153,48,Anemia,None,"back pain, lower back ache"
+Back Pain,Low,Hot water bag,Ibuprofen,No,31,O,110,31,None,back pain,back pain
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,8,M,189,31,Anemia,None,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,13,M,103,97,Asthma,None,"back pain, lower back ache"
+Back Pain,Low,Hot water bag,Ibuprofen,No,71,O,121,70,Anemia,lower back ache,back pain
+Back Pain,Low,Hot water bag,Ibuprofen,No,74,F,169,98,Asthma,None,"lower back ache, back pain"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,49,F,123,47,Asthma,None,back pain
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,36,O,154,74,Anemia,back pain,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,30,M,137,55,Asthma,lower back ache,lower back ache
+Back Pain,Low,Rest,Paracetamol,No,28,M,138,82,Asthma,lower back ache,"lower back ache, back pain"
+Back Pain,Low,Rest,Paracetamol,No,61,O,153,52,None,None,lower back ache
+Back Pain,Low,Hot water bag,Paracetamol,No,15,F,150,51,Anemia,None,"lower back ache, back pain"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,12,F,148,98,None,lower back ache,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,33,M,102,92,Hypertension,lower back ache,lower back ache
+Back Pain,Low,Hot water bag,Ibuprofen,No,48,O,122,40,Anemia,lower back ache,back pain
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,8,O,101,95,Asthma,None,lower back ache
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,31,O,179,89,Hypertension,back pain,lower back ache
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,78,F,143,57,Anemia,lower back ache,"back pain, lower back ache"
+Back Pain,Low,Hot water bag,Ibuprofen,No,66,M,100,88,Hypertension,lower back ache,back pain
+Back Pain,Low,Hot water bag,Paracetamol,No,26,O,100,92,Diabetes,None,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,56,M,136,31,Hypertension,lower back ache,"lower back ache, back pain"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,59,M,171,57,Anemia,None,lower back ache
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,79,M,182,93,Diabetes,back pain,"back pain, lower back ache"
+Back Pain,Low,Rest,Ibuprofen,No,74,O,101,37,Hypertension,lower back ache,"back pain, lower back ache"
+Back Pain,Low,Rest,Paracetamol,No,44,M,173,62,Hypertension,back pain,back pain
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,24,M,166,79,Diabetes,back pain,"lower back ache, back pain"
+Back Pain,Low,Rest,Paracetamol,No,30,F,135,92,Asthma,back pain,lower back ache
+Back Pain,Low,Rest,Paracetamol,No,61,O,102,65,Anemia,None,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,35,F,155,96,Diabetes,None,back pain
+Back Pain,Low,Rest,Paracetamol,No,53,F,145,39,None,None,lower back ache
+Back Pain,Low,Rest,Ibuprofen,No,19,F,124,83,Anemia,lower back ache,"back pain, lower back ache"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,51,F,160,38,Asthma,back pain,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,58,F,128,50,None,None,"back pain, lower back ache"
+Back Pain,Low,Hot water bag,Paracetamol,No,29,O,116,91,Anemia,None,back pain
+Back Pain,Low,"Hot water bag, Rest",Ibuprofen,No,61,O,152,32,None,back pain,"back pain, lower back ache"
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,49,F,113,87,Hypertension,lower back ache,back pain
+Back Pain,Low,Rest,Paracetamol,No,32,F,103,33,Anemia,None,back pain
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,62,F,182,33,None,lower back ache,lower back ache
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,70,O,173,97,Asthma,back pain,back pain
+Back Pain,Low,Hot water bag,Paracetamol,No,22,M,176,69,Anemia,back pain,back pain
+Back Pain,Low,Hot water bag,Ibuprofen,No,58,M,153,79,Diabetes,back pain,lower back ache
+Back Pain,Low,Rest,Paracetamol,No,18,M,137,45,Asthma,None,lower back ache
+Back Pain,Low,Rest,Paracetamol,No,9,F,136,58,Diabetes,None,back pain
+Back Pain,Low,Hot water bag,Paracetamol,No,2,O,105,64,Hypertension,lower back ache,"back pain, lower back ache"
+Back Pain,Low,Hot water bag,Paracetamol,No,62,M,170,63,None,None,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,65,F,159,71,Anemia,lower back ache,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Ibuprofen,No,67,O,114,66,Diabetes,None,"back pain, lower back ache"
+Back Pain,Low,Rest,Paracetamol,No,35,M,176,87,Diabetes,None,"back pain, lower back ache"
+Back Pain,Low,Hot water bag,Ibuprofen,No,17,O,124,82,None,None,back pain
+Back Pain,Low,Hot water bag,Ibuprofen,No,15,M,141,97,None,lower back ache,lower back ache
+Back Pain,Low,Rest,Paracetamol,No,51,F,144,43,None,back pain,"back pain, lower back ache"
+Back Pain,Low,Hot water bag,Ibuprofen,No,77,F,110,89,Diabetes,lower back ache,"lower back ache, back pain"
+Back Pain,Low,Rest,Paracetamol,No,64,O,116,52,Anemia,lower back ache,lower back ache
+Back Pain,Low,Hot water bag,Ibuprofen,No,39,M,130,68,Diabetes,None,back pain
+Back Pain,Low,"Hot water bag, Rest",Ibuprofen,No,28,M,123,46,Anemia,None,"back pain, lower back ache"
+Back Pain,Low,Rest,Paracetamol,No,80,O,132,91,Hypertension,None,"lower back ache, back pain"
+Back Pain,Low,Hot water bag,Paracetamol,No,14,O,180,88,Diabetes,back pain,lower back ache
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,17,O,152,50,Anemia,lower back ache,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Ibuprofen,No,68,F,171,71,Anemia,back pain,back pain
+Back Pain,Low,Rest,Ibuprofen,No,39,O,177,84,Diabetes,None,"back pain, lower back ache"
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,17,O,133,53,None,back pain,lower back ache
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,64,F,139,51,Asthma,lower back ache,"back pain, lower back ache"
+Back Pain,Low,"Rest, Hot water bag",Paracetamol,No,5,F,166,34,Anemia,None,"lower back ache, back pain"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,25,O,156,51,Diabetes,lower back ache,lower back ache
+Back Pain,Low,"Hot water bag, Rest",Ibuprofen,No,77,M,161,77,Asthma,lower back ache,"back pain, lower back ache"
+Back Pain,Low,"Hot water bag, Rest",Paracetamol,No,57,M,106,76,Diabetes,None,back pain
+Back Pain,Low,Hot water bag,Paracetamol,No,9,O,127,75,Hypertension,back pain,"back pain, lower back ache"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,59,O,139,73,Asthma,lower back ache,"lower back ache, back pain"
+Back Pain,Low,"Rest, Hot water bag",Ibuprofen,No,5,O,169,71,Diabetes,lower back ache,"back pain, lower back ache"
+UTI,Low,Hydration,Antibiotics,No,56,O,135,72,None,None,frequent urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,36,F,126,82,Anemia,burning urination,burning urination
+UTI,Low,Cranberry juice,Antibiotics,No,77,O,150,71,Diabetes,None,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,22,O,112,58,Anemia,frequent urination,burning urination
+UTI,Low,Hydration,Antibiotics,No,19,M,139,39,Diabetes,None,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,64,M,113,66,Diabetes,None,burning urination
+UTI,Low,Hydration,Antibiotics,No,36,O,175,31,Anemia,burning urination,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,69,F,121,74,Anemia,None,burning urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,25,F,176,99,None,None,"burning urination, frequent urination"
+UTI,Low,Hydration,Antibiotics,No,37,M,140,65,Anemia,frequent urination,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,10,F,122,44,None,frequent urination,"burning urination, frequent urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,39,M,185,97,Hypertension,frequent urination,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,70,M,182,64,None,burning urination,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,5,M,128,39,None,frequent urination,frequent urination
+UTI,Low,Cranberry juice,Antibiotics,No,67,F,176,44,Diabetes,burning urination,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,27,O,116,85,None,frequent urination,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,54,O,100,46,Diabetes,frequent urination,burning urination
+UTI,Low,Cranberry juice,Antibiotics,No,68,O,143,39,Hypertension,frequent urination,frequent urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,7,F,186,43,Diabetes,burning urination,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,34,F,139,73,Hypertension,None,burning urination
+UTI,Low,Cranberry juice,Antibiotics,No,6,F,129,32,Hypertension,burning urination,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,30,M,107,94,Diabetes,None,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,49,M,146,90,Anemia,None,frequent urination
+UTI,Low,Hydration,Antibiotics,No,60,O,149,47,Diabetes,frequent urination,frequent urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,6,F,123,86,Anemia,frequent urination,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,58,M,174,92,Anemia,None,"frequent urination, burning urination"
+UTI,Low,Cranberry juice,Antibiotics,No,61,M,188,99,Asthma,frequent urination,"frequent urination, burning urination"
+UTI,Low,Cranberry juice,Antibiotics,No,10,M,174,42,None,frequent urination,"frequent urination, burning urination"
+UTI,Low,Hydration,Antibiotics,No,15,F,157,78,Anemia,None,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,56,O,110,64,Asthma,burning urination,"burning urination, frequent urination"
+UTI,Low,Hydration,Antibiotics,No,28,F,182,40,None,frequent urination,"burning urination, frequent urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,31,M,151,57,Hypertension,frequent urination,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,55,O,149,90,Anemia,None,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,49,M,126,97,None,None,"burning urination, frequent urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,7,M,115,69,Hypertension,None,"burning urination, frequent urination"
+UTI,Low,Hydration,Antibiotics,No,55,M,152,31,Hypertension,None,"burning urination, frequent urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,14,F,153,73,Hypertension,frequent urination,frequent urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,38,F,188,42,Diabetes,None,burning urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,21,M,113,79,None,burning urination,"frequent urination, burning urination"
+UTI,Low,Hydration,Antibiotics,No,39,F,121,72,Diabetes,burning urination,"burning urination, frequent urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,56,M,101,46,None,frequent urination,frequent urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,52,M,170,89,Asthma,frequent urination,frequent urination
+UTI,Low,Hydration,Antibiotics,No,67,O,143,94,Diabetes,frequent urination,burning urination
+UTI,Low,Hydration,Antibiotics,No,71,M,119,92,None,frequent urination,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,51,O,132,82,Hypertension,burning urination,"frequent urination, burning urination"
+UTI,Low,Cranberry juice,Antibiotics,No,23,O,129,59,Anemia,frequent urination,"frequent urination, burning urination"
+UTI,Low,Cranberry juice,Antibiotics,No,10,M,172,42,Diabetes,frequent urination,"frequent urination, burning urination"
+UTI,Low,Hydration,Antibiotics,No,48,O,181,58,Hypertension,burning urination,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,74,F,163,44,Anemia,burning urination,burning urination
+UTI,Low,Hydration,Antibiotics,No,40,F,153,69,Diabetes,None,frequent urination
+UTI,Low,Cranberry juice,Antibiotics,No,47,M,165,82,Asthma,frequent urination,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,29,O,134,51,Hypertension,burning urination,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,40,O,136,76,None,burning urination,"burning urination, frequent urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,34,M,162,93,Diabetes,frequent urination,"frequent urination, burning urination"
+UTI,Low,Hydration,Antibiotics,No,35,M,138,78,None,None,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,73,O,133,32,Hypertension,None,burning urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,1,F,169,92,Asthma,burning urination,frequent urination
+UTI,Low,Cranberry juice,Antibiotics,No,13,O,142,40,Diabetes,None,frequent urination
+UTI,Low,Cranberry juice,Antibiotics,No,13,O,125,56,None,burning urination,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,26,M,132,62,Asthma,burning urination,"burning urination, frequent urination"
+UTI,Low,Hydration,Antibiotics,No,15,M,154,71,None,frequent urination,"burning urination, frequent urination"
+UTI,Low,Hydration,Antibiotics,No,74,M,189,87,Hypertension,None,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,4,F,164,64,Asthma,None,"burning urination, frequent urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,47,M,157,83,Asthma,burning urination,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,75,F,118,37,Anemia,frequent urination,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,36,F,118,78,Asthma,burning urination,"frequent urination, burning urination"
+UTI,Low,Cranberry juice,Antibiotics,No,28,F,165,31,None,None,burning urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,34,M,156,36,Anemia,None,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,11,O,130,30,None,None,"burning urination, frequent urination"
+UTI,Low,Hydration,Antibiotics,No,41,F,149,84,Asthma,frequent urination,frequent urination
+UTI,Low,Cranberry juice,Antibiotics,No,65,O,189,45,None,None,frequent urination
+UTI,Low,Hydration,Antibiotics,No,45,O,104,99,None,frequent urination,frequent urination
+UTI,Low,Cranberry juice,Antibiotics,No,79,O,128,87,Hypertension,None,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,3,M,134,55,Hypertension,None,"frequent urination, burning urination"
+UTI,Low,Hydration,Antibiotics,No,10,M,118,89,Diabetes,frequent urination,frequent urination
+UTI,Low,Cranberry juice,Antibiotics,No,21,F,178,42,Anemia,frequent urination,"burning urination, frequent urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,48,O,129,64,Diabetes,burning urination,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,77,F,121,65,Anemia,None,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,22,O,186,53,Asthma,None,burning urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,16,F,103,74,None,frequent urination,frequent urination
+UTI,Low,Hydration,Antibiotics,No,61,O,139,77,Hypertension,burning urination,burning urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,12,M,129,48,None,None,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,15,F,140,32,None,frequent urination,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,60,M,100,100,Anemia,None,"frequent urination, burning urination"
+UTI,Low,Cranberry juice,Antibiotics,No,41,M,127,43,Hypertension,None,"frequent urination, burning urination"
+UTI,Low,Hydration,Antibiotics,No,57,M,154,97,None,None,burning urination
+UTI,Low,Hydration,Antibiotics,No,64,O,103,93,Anemia,frequent urination,"frequent urination, burning urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,41,M,172,71,Asthma,frequent urination,frequent urination
+UTI,Low,Hydration,Antibiotics,No,71,F,172,44,Asthma,None,"burning urination, frequent urination"
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,61,M,146,96,Anemia,burning urination,burning urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,50,M,120,81,Asthma,None,"burning urination, frequent urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,27,F,131,71,Diabetes,burning urination,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,57,F,136,42,Hypertension,frequent urination,frequent urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,74,F,108,85,Diabetes,None,frequent urination
+UTI,Low,"Cranberry juice, Hydration",Antibiotics,No,14,F,141,63,Hypertension,frequent urination,"frequent urination, burning urination"
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,17,M,102,33,Hypertension,frequent urination,frequent urination
+UTI,Low,"Hydration, Cranberry juice",Antibiotics,No,73,O,104,42,None,burning urination,"frequent urination, burning urination"
+UTI,Low,Cranberry juice,Antibiotics,No,42,O,106,56,Diabetes,frequent urination,"burning urination, frequent urination"
+UTI,Low,Cranberry juice,Antibiotics,No,48,F,115,63,Hypertension,None,burning urination
+UTI,Low,Cranberry juice,Antibiotics,No,73,F,190,76,None,frequent urination,"frequent urination, burning urination"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,80,O,164,65,Anemia,None,"runny nose, sneezing"
+Allergy,Low,Antihistamines,Antihistamines,No,68,M,107,46,Asthma,sneezing,"sneezing, watery eyes, runny nose"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,69,O,161,92,Asthma,watery eyes,"watery eyes, sneezing, runny nose"
+Allergy,Low,Antihistamines,Antihistamines,No,48,F,144,58,None,watery eyes,watery eyes
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,64,O,111,46,Anemia,None,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,25,O,152,61,Hypertension,watery eyes,"watery eyes, runny nose"
+Allergy,Low,Avoid allergens,Antihistamines,No,64,O,187,46,None,None,sneezing
+Allergy,Low,Antihistamines,Antihistamines,No,69,F,139,66,Diabetes,runny nose,"sneezing, runny nose"
+Allergy,Low,Avoid allergens,Antihistamines,No,57,M,130,86,Hypertension,None,"runny nose, watery eyes, sneezing"
+Allergy,Low,Antihistamines,Antihistamines,No,64,M,152,36,Hypertension,runny nose,"sneezing, watery eyes"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,50,M,132,48,Hypertension,None,runny nose
+Allergy,Low,Avoid allergens,Antihistamines,No,34,M,154,59,Anemia,None,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,71,F,106,83,Anemia,sneezing,watery eyes
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,42,M,112,76,Hypertension,watery eyes,"runny nose, watery eyes"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,30,M,166,33,None,None,"runny nose, sneezing, watery eyes"
+Allergy,Low,Avoid allergens,Antihistamines,No,3,F,178,82,Asthma,watery eyes,watery eyes
+Allergy,Low,Avoid allergens,Antihistamines,No,54,O,139,71,Hypertension,runny nose,"sneezing, runny nose"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,75,O,150,50,Hypertension,watery eyes,sneezing
+Allergy,Low,Antihistamines,Antihistamines,No,47,F,147,44,Diabetes,None,"watery eyes, runny nose, sneezing"
+Allergy,Low,Avoid allergens,Antihistamines,No,72,M,110,47,Diabetes,runny nose,"watery eyes, runny nose"
+Allergy,Low,Antihistamines,Antihistamines,No,67,O,105,40,None,watery eyes,runny nose
+Allergy,Low,Antihistamines,Antihistamines,No,25,F,187,86,Anemia,None,"watery eyes, runny nose"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,13,O,121,85,Anemia,watery eyes,"sneezing, runny nose"
+Allergy,Low,Antihistamines,Antihistamines,No,32,O,144,40,Anemia,watery eyes,"runny nose, sneezing"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,63,O,181,95,Anemia,runny nose,"watery eyes, runny nose"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,69,M,132,35,None,None,"watery eyes, runny nose"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,1,F,158,95,None,None,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,19,O,118,93,Asthma,runny nose,runny nose
+Allergy,Low,Antihistamines,Antihistamines,No,9,O,109,93,Asthma,runny nose,"watery eyes, runny nose"
+Allergy,Low,Avoid allergens,Antihistamines,No,14,F,135,64,Diabetes,watery eyes,sneezing
+Allergy,Low,Avoid allergens,Antihistamines,No,73,O,144,30,None,runny nose,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,74,F,143,95,Asthma,None,"runny nose, watery eyes, sneezing"
+Allergy,Low,Avoid allergens,Antihistamines,No,19,M,188,95,None,None,"watery eyes, sneezing, runny nose"
+Allergy,Low,Antihistamines,Antihistamines,No,5,F,121,66,None,sneezing,runny nose
+Allergy,Low,Antihistamines,Antihistamines,No,50,F,117,92,Diabetes,None,watery eyes
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,30,F,175,48,Asthma,runny nose,sneezing
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,62,M,172,69,Hypertension,watery eyes,sneezing
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,22,F,188,77,Hypertension,watery eyes,runny nose
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,28,F,123,97,Anemia,watery eyes,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,17,M,111,89,Anemia,sneezing,"watery eyes, runny nose, sneezing"
+Allergy,Low,Avoid allergens,Antihistamines,No,30,F,141,35,None,runny nose,"runny nose, watery eyes"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,31,M,133,65,Hypertension,sneezing,"sneezing, watery eyes"
+Allergy,Low,Avoid allergens,Antihistamines,No,59,F,144,51,Anemia,watery eyes,"watery eyes, runny nose, sneezing"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,52,F,103,48,Asthma,None,"watery eyes, sneezing, runny nose"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,21,F,135,78,Anemia,watery eyes,"watery eyes, runny nose, sneezing"
+Allergy,Low,Avoid allergens,Antihistamines,No,18,F,128,99,Anemia,sneezing,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,13,F,186,70,None,runny nose,"watery eyes, sneezing, runny nose"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,79,M,160,60,Asthma,watery eyes,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,63,O,152,59,None,watery eyes,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,73,F,101,47,Diabetes,watery eyes,watery eyes
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,16,F,113,54,Asthma,None,"runny nose, watery eyes"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,20,O,116,69,Diabetes,None,"runny nose, watery eyes"
+Allergy,Low,Antihistamines,Antihistamines,No,35,M,121,70,Hypertension,None,sneezing
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,55,M,153,85,Anemia,watery eyes,sneezing
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,63,F,190,50,None,sneezing,sneezing
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,19,F,143,86,Anemia,sneezing,watery eyes
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,36,F,122,70,Asthma,None,runny nose
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,15,M,178,77,Asthma,sneezing,"sneezing, runny nose"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,71,F,178,37,None,runny nose,"runny nose, watery eyes"
+Allergy,Low,Antihistamines,Antihistamines,No,64,M,164,46,Asthma,sneezing,"runny nose, watery eyes, sneezing"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,5,F,127,61,Diabetes,runny nose,"watery eyes, runny nose, sneezing"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,72,M,121,94,Hypertension,watery eyes,"watery eyes, sneezing"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,25,O,140,64,None,watery eyes,"watery eyes, runny nose, sneezing"
+Allergy,Low,Antihistamines,Antihistamines,No,43,O,133,58,Diabetes,watery eyes,"watery eyes, sneezing"
+Allergy,Low,Avoid allergens,Antihistamines,No,12,O,116,61,Anemia,None,"sneezing, watery eyes, runny nose"
+Allergy,Low,Avoid allergens,Antihistamines,No,40,M,122,37,Diabetes,None,"sneezing, watery eyes"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,77,O,179,57,Asthma,sneezing,runny nose
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,30,M,122,90,Anemia,runny nose,watery eyes
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,54,F,102,30,Asthma,watery eyes,"watery eyes, sneezing, runny nose"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,5,O,185,50,Asthma,watery eyes,"runny nose, sneezing"
+Allergy,Low,Antihistamines,Antihistamines,No,16,F,117,72,Hypertension,watery eyes,sneezing
+Allergy,Low,Avoid allergens,Antihistamines,No,73,O,128,86,None,runny nose,"watery eyes, sneezing, runny nose"
+Allergy,Low,Antihistamines,Antihistamines,No,27,M,103,41,Asthma,sneezing,sneezing
+Allergy,Low,Avoid allergens,Antihistamines,No,31,F,176,84,Anemia,runny nose,watery eyes
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,77,O,179,94,Anemia,sneezing,"watery eyes, sneezing"
+Allergy,Low,Antihistamines,Antihistamines,No,58,M,115,51,Asthma,runny nose,"sneezing, watery eyes, runny nose"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,37,F,113,74,Diabetes,watery eyes,"runny nose, watery eyes, sneezing"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,59,M,169,81,None,watery eyes,"watery eyes, runny nose, sneezing"
+Allergy,Low,Avoid allergens,Antihistamines,No,46,M,169,93,None,sneezing,watery eyes
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,16,F,146,46,None,runny nose,"sneezing, runny nose, watery eyes"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,7,M,139,99,Anemia,sneezing,"sneezing, runny nose, watery eyes"
+Allergy,Low,Avoid allergens,Antihistamines,No,41,M,139,82,Anemia,runny nose,"runny nose, sneezing, watery eyes"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,55,M,115,33,Hypertension,watery eyes,sneezing
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,31,O,139,84,Anemia,None,"watery eyes, runny nose, sneezing"
+Allergy,Low,Avoid allergens,Antihistamines,No,78,O,177,42,Hypertension,runny nose,"runny nose, sneezing"
+Allergy,Low,Antihistamines,Antihistamines,No,28,O,185,90,Anemia,watery eyes,"runny nose, watery eyes, sneezing"
+Allergy,Low,Antihistamines,Antihistamines,No,51,F,121,75,Asthma,runny nose,"sneezing, runny nose, watery eyes"
+Allergy,Low,Avoid allergens,Antihistamines,No,61,M,131,90,Anemia,sneezing,watery eyes
+Allergy,Low,Avoid allergens,Antihistamines,No,4,M,177,93,Hypertension,None,watery eyes
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,17,F,128,41,Diabetes,runny nose,"sneezing, runny nose"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,72,M,104,77,Asthma,runny nose,"sneezing, watery eyes"
+Allergy,Low,Avoid allergens,Antihistamines,No,33,F,151,38,Diabetes,sneezing,"watery eyes, runny nose"
+Allergy,Low,Antihistamines,Antihistamines,No,51,F,151,38,Anemia,None,"sneezing, runny nose, watery eyes"
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,19,O,109,65,Hypertension,sneezing,"watery eyes, runny nose"
+Allergy,Low,Antihistamines,Antihistamines,No,29,O,133,79,Hypertension,watery eyes,"sneezing, runny nose"
+Allergy,Low,Avoid allergens,Antihistamines,No,68,F,187,50,Anemia,runny nose,runny nose
+Allergy,Low,Antihistamines,Antihistamines,No,3,O,103,83,Diabetes,watery eyes,"watery eyes, runny nose, sneezing"
+Allergy,Low,"Avoid allergens, Antihistamines",Antihistamines,No,78,O,144,75,None,None,watery eyes
+Allergy,Low,Antihistamines,Antihistamines,No,51,M,178,32,Asthma,sneezing,sneezing
+Allergy,Low,"Antihistamines, Avoid allergens",Antihistamines,No,38,M,103,41,Hypertension,watery eyes,"sneezing, runny nose"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,30,M,104,84,Anemia,high fever,"joint pain, fatigue, rash"
+Dengue,High,Hydration,Supportive care,Yes,74,F,122,95,Diabetes,joint pain,fatigue
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,32,O,129,33,Anemia,joint pain,"rash, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,54,M,179,76,None,None,"high fever, rash"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,21,O,113,44,Asthma,None,rash
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,56,F,183,57,Hypertension,rash,"rash, high fever"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,48,M,159,77,Asthma,rash,rash
+Dengue,High,Hydration,Supportive care,Yes,16,O,107,80,Diabetes,joint pain,high fever
+Dengue,High,Papaya leaf juice,Supportive care,Yes,69,M,178,91,Anemia,None,"high fever, joint pain"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,48,M,108,88,Hypertension,high fever,"fatigue, joint pain"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,17,M,182,33,Hypertension,fatigue,rash
+Dengue,High,Hydration,Supportive care,Yes,36,O,124,44,Diabetes,high fever,"high fever, rash"
+Dengue,High,Hydration,Supportive care,Yes,8,O,116,34,None,high fever,joint pain
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,40,F,189,93,Hypertension,joint pain,"joint pain, rash, high fever"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,4,F,111,48,None,fatigue,"high fever, fatigue"
+Dengue,High,Hydration,Supportive care,Yes,70,O,138,81,None,fatigue,"fatigue, high fever, rash"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,3,F,118,83,Asthma,None,"high fever, rash, joint pain"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,26,O,156,30,Anemia,rash,high fever
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,31,O,110,87,Anemia,None,"rash, fatigue"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,69,O,172,33,Hypertension,fatigue,"fatigue, rash, high fever"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,28,O,169,45,Hypertension,joint pain,"fatigue, rash, high fever"
+Dengue,High,Hydration,Supportive care,Yes,69,F,130,36,Asthma,high fever,"fatigue, joint pain"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,18,F,132,57,Diabetes,joint pain,fatigue
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,71,F,131,81,Hypertension,joint pain,"joint pain, fatigue, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,55,F,142,51,None,rash,"rash, joint pain"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,26,O,113,85,None,fatigue,rash
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,36,O,165,45,Hypertension,fatigue,fatigue
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,6,M,167,94,Diabetes,high fever,"high fever, joint pain"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,69,F,119,33,Anemia,high fever,"fatigue, joint pain"
+Dengue,High,Hydration,Supportive care,Yes,5,M,115,70,Anemia,joint pain,joint pain
+Dengue,High,Hydration,Supportive care,Yes,23,M,179,85,None,None,rash
+Dengue,High,Hydration,Supportive care,Yes,55,M,106,61,Hypertension,high fever,joint pain
+Dengue,High,Hydration,Supportive care,Yes,14,M,174,42,Asthma,None,"rash, joint pain, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,42,F,134,32,Diabetes,None,joint pain
+Dengue,High,Papaya leaf juice,Supportive care,Yes,52,M,151,77,None,rash,"fatigue, rash"
+Dengue,High,Hydration,Supportive care,Yes,24,M,107,85,Diabetes,fatigue,"rash, fatigue, high fever"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,1,O,180,59,Anemia,fatigue,"fatigue, rash, joint pain"
+Dengue,High,Hydration,Supportive care,Yes,69,F,104,43,Hypertension,high fever,rash
+Dengue,High,Papaya leaf juice,Supportive care,Yes,71,M,176,84,Hypertension,joint pain,"rash, high fever"
+Dengue,High,Hydration,Supportive care,Yes,7,O,119,62,Anemia,joint pain,"rash, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,32,F,161,88,Asthma,high fever,"fatigue, high fever, rash"
+Dengue,High,Hydration,Supportive care,Yes,18,F,126,64,None,None,"high fever, fatigue"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,68,M,154,96,Diabetes,None,"high fever, rash, joint pain"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,59,F,115,58,None,joint pain,"rash, fatigue"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,44,M,109,85,Diabetes,high fever,"rash, high fever, joint pain"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,67,O,135,64,Hypertension,rash,"high fever, joint pain, rash"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,80,O,145,49,Hypertension,rash,fatigue
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,36,F,109,41,Diabetes,rash,"high fever, rash"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,41,M,109,66,Anemia,fatigue,"fatigue, rash, joint pain"
+Dengue,High,Hydration,Supportive care,Yes,14,F,148,56,Hypertension,joint pain,"high fever, fatigue, rash"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,13,F,102,75,Hypertension,joint pain,fatigue
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,51,M,163,39,Hypertension,rash,"rash, joint pain, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,28,F,169,75,None,fatigue,"rash, high fever, fatigue"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,71,F,111,89,Diabetes,None,joint pain
+Dengue,High,Papaya leaf juice,Supportive care,Yes,72,F,100,99,Diabetes,None,"joint pain, fatigue, rash"
+Dengue,High,Hydration,Supportive care,Yes,1,O,165,33,Diabetes,joint pain,"high fever, fatigue"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,52,M,108,51,Hypertension,fatigue,"rash, fatigue"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,39,F,147,67,None,fatigue,"fatigue, rash"
+Dengue,High,Hydration,Supportive care,Yes,10,M,112,68,Hypertension,fatigue,"joint pain, rash"
+Dengue,High,Hydration,Supportive care,Yes,71,M,146,31,None,rash,joint pain
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,34,F,139,83,Asthma,high fever,joint pain
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,6,O,161,73,Hypertension,None,"rash, joint pain"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,6,O,113,57,Anemia,fatigue,"high fever, rash"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,29,O,156,93,Asthma,high fever,"high fever, joint pain"
+Dengue,High,Hydration,Supportive care,Yes,66,O,160,86,Hypertension,rash,"joint pain, high fever"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,35,O,149,74,Anemia,fatigue,high fever
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,12,M,147,66,Diabetes,None,"joint pain, rash"
+Dengue,High,Hydration,Supportive care,Yes,35,F,153,81,Asthma,high fever,rash
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,50,F,135,55,Diabetes,joint pain,joint pain
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,79,M,149,84,Anemia,None,rash
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,15,M,156,51,Asthma,fatigue,"rash, high fever"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,60,M,110,60,None,rash,rash
+Dengue,High,Hydration,Supportive care,Yes,69,O,169,42,Diabetes,joint pain,"rash, high fever, fatigue"
+Dengue,High,Hydration,Supportive care,Yes,20,F,127,72,Diabetes,fatigue,joint pain
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,57,F,167,95,Hypertension,rash,"fatigue, joint pain, high fever"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,42,O,178,95,Diabetes,None,"rash, joint pain, high fever"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,15,O,141,73,Anemia,fatigue,joint pain
+Dengue,High,Hydration,Supportive care,Yes,38,O,161,41,Anemia,rash,"rash, joint pain, high fever"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,23,F,188,75,None,rash,high fever
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,42,F,116,43,Asthma,fatigue,high fever
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,25,O,158,56,Asthma,fatigue,high fever
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,39,O,117,84,Diabetes,None,"fatigue, high fever, rash"
+Dengue,High,Hydration,Supportive care,Yes,53,M,165,73,Asthma,high fever,"rash, fatigue"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,63,O,167,70,Anemia,joint pain,"fatigue, joint pain"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,59,M,104,53,Diabetes,None,"joint pain, fatigue"
+Dengue,High,Hydration,Supportive care,Yes,22,F,150,89,Diabetes,joint pain,"rash, joint pain"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,73,M,136,66,None,fatigue,"high fever, rash"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,35,F,133,95,Asthma,fatigue,"joint pain, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,50,F,120,65,Anemia,joint pain,"joint pain, fatigue, rash"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,50,F,104,36,Anemia,None,"high fever, rash"
+Dengue,High,"Hydration, Papaya leaf juice",Supportive care,Yes,22,F,171,30,Anemia,fatigue,fatigue
+Dengue,High,Hydration,Supportive care,Yes,25,O,146,78,None,joint pain,"joint pain, fatigue, rash"
+Dengue,High,Hydration,Supportive care,Yes,68,F,162,75,None,rash,fatigue
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,16,F,127,63,Anemia,rash,"high fever, fatigue"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,11,M,178,39,Hypertension,high fever,"joint pain, rash, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,20,F,147,67,None,rash,joint pain
+Dengue,High,Hydration,Supportive care,Yes,47,F,140,62,None,None,"joint pain, fatigue, high fever"
+Dengue,High,Papaya leaf juice,Supportive care,Yes,59,O,187,65,Anemia,rash,"joint pain, high fever"
+Dengue,High,"Papaya leaf juice, Hydration",Supportive care,Yes,12,O,128,34,Asthma,fatigue,high fever
+Dengue,High,Papaya leaf juice,Supportive care,Yes,79,M,181,48,Diabetes,rash,fatigue
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,25,O,158,31,Diabetes,high fever,chills
+Malaria,High,Hydration,Antimalarial,Yes,21,M,122,45,None,headache,"high fever, chills, headache"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,59,F,146,54,Hypertension,None,"headache, chills, high fever"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,11,M,106,66,Anemia,high fever,"headache, chills, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,5,M,112,44,Diabetes,headache,"headache, chills"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,69,F,164,57,Diabetes,None,"high fever, headache, chills"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,9,O,149,86,None,headache,"chills, high fever, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,32,O,136,97,None,None,"high fever, chills, headache"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,27,M,182,59,Diabetes,headache,chills
+Malaria,High,Hydration,Antimalarial,Yes,52,F,149,68,Anemia,high fever,"high fever, headache, chills"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,72,O,160,64,None,headache,"high fever, chills"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,70,O,142,55,Hypertension,None,high fever
+Malaria,High,Hydration,Antimalarial,Yes,29,F,119,32,None,high fever,"headache, high fever"
+Malaria,High,Hydration,Antimalarial,Yes,5,O,163,39,Asthma,headache,"chills, headache, high fever"
+Malaria,High,Hydration,Antimalarial,Yes,12,M,109,97,None,None,"high fever, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,28,O,106,60,Diabetes,chills,"headache, chills, high fever"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,23,F,164,93,Hypertension,None,"chills, headache"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,44,M,154,94,None,None,"headache, high fever, chills"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,25,M,102,64,Asthma,headache,"headache, high fever, chills"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,24,F,137,72,None,chills,"high fever, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,22,O,172,60,Hypertension,high fever,"headache, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,32,O,130,66,Anemia,headache,high fever
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,14,F,151,63,None,headache,chills
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,48,F,168,70,Asthma,high fever,"high fever, headache"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,80,O,175,99,Hypertension,high fever,"chills, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,25,M,171,70,Diabetes,chills,"high fever, chills, headache"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,26,O,134,92,None,headache,"headache, high fever, chills"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,24,O,180,60,Anemia,chills,"high fever, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,18,F,113,74,Asthma,high fever,"headache, high fever"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,63,F,111,36,Diabetes,None,"high fever, chills, headache"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,66,M,159,30,Diabetes,headache,"high fever, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,37,F,110,66,None,chills,chills
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,28,M,151,35,None,high fever,"headache, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,63,M,105,76,Hypertension,chills,"headache, high fever"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,8,O,150,40,Asthma,headache,"headache, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,80,O,180,60,Hypertension,high fever,"chills, headache, high fever"
+Malaria,High,Hydration,Antimalarial,Yes,20,F,143,57,Hypertension,headache,"chills, headache, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,62,M,151,54,None,None,chills
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,50,F,174,75,Diabetes,chills,"high fever, chills, headache"
+Malaria,High,Hydration,Antimalarial,Yes,30,F,135,43,Anemia,None,"headache, chills"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,43,F,116,34,Diabetes,chills,"high fever, chills, headache"
+Malaria,High,Hydration,Antimalarial,Yes,31,M,169,92,None,chills,chills
+Malaria,High,Hydration,Antimalarial,Yes,6,O,133,79,Diabetes,high fever,headache
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,29,O,170,82,Asthma,None,"high fever, headache, chills"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,19,M,122,33,None,chills,"high fever, chills"
+Malaria,High,Hydration,Antimalarial,Yes,31,F,148,91,Asthma,chills,high fever
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,34,O,181,81,Asthma,headache,high fever
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,49,M,103,32,Hypertension,high fever,"headache, chills, high fever"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,72,O,142,39,Hypertension,chills,high fever
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,50,O,153,30,Hypertension,high fever,high fever
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,56,M,108,56,Anemia,headache,headache
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,17,F,115,100,Asthma,chills,"high fever, chills"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,16,M,167,95,Asthma,None,"chills, high fever, headache"
+Malaria,High,Hydration,Antimalarial,Yes,21,M,187,39,Hypertension,high fever,high fever
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,71,O,181,93,None,high fever,headache
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,32,F,158,51,Anemia,chills,"chills, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,58,M,130,32,None,headache,high fever
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,58,M,172,39,Diabetes,None,"chills, headache, high fever"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,27,F,119,59,Asthma,high fever,"high fever, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,71,O,151,77,Anemia,headache,"high fever, chills"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,78,O,190,45,Asthma,headache,"headache, high fever"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,71,F,129,91,Diabetes,headache,"high fever, chills"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,77,M,161,56,Diabetes,high fever,"chills, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,73,M,165,67,Diabetes,chills,high fever
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,40,M,134,46,Anemia,None,"high fever, headache, chills"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,19,M,164,99,Anemia,high fever,"high fever, chills, headache"
+Malaria,High,Hydration,Antimalarial,Yes,40,M,140,75,None,chills,"chills, headache, high fever"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,75,M,171,95,Diabetes,chills,"chills, high fever, headache"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,66,M,169,30,Diabetes,None,"headache, chills, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,2,M,121,94,Diabetes,high fever,"high fever, chills, headache"
+Malaria,High,Hydration,Antimalarial,Yes,58,F,130,72,Hypertension,chills,"headache, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,25,M,176,44,Hypertension,high fever,high fever
+Malaria,High,Hydration,Antimalarial,Yes,22,O,169,56,Asthma,high fever,headache
+Malaria,High,Hydration,Antimalarial,Yes,25,O,150,30,None,high fever,"high fever, headache"
+Malaria,High,Hydration,Antimalarial,Yes,52,O,168,80,Asthma,None,"high fever, headache, chills"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,35,F,119,60,None,None,headache
+Malaria,High,Hydration,Antimalarial,Yes,1,O,157,59,Asthma,chills,"headache, chills"
+Malaria,High,Hydration,Antimalarial,Yes,15,O,116,90,Anemia,chills,"chills, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,69,F,100,81,None,None,"chills, headache, high fever"
+Malaria,High,Hydration,Antimalarial,Yes,14,M,139,85,Hypertension,None,high fever
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,2,M,146,82,Diabetes,None,"high fever, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,59,O,150,75,None,chills,"headache, chills"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,75,F,178,99,Asthma,chills,"chills, headache, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,41,M,148,74,Diabetes,high fever,"high fever, chills, headache"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,55,F,134,62,Hypertension,high fever,chills
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,74,O,155,93,Diabetes,None,"high fever, chills, headache"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,53,O,164,92,Diabetes,high fever,"chills, headache, high fever"
+Malaria,High,Hydration,Antimalarial,Yes,62,O,114,97,Hypertension,None,"chills, headache, high fever"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,32,M,152,63,Hypertension,headache,"chills, headache, high fever"
+Malaria,High,Hydration,Antimalarial,Yes,77,O,158,46,Diabetes,None,"headache, high fever, chills"
+Malaria,High,Hydration,Antimalarial,Yes,10,F,158,98,None,None,"high fever, headache, chills"
+Malaria,High,Hydration,Antimalarial,Yes,31,O,111,49,Diabetes,None,"headache, high fever"
+Malaria,High,"Papaya leaf juice, Hydration",Antimalarial,Yes,56,F,116,31,Hypertension,headache,chills
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,8,O,129,66,Asthma,chills,"chills, headache, high fever"
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,19,M,134,76,None,None,chills
+Malaria,High,Papaya leaf juice,Antimalarial,Yes,25,O,151,41,Anemia,high fever,high fever
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,67,M,139,96,Hypertension,headache,"chills, high fever, headache"
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,19,M,152,50,None,high fever,"chills, headache"
+Malaria,High,Hydration,Antimalarial,Yes,1,F,108,51,Diabetes,high fever,high fever
+Malaria,High,"Hydration, Papaya leaf juice",Antimalarial,Yes,64,F,135,77,Asthma,high fever,"high fever, headache, chills"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,29,O,118,58,Asthma,None,"chest pain, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,24,F,155,93,Hypertension,chest pain,chest pain
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,30,O,184,100,None,shortness of breath,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,6,O,144,94,None,chest pain,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,14,M,150,61,Diabetes,dizziness,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,38,F,169,80,Asthma,dizziness,"shortness of breath, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,38,F,133,73,Hypertension,None,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,31,F,116,47,None,dizziness,"dizziness, shortness of breath"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,49,F,173,80,None,dizziness,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,40,M,172,76,Asthma,chest pain,dizziness
+Heart Attack,High,Rest,Angioplasty,Yes,4,M,138,48,Hypertension,None,"dizziness, chest pain"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,76,M,106,32,Asthma,shortness of breath,"shortness of breath, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,53,F,111,33,Anemia,shortness of breath,shortness of breath
+Heart Attack,High,Healthy diet,Angioplasty,Yes,27,M,167,37,Hypertension,None,"shortness of breath, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,53,F,180,85,Hypertension,dizziness,"dizziness, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,66,M,107,64,Diabetes,dizziness,"chest pain, dizziness"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,1,F,127,47,Diabetes,shortness of breath,"shortness of breath, chest pain, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,28,F,150,86,Diabetes,None,"dizziness, shortness of breath, chest pain"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,8,O,181,83,None,chest pain,dizziness
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,75,O,183,49,Anemia,dizziness,chest pain
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,35,O,112,69,Asthma,shortness of breath,shortness of breath
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,9,M,160,100,Anemia,chest pain,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,19,F,179,80,Hypertension,None,"chest pain, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,8,O,116,88,None,None,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,Rest,Angioplasty,Yes,5,O,102,68,None,chest pain,chest pain
+Heart Attack,High,Rest,Angioplasty,Yes,3,M,106,42,Anemia,chest pain,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,2,M,106,49,Diabetes,None,"chest pain, dizziness"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,51,M,180,54,Anemia,chest pain,"chest pain, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,64,O,103,36,Asthma,chest pain,"chest pain, dizziness"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,7,F,155,92,Anemia,dizziness,dizziness
+Heart Attack,High,Healthy diet,Angioplasty,Yes,42,O,124,31,Diabetes,None,"shortness of breath, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,73,M,124,82,Hypertension,shortness of breath,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,53,M,147,69,None,None,chest pain
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,60,F,167,83,Hypertension,shortness of breath,"dizziness, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,17,O,131,90,Anemia,shortness of breath,shortness of breath
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,38,M,170,73,Diabetes,None,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,48,O,137,68,Diabetes,chest pain,shortness of breath
+Heart Attack,High,Rest,Angioplasty,Yes,9,M,169,49,Asthma,shortness of breath,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,54,F,135,95,Asthma,dizziness,"shortness of breath, chest pain, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,78,M,130,49,None,dizziness,dizziness
+Heart Attack,High,Healthy diet,Angioplasty,Yes,42,O,145,53,Diabetes,dizziness,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,66,O,182,73,Asthma,shortness of breath,chest pain
+Heart Attack,High,Healthy diet,Angioplasty,Yes,29,F,174,67,Hypertension,chest pain,dizziness
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,64,M,137,98,Diabetes,chest pain,shortness of breath
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,55,O,175,60,Diabetes,None,"chest pain, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,40,O,117,85,None,None,"shortness of breath, chest pain, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,45,M,146,90,Hypertension,chest pain,"dizziness, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,56,M,167,83,Hypertension,dizziness,"chest pain, dizziness"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,59,F,130,84,Hypertension,chest pain,chest pain
+Heart Attack,High,Healthy diet,Angioplasty,Yes,56,M,150,94,None,dizziness,"chest pain, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,73,F,143,99,Diabetes,chest pain,shortness of breath
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,47,F,173,46,Anemia,chest pain,shortness of breath
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,27,O,113,41,Hypertension,shortness of breath,"chest pain, shortness of breath, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,36,O,135,31,Diabetes,chest pain,"chest pain, dizziness, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,50,O,112,50,Hypertension,dizziness,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,47,F,164,47,Anemia,chest pain,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,37,M,156,72,Asthma,chest pain,"chest pain, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,16,O,125,41,Asthma,None,shortness of breath
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,11,O,188,90,None,dizziness,"chest pain, shortness of breath"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,80,M,106,69,None,shortness of breath,chest pain
+Heart Attack,High,Healthy diet,Angioplasty,Yes,40,F,141,63,Anemia,dizziness,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,44,O,156,31,None,shortness of breath,"shortness of breath, chest pain, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,60,F,179,84,Asthma,chest pain,"chest pain, shortness of breath, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,18,M,143,41,Asthma,dizziness,"shortness of breath, chest pain"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,78,F,180,49,Hypertension,chest pain,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,45,F,111,85,Anemia,shortness of breath,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,11,O,188,70,Asthma,chest pain,"shortness of breath, chest pain, dizziness"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,16,M,190,44,Diabetes,chest pain,dizziness
+Heart Attack,High,Rest,Angioplasty,Yes,14,O,143,97,None,chest pain,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,48,M,179,93,Diabetes,None,chest pain
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,68,O,137,49,Hypertension,dizziness,dizziness
+Heart Attack,High,Healthy diet,Angioplasty,Yes,25,M,101,99,Diabetes,shortness of breath,shortness of breath
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,31,M,144,70,Diabetes,chest pain,"shortness of breath, chest pain"
+Heart Attack,High,Rest,Angioplasty,Yes,42,F,146,81,Diabetes,shortness of breath,"chest pain, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,59,O,180,49,Hypertension,None,shortness of breath
+Heart Attack,High,Rest,Angioplasty,Yes,38,M,130,56,Diabetes,chest pain,shortness of breath
+Heart Attack,High,Healthy diet,Angioplasty,Yes,71,M,160,48,Anemia,None,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,35,M,155,31,Anemia,chest pain,shortness of breath
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,33,F,183,66,Asthma,chest pain,dizziness
+Heart Attack,High,Rest,Angioplasty,Yes,46,F,100,69,Hypertension,shortness of breath,chest pain
+Heart Attack,High,Healthy diet,Angioplasty,Yes,6,M,102,44,Asthma,dizziness,"dizziness, shortness of breath"
+Heart Attack,High,Rest,Angioplasty,Yes,29,O,186,52,Hypertension,dizziness,shortness of breath
+Heart Attack,High,Healthy diet,Angioplasty,Yes,12,O,148,36,Hypertension,dizziness,"dizziness, shortness of breath, chest pain"
+Heart Attack,High,Rest,Angioplasty,Yes,52,M,184,63,Hypertension,chest pain,"shortness of breath, dizziness"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,50,F,137,93,None,shortness of breath,"dizziness, shortness of breath, chest pain"
+Heart Attack,High,Healthy diet,Angioplasty,Yes,69,M,151,47,Diabetes,chest pain,dizziness
+Heart Attack,High,Healthy diet,Angioplasty,Yes,48,M,155,54,None,shortness of breath,"dizziness, chest pain"
+Heart Attack,High,Rest,Angioplasty,Yes,70,M,138,95,None,None,"shortness of breath, chest pain, dizziness"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,6,F,136,77,Diabetes,shortness of breath,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,79,F,106,46,Diabetes,None,shortness of breath
+Heart Attack,High,Rest,Angioplasty,Yes,73,F,126,83,Asthma,shortness of breath,"chest pain, dizziness"
+Heart Attack,High,Rest,Angioplasty,Yes,66,M,177,69,None,dizziness,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,78,F,172,89,None,None,"chest pain, shortness of breath"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,52,M,135,48,Diabetes,None,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,31,F,141,56,Asthma,shortness of breath,"dizziness, chest pain, shortness of breath"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,51,O,104,49,Diabetes,dizziness,"shortness of breath, dizziness, chest pain"
+Heart Attack,High,Rest,Angioplasty,Yes,10,O,169,96,Anemia,shortness of breath,"dizziness, chest pain"
+Heart Attack,High,"Healthy diet, Rest",Angioplasty,Yes,51,F,150,31,Asthma,chest pain,"shortness of breath, dizziness"
+Heart Attack,High,"Rest, Healthy diet",Angioplasty,Yes,7,O,170,48,Diabetes,shortness of breath,chest pain
+Heart Attack,High,Rest,Angioplasty,Yes,44,O,155,55,Anemia,dizziness,shortness of breath
