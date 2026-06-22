@@ -1,59 +1,24 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for,jsonify
 from .models import SearchHistory, User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db   ##means from __init__.py import db
 from flask_login import login_user, login_required, logout_user, current_user
 import pickle
 import numpy as np
+import pandas as pd
+from scipy.sparse import hstack
 
-# popular_df = pickle.load(open('popular.pkl','rb'))
-# pt = pickle.load(open('pt.pkl','rb'))
-# books = pickle.load(open('books.pkl','rb'))
-# similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
 
 auth = Blueprint('auth', __name__)
 
 @auth.route('/')
 def index():
     return render_template('index.html'
-                        #    book_name = list(popular_df['Book-Title'].values),
-                        #    author=list(popular_df['Book-Author'].values),
-                        #    image=list(popular_df['Image-URL-M'].values),
-                        #    votes=list(popular_df['num_ratings'].values),
-                        #    rating=list(popular_df['avg_rating'].values)
+                       
     )
 
 from urllib.parse import unquote
 
-# @auth.route('/book/<book_title>')
-# @login_required
-# def track_click(book_title):
-#     book_title = unquote(book_title)
-
-#     try:
-#         index = np.where(pt.index == book_title)[0][0]
-#         similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:11]
-
-#         recommended_books = []
-#         for i in similar_items:
-#             temp_df = books[books['Book-Title'] == pt.index[i[0]]]
-#             item = [
-#                 temp_df.drop_duplicates('Book-Title')['Book-Title'].values[0],
-#                 temp_df.drop_duplicates('Book-Title')['Book-Author'].values[0],
-#                 temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values[0]
-#             ]
-#             recommended_books.append(item)
-        
-#         return render_template("dashboard.html", data=recommended_books, clicked_book=book_title)
-
-#     except:
-#         flash("Sorry, we couldn't generate recommendations for this book.", "error")
-#         return redirect(url_for('auth.index'))
-
-
-# @auth.route('/recommend')
-# def recommend_ui():
-#     return render_template('recommend.html')
 
 @auth.route('/symptom')
 def symptom():
@@ -130,105 +95,116 @@ def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+try:
+    data = pd.read_csv("structured_healthcare_dataset.csv")
+    model = pickle.load(open("disease_model.pkl","rb"))
+    vectorizer = pickle.load(open("vectorizer.pkl","rb"))
+    scaler = pickle.load(open("scaler.pkl","rb"))
+    label_encoder = pickle.load(open("label_encoder.pkl","rb"))
+    print("✅ Dataset and models loaded successfully")
+except Exception as e:
+    print("❌ Error loading dataset or models:", e)
+    exit(1)
 
-@auth.route('/recommend_books', methods=['POST'])
-@login_required
-def recommend():
-    user_input = request.form.get('user_input').strip()
-    
-    data = []
-    no_results = False
+@auth.route("/symptom", methods=["POST"])
+def analyze():
+    try:
+        req = request.json
+        symptoms = req.get("symptoms","").lower()
+        age = float(req.get("age",0))
+        height = float(req.get("height",0))
+        weight = float(req.get("weight",0))
+        previous_conditions = req.get("previous_conditions","")
+        current_conditions = req.get("current_conditions","")
 
-    if user_input:
-        # Find titles that contain the user input (case-insensitive)
-        matched_titles = [title for title in pt.index if user_input.lower() in title.lower()]
+        # --------- Rule-based detection for 20+ common diseases ----------
+        simple_rules = {
+            "common cold":["cough","runny nose","sneezing","mild fever"],
+            "flu":["fever","cough","body ache","fatigue"],
+            "headache":["headache","migraine","mild nausea"],
+            "vomiting":["vomiting","nausea"],
+            "body pain":["body pain","muscle ache","joint pain"],
+            "eye pain":["eye pain","red eyes","eye irritation","itchy eyes"],
+            "ear pain":["ear pain","ear ache","ear infection"],
+            "diarrhea":["diarrhea","loose stool","stomach upset"],
+            "constipation":["constipation","hard stool"],
+            "indigestion":["indigestion","acidity","heartburn"],
+            "sore throat":["sore throat","throat pain"],
+            "skin rash":["rash","itching","red spots"],
+            "back pain":["back pain","lower back ache"],
+            "uti":["burning urination","frequent urination"],
+            "allergy":["sneezing","watery eyes","runny nose"],
+            "fever":["fever","chills"],
+        }
 
-        if matched_titles:
-            # Save the first matched title to search history
-            history = SearchHistory(user_id=current_user.id, search_term=matched_titles[0])
-            db.session.add(history)
-            db.session.commit()
+        remedies = {
+            "common cold":"Steam inhalation + Tulsi tea",
+            "flu":"Hydration + Ginger tea",
+            "headache":"Dark room + Ginger tea",
+            "vomiting":"Ginger tea + Light meals",
+            "body pain":"Rest + Warm compress",
+            "eye pain":"Wash eyes + Avoid strain",
+            "ear pain":"Warm compress + Ear drops if mild",
+            "diarrhea":"ORS + Hydration + Banana",
+            "constipation":"Fiber-rich diet + Hydration",
+            "indigestion":"Avoid oily food + Ginger tea",
+            "sore throat":"Warm salt water gargle + Honey",
+            "skin rash":"Aloe vera gel + Cold compress",
+            "back pain":"Rest + Hot water bag",
+            "uti":"Hydration + Cranberry juice",
+            "allergy":"Avoid allergens + Antihistamines",
+            "fever":"Hydration + Rest"
+        }
 
-            for title in matched_titles[:1]:  # Only use first match for similarity
-                try:
-                    index = np.where(pt.index == title)[0][0]
-                    similar_items = sorted(
-                        list(enumerate(similarity_scores[index])),
-                        key=lambda x: x[1],
-                        reverse=True
-                    )[1:21]
-
-                    for i in similar_items:
-                        temp_df = books[books['Book-Title'] == pt.index[i[0]]]
-                        item = [
-                            temp_df.drop_duplicates('Book-Title')['Book-Title'].values[0],
-                            temp_df.drop_duplicates('Book-Title')['Book-Author'].values[0],
-                            temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values[0]
-                        ]
-                        data.append(item)
-                except:
-                    continue
-
-            if not data:
-                no_results = True
-
-        else:
-            # Fallback: search by author
-            temp_df = books[books['Book-Author'].str.contains(user_input, case=False, na=False)]
-            temp_df = temp_df.drop_duplicates('Book-Title').head(10)
-
-            for _, row in temp_df.iterrows():
-                item = [row['Book-Title'], row['Book-Author'], row['Image-URL-M']]
-                data.append(item)
-
-            if not data:
-                no_results = True
-
-    return render_template('recommend.html', data=data, no_results=no_results)
-
-
-
-recommend_bp = Blueprint('dashboard', __name__)
-
-@auth.route('/dashboard')
-@login_required
-def recommend_from_history():
-    user_searches = SearchHistory.query.filter_by(user_id=current_user.id)\
-        .order_by(SearchHistory.id.desc()).limit(10).all()
-    
-    if not user_searches:
-        return render_template('dashboard.html', no_data=True)
-
-    recommended_books = []
-
-    for search in user_searches:
-        try:
-            index = np.where(pt.index == search.search_term)[0][0]
-            similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:5]
-
-            for i in similar_items:
-                temp_df = books[books['Book-Title'] == pt.index[i[0]]]
-                item = [
-                    temp_df.drop_duplicates('Book-Title')['Book-Title'].values[0],
-                    temp_df.drop_duplicates('Book-Title')['Book-Author'].values[0],
-                    temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values[0]
-                ]
-                recommended_books.append(item)
-        except:
-            continue
-
-    # Remove duplicates
-    seen = set()
-    unique_recommendations = []
-    for book in recommended_books:
-        if book[0] not in seen:
-            unique_recommendations.append(book)
-            seen.add(book[0])
-
-    return render_template('dashboard.html', data=unique_recommendations)
+        medicines = {
+            "common cold":"Paracetamol",
+            "flu":"Paracetamol",
+            "headache":"Paracetamol",
+            "vomiting":"Ondansetron",
+            "body pain":"Paracetamol or Ibuprofen",
+            "eye pain":"Artificial tears or mild eye drops",
+            "ear pain":"Painkillers or ear drops",
+            "diarrhea":"ORS + Probiotics",
+            "constipation":"Laxatives",
+            "indigestion":"Antacids",
+            "sore throat":"Paracetamol",
+            "skin rash":"Antihistamines",
+            "back pain":"Paracetamol or Ibuprofen",
+            "uti":"Antibiotics",
+            "allergy":"Antihistamines",
+            "fever":"Paracetamol"
+        }
 
 
 
+        # Check rule-based first
+        for disease_name, sym_list in simple_rules.items():
+            if any(sym in symptoms for sym in sym_list):
+                return jsonify({
+                    "disease":disease_name.title(),
+                    "home_remedy":remedies[disease_name],
+                    "medicine":medicines[disease_name],
+                    "doctor_required":"No",
+                    "note":"Simple/common disease detected based on symptoms."
+                })
 
-    
+        # --------- ML prediction for complex/rare diseases ----------
+        text = previous_conditions + " " + current_conditions + " " + symptoms
+        X_text_input = vectorizer.transform([text])
+        X_numeric_input = scaler.transform([[age,height,weight]])
+        X_input = hstack([X_text_input, X_numeric_input])
 
+        pred = model.predict(X_input)
+        disease_name = label_encoder.inverse_transform(pred)[0]
+        row = data[data["disease"]==disease_name].iloc[0]
+
+        return jsonify({
+            "disease":disease_name,
+            "home_remedy":row["home_remedy"],
+            "medicine":row["common_medicine"],
+            "doctor_required":row["doctor_required"],
+            "note":"Predicted using ML. Consult a doctor for serious conditions."
+        })
+
+    except Exception as e:
+        return jsonify({"error":"Something went wrong", "details": str(e)})

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI Healthcare Prediction</title>
+    <title>Healthcare Prediction</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 30px; background: #f2f2f2; }
         h1 { text-align: center; }
@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <h1>AI Healthcare Prediction</h1>
+    <h1>Healthcare Prediction</h1>
     <form id="healthForm">
         <label>Age:</label>
         <input type="number" name="age" required>
@@ -60,7 +60,7 @@
             resultDiv.innerHTML = "Predicting...";
 
             try {
-                const response = await fetch('http://127.0.0.1:5000/analyze', {
+                const response = await fetch('http://127.0.0.1:5000//symptom', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)

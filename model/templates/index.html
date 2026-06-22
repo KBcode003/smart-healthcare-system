@@ -36,18 +36,14 @@
             <li><a class="text-black" href="/">Home</a></li>
             <li><a class="text-black" href="/symptom">Assess your Symptoms</a></li>
             <li><a class="text-black" href="/contact">Contact</a></li>
-            {% if current_user.is_authenticated %}
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('auth.recommend_from_history') }}" style="color: black;">My Recommendations</a>
-            </li>
-{% endif %}
+            
         <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
   {% if current_user.is_authenticated %}
     <li><a class="text-black" href="#"><b>Logged in:</b> {{ current_user.email }}</a></li>
     <li><a class="text-black" href="{{ url_for('auth.logout') }}">Logout</a></li>
   {% else %}
-    <li><a class="text-black" href="{{ url_for('auth.signup') }}">Sign Up</a></li>
-    <li><a class="text-black" href="{{ url_for('auth.login') }}">Login</a></li>
+    <li><a class="text-black" href="{{ url_for('auth.signup') }}">Sign Up as patient</a></li>
+    <li><a class="text-black" href="{{ url_for('auth.login') }}">Login as patient</a></li>
   {% endif %}
 </ul>
 
@@ -74,25 +70,8 @@
     <div class="p-4"> <!-- Add padding wrapper -->
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-black" style="font-size:20px">Your personal health assisstant...</h1>
+                <h1 class="text-black" style="font-size:20px">Your personal health assistant...</h1>
             </div>
-
-            {% for i in range(book_name|length) %}
-                <div class="col-md-3" style="margin-top:50px">
-                    <div class="card">
-                        <div class="card-body">
-                            <a href="{{ url_for('auth.track_click', book_title=book_name[i]) }}">
-                              <img class="card-img-top" src="{{ image[i] }}" alt="Cover of {{ book_name[i] }}">
-                            </a>
-
-                            <p class="text-white" style="margin-top:15px;">{{ book_name[i] }}</p>
-                            <h4 class="text-white">{{ author[i] }}</h4>
-                            <h4 class="text-white">Votes : {{ votes[i] }}</h4>
-                            <h4 class="text-white">Rating : {{ rating[i]|round(1) }}</h4>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
         </div>
     </div>
     {% endblock %}
