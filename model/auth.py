@@ -21,6 +21,7 @@ from urllib.parse import unquote
 
 
 @auth.route('/symptom')
+@login_required
 def symptom():
     return render_template('symptom.html')
 
@@ -107,6 +108,7 @@ except Exception as e:
     exit(1)
 
 @auth.route("/symptom", methods=["POST"])
+@login_required
 def analyze():
     try:
         req = request.json
