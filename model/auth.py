@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for,jsonify
-from .models import SearchHistory, User
+from flask import Blueprint, render_template, request, flash, redirect, url_for,jsonify, session
+from .models import SearchHistory, User, Doctor
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db   ##means from __init__.py import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -210,3 +210,54 @@ def analyze():
 
     except Exception as e:
         return jsonify({"error":"Something went wrong", "details": str(e)})
+
+ADMIN_PASSWORD = "admin123"  # change this to whatever you want
+
+@auth.route('/admin', methods=['GET', 'POST'])
+def admin_login():
+    if request.method == 'POST':
+        password = request.form.get('password')
+        if password == ADMIN_PASSWORD:
+            session['is_admin'] = True
+            return redirect(url_for('auth.admin_portal'))
+        else:
+            flash('Incorrect admin password.', category='error')
+    return render_template('admin_login.html')
+
+@auth.route('/admin/portal', methods=['GET', 'POST'])
+def admin_portal():
+    if not session.get('is_admin'):
+        return redirect(url_for('auth.admin_login'))
+
+    if request.method == 'POST':
+        name = request.form.get('name')
+        specialty = request.form.get('specialty')
+        email = request.form.get('email')
+
+        existing = Doctor.query.filter_by(email=email).first()
+        if existing:
+            flash('A doctor with that email already exists.', category='error')
+        else:
+            new_doctor = Doctor(name=name, specialty=specialty, email=email)
+            db.session.add(new_doctor)
+            db.session.commit()
+            flash('Doctor added successfully!', category='success')
+
+    patients = User.query.all()
+    doctors = Doctor.query.all()
+    return render_template('admin_portal.html', patients=patients, doctors=doctors)
+
+@auth.route('/admin/logout')
+def admin_logout():
+    session.pop('is_admin', None)
+    return redirect(url_for('auth.admin_login'))
+
+@auth.route('/admin/delete_doctor/<int:doctor_id>')
+def delete_doctor(doctor_id):
+    if not session.get('is_admin'):
+        return redirect(url_for('auth.admin_login'))
+    doctor = Doctor.query.get_or_404(doctor_id)
+    db.session.delete(doctor)
+    db.session.commit()
+    flash('Doctor removed.', category='success')
+    return redirect(url_for('auth.admin_portal'))

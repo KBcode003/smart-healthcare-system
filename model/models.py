@@ -15,7 +15,12 @@ class ClickLog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     book_title = db.Column(db.String(255))
-    
+class Doctor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150))
+    specialty = db.Column(db.String(150))
+    email = db.Column(db.String(150), unique=True)
+    available = db.Column(db.Boolean, default=True)   
 
 
 
