@@ -27,6 +27,12 @@
       font-weight: 600;
       margin-bottom: 16px;
     }
+
+    @media (max-width: 576px) {
+    .section-card { padding: 16px; }
+    .navbar-brand { font-size: 14px; }
+    .container { padding-left: 12px; padding-right: 12px; }
+}
   </style>
 </head>
 
@@ -51,19 +57,19 @@
 
     <!-- Stats row -->
     <div class="row mb-4">
-      <div class="col-sm-4">
+      <div class="col-12 col-md-4 mb-4">
         <div class="section-card text-center">
           <h2 style="color:#7c3aed;font-weight:600;">{{ patients|length }}</h2>
           <p class="text-muted mb-0">Registered patients</p>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-12 col-md-4 mb-4">
         <div class="section-card text-center">
           <h2 style="color:#7c3aed;font-weight:600;">{{ doctors|length }}</h2>
           <p class="text-muted mb-0">Doctors added</p>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-12 col-md-4 mb-4">
         <div class="section-card text-center">
           <h2 style="color:#7c3aed;font-weight:600;">{{ doctors|selectattr('available')|list|length }}</h2>
           <p class="text-muted mb-0">Available doctors</p>
@@ -74,7 +80,7 @@
     <div class="row">
 
       <!-- Add doctor form -->
-      <div class="col-sm-4">
+      <div class="col-12 col-md-4 mb-4">
         <div class="section-card">
           <h5>➕ Add a doctor</h5>
           <form method="POST">
@@ -112,11 +118,12 @@
       </div>
 
       <!-- Doctors list -->
-      <div class="col-sm-8">
+      <div class="col-12 col-md-8">
         <div class="section-card">
           <h5>👨‍⚕️ Doctors</h5>
           {% if doctors %}
-          <table class="table table-hover">
+          <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<table class="table table-hover" style="min-width: 550px;">
             <thead>
               <tr>
                 <th>Name</th>
@@ -144,13 +151,15 @@
           {% else %}
           <p class="text-muted">No doctors added yet.</p>
           {% endif %}
+           </div>
         </div>
 
         <!-- Patients list -->
         <div class="section-card">
           <h5>🧑‍🤝‍🧑 Registered patients</h5>
           {% if patients %}
-          <table class="table table-hover">
+          <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<table class="table table-hover" style="min-width: 550px;">
             <thead>
               <tr>
                 <th>#</th>
@@ -171,6 +180,7 @@
           {% else %}
           <p class="text-muted">No patients registered yet.</p>
           {% endif %}
+           </div>
         </div>
         <!-- Add this after the patients section-card -->
         <div class="section-card">
@@ -210,12 +220,14 @@
           {% else %}
           <p class="text-muted">No appointments yet.</p>
           {% endif %}
+           </div>
         </div>
         <!-- Add this after the patients section-card -->
 <div class="section-card">
     <h5>📅 All Appointments</h5>
     {% if all_appointments %}
-    <table class="table table-hover">
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<table class="table table-hover" style="min-width: 550px;">
         <thead>
             <tr>
                 <th>#</th>
@@ -246,9 +258,12 @@
             {% endfor %}
         </tbody>
     </table>
+   
     {% else %}
+    
     <p class="text-muted">No appointments yet.</p>
     {% endif %}
+     </div>
 </div>
       </div>
     </div>

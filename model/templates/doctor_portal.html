@@ -13,6 +13,12 @@
             margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
         }
         .navbar-brand, .nav-link { color: white !important; }
+
+        @media (max-width: 576px) {
+    .section-card { padding: 16px; }
+    .navbar-brand { font-size: 14px; }
+}
+
     </style>
 </head>
 <body>
@@ -39,7 +45,7 @@
 
     <!-- Stats -->
     <div class="row mb-4">
-        <div class="col-sm-4">
+        <div class="col-12 col-sm-4">
             <div class="section-card text-center">
                 <h2 style="color:#7c3aed;font-weight:600;">
                     {{ appointments|length }}
@@ -47,7 +53,7 @@
                 <p class="text-muted mb-0">Total appointments</p>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-12 col-sm-4">
             <div class="section-card text-center">
                 <h2 style="color:#f59e0b;font-weight:600;">
                     {{ appointments|selectattr('status','equalto','Pending')|list|length }}
@@ -55,7 +61,7 @@
                 <p class="text-muted mb-0">Pending</p>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-12 col-sm-4">
             <div class="section-card text-center">
                 <h2 style="color:#10b981;font-weight:600;">
                     {{ appointments|selectattr('status','equalto','Approved')|list|length }}
@@ -68,7 +74,9 @@
     <!-- Appointments table -->
     <div class="section-card">
         <h5>📋 Appointments</h5>
-        {% if appointments %}
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+            {% if appointments %}
+<table class="table table-hover" style="min-width: 650px;">
         <table class="table table-hover">
             <thead>
                 <tr>

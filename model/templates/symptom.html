@@ -7,144 +7,301 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f2f2f2; padding: 30px; }
-        h1 { text-align: center; margin-bottom: 24px; }
-        .form-card { max-width: 620px; margin: auto; background: white; padding: 28px; border-radius: 12px; box-shadow: 0 0 10px #ccc; }
-        #result { max-width: 620px; margin: 24px auto; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 0 10px #ccc; display: none; }
-        .precaution-list li { margin-bottom: 6px; }
-        .tag { display: inline-block; background: #ede9fe; color: #5b21b6; border-radius: 999px; padding: 3px 10px; font-size: 12px; margin: 3px; cursor: pointer; }
-        .tag:hover { background: #7c3aed; color: white; }
-        #symptom-hint { font-size: 12px; color: #888; margin-top: 4px; }
+        h1 { text-align: center; margin-bottom: 24px; font-weight: 700; color: #3b0764; }
+        .form-card {
+            max-width: 680px; margin: auto; background: white;
+            padding: 28px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        #result {
+            max-width: 680px; margin: 24px auto; padding: 24px;
+            background: white; border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: none;
+        }
+        .tag {
+            display: inline-block; background: #f5f3ff; color: #5b21b6;
+            border: 1px solid #ede9fe; border-radius: 999px;
+            padding: 5px 13px; font-size: 12px; margin: 3px;
+            cursor: pointer; transition: all .15s; user-select: none;
+        }
+        .tag:hover { background: #7c3aed; color: white; border-color: #7c3aed; }
+        .tag.selected { background: #7c3aed; color: white; border-color: #7c3aed; }
+        #symptoms {
+            font-size: 14px;
+        }
+        .autocomplete-list {
+            position: absolute; background: white; border: 1px solid #e5e7eb;
+            border-radius: 8px; z-index: 999; max-height: 200px;
+            overflow-y: auto; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .autocomplete-item {
+            padding: 8px 14px; font-size: 13px; cursor: pointer; color: #374151;
+        }
+        .autocomplete-item:hover { background: #f5f3ff; color: #7c3aed; }
+        .symptom-wrapper { position: relative; }
+        .section-label {
+            font-size: 12px; font-weight: 600; color: #6b7280;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+        }
+
+        @media (max-width: 576px) {
+    body { padding: 16px; }
+    h1 { font-size: 22px; }
+    .form-card { padding: 20px 16px; }
+    #result { padding: 20px 16px; }
+    .tag { font-size: 11px; padding: 4px 10px; }
+}
+
     </style>
 </head>
 <body>
-    <h1>Healthcare Prediction</h1>
+    <h1>🔍 Healthcare Prediction</h1>
 
     <div class="form-card">
         <form id="healthForm">
             <div class="form-group">
-                <label><strong>Enter your symptoms</strong></label>
-                <input type="text" class="form-control" id="symptoms" name="symptoms"
-                    placeholder="e.g. itching, skin_rash, fatigue" required>
-                <small id="symptom-hint">Separate multiple symptoms with commas. Use underscores for multi-word symptoms (e.g. skin_rash).</small>
+                <label style="font-weight:600;">Enter your symptoms</label>
+                <div class="symptom-wrapper">
+                    <input type="text" class="form-control" id="symptoms"
+                        name="symptoms" autocomplete="off"
+                        placeholder="Type a symptom, e.g. fever, headache, skin rash">
+                    <div class="autocomplete-list" id="autocompleteList"
+                         style="display:none;"></div>
+                </div>
+                <small class="text-muted mt-1 d-block">
+                    Separate multiple symptoms with commas, or click the tags below.
+                </small>
             </div>
 
-            <!-- Quick symptom tags -->
-            <div class="mb-3">
-                <small class="text-muted d-block mb-1">Common symptoms — click to add:</small>
-                {% set common = ['itching', 'fever', 'cough', 'fatigue', 'nausea', 'vomiting',
-                                 'chest_pain', 'headache', 'skin_rash', 'abdominal_pain',
-                                 'back_pain', 'chills', 'joint_pain', 'loss_of_appetite'] %}
-                {% for s in common %}
-                <span class="tag" onclick="addSymptom('{{ s }}')">{{ s.replace('_', ' ') }}</span>
+            <!-- Common symptom tags -->
+            <div class="mb-4">
+                <div class="section-label">Common symptoms — click to add</div>
+                {% set common_symptoms = [
+                    'itching', 'skin rash', 'fever', 'cough', 'fatigue',
+                    'nausea', 'vomiting', 'headache', 'chest pain',
+                    'abdominal pain', 'back pain', 'chills', 'joint pain',
+                    'loss of appetite', 'sweating', 'breathlessness',
+                    'dizziness', 'yellowish skin', 'dark urine', 'weight loss',
+                    'muscle weakness', 'runny nose', 'sore throat',
+                    'blurred vision', 'swelling'
+                ] %}
+                {% for sym in common_symptoms %}
+                <span class="tag" data-symptom="{{ sym }}">{{ sym }}</span>
                 {% endfor %}
             </div>
 
             <button type="submit" class="btn btn-block btn-primary"
-                style="background:#7c3aed;border-color:#7c3aed;">Predict</button>
+                style="background:#7c3aed;border-color:#7c3aed;
+                       border-radius:10px;font-weight:600;padding:12px;">
+                Predict
+            </button>
         </form>
     </div>
 
     <div id="result"></div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('healthForm');
-        const resultDiv = document.getElementById('result');
+        // ── All symptoms from dataset (underscores replaced with spaces) ──
+        const allSymptoms = {{ all_symptoms | tojson }}.map(s => s.replace(/_/g, ' '));
 
-        if (!form) {
-            console.error('Form not found');
-            return;
+        const input = document.getElementById('symptoms');
+        const autocompleteList = document.getElementById('autocompleteList');
+        const resultDiv = document.getElementById('result');
+        const tags = document.querySelectorAll('.tag');
+
+        // ── Helper: get current symptoms as array ──
+        function getCurrentSymptoms() {
+            return input.value.split(',')
+                .map(s => s.trim())
+                .filter(s => s.length > 0);
         }
 
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+        // ── Helper: set symptoms array back to input ──
+        function setSymptoms(arr) {
+            input.value = arr.join(', ');
+        }
 
-            const symptoms = document.getElementById('symptoms').value.trim();
+        // ── Tag click — add/remove symptom ──
+        tags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                const sym = this.getAttribute('data-symptom');
+                let current = getCurrentSymptoms();
 
-            if (!symptoms) {
-                alert('Please enter at least one symptom.');
+                if (current.includes(sym)) {
+                    // Remove if already added
+                    current = current.filter(s => s !== sym);
+                    this.classList.remove('selected');
+                } else {
+                    // Add
+                    current.push(sym);
+                    this.classList.add('selected');
+                }
+                setSymptoms(current);
+                input.focus();
+            });
+        });
+
+        // ── Autocomplete while typing ──
+        input.addEventListener('input', function() {
+            const parts = this.value.split(',');
+            const lastPart = parts[parts.length - 1].trim().toLowerCase();
+
+            if (lastPart.length < 2) {
+                autocompleteList.style.display = 'none';
                 return;
             }
 
-            resultDiv.style.display = 'block';
-            resultDiv.innerHTML = '<p class="text-center text-muted">Analyzing symptoms...</p>';
+            const matches = allSymptoms.filter(s =>
+                s.toLowerCase().includes(lastPart)
+            ).slice(0, 8);
 
-            try {
-                const response = await fetch('/symptom', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ symptoms: symptoms })
-                });
+            if (matches.length === 0) {
+                autocompleteList.style.display = 'none';
+                return;
+            }
 
-                if (!response.ok) {
-                    throw new Error('Server returned ' + response.status);
+            autocompleteList.innerHTML = matches.map(m =>
+                `<div class="autocomplete-item" data-value="${m}">${m}</div>`
+            ).join('');
+            autocompleteList.style.display = 'block';
+        });
+
+        // ── Click autocomplete item ──
+        autocompleteList.addEventListener('click', function(e) {
+            const item = e.target.closest('.autocomplete-item');
+            if (!item) return;
+
+            const chosen = item.getAttribute('data-value');
+            const parts = input.value.split(',');
+            parts[parts.length - 1] = ' ' + chosen;
+            input.value = parts.join(',').replace(/^,\s*/, '') + ', ';
+            autocompleteList.style.display = 'none';
+            input.focus();
+
+            // Highlight matching tag if exists
+            tags.forEach(tag => {
+                if (tag.getAttribute('data-symptom') === chosen) {
+                    tag.classList.add('selected');
                 }
+            });
+        });
 
-                const result = await response.json();
-                console.log('Result:', result);
+        // ── Close autocomplete on outside click ──
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.symptom-wrapper')) {
+                autocompleteList.style.display = 'none';
+            }
+        });
 
-                if (result.error) {
-                    resultDiv.innerHTML = `<p class="text-danger">Error: ${result.details}</p>`;
+        // ── Form submit ──
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('healthForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const rawSymptoms = input.value.trim();
+                if (!rawSymptoms) {
+                    alert('Please enter at least one symptom.');
                     return;
                 }
 
-                const precautionItems = result.precautions
-                    .map(p => `<li>${p}</li>`).join('');
+                // Convert spaces back to underscores for the backend
+                const backendSymptoms = rawSymptoms
+                    .split(',')
+                    .map(s => s.trim().replace(/ /g, '_').toLowerCase())
+                    .filter(s => s.length > 0)
+                    .join(', ');
 
-                let doctorSection = '';
-                if (result.doctor_required === 'Yes') {
-                    if (result.available_doctors_count > 0) {
-                        doctorSection = `
-                            <hr>
-                            <h5>Recommended Specialist:
-                                <span style="color:#7c3aed">${result.recommended_specialty}</span>
-                            </h5>
-                            <p>${result.available_doctors_count} doctor(s) available.</p>
-                            <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
-                               class="btn btn-primary"
-                               style="background:#7c3aed;border-color:#7c3aed;">
-                               📅 Book Appointment
-                            </a>`;
-                    } else {
-                        doctorSection = `
-                            <hr>
-                            <h5>Recommended Specialist:
-                                <span style="color:#7c3aed">${result.recommended_specialty}</span>
-                            </h5>
-                            <p class="text-muted">No doctors currently available.
-                            Please contact us.</p>`;
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = '<p class="text-center text-muted py-3">Analyzing symptoms...</p>';
+
+                try {
+                    const response = await fetch('/symptom', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ symptoms: backendSymptoms })
+                    });
+
+                    if (!response.ok) throw new Error('Server error ' + response.status);
+
+                    const result = await response.json();
+                    console.log('Result:', result);
+
+                    if (result.error) {
+                        resultDiv.innerHTML = `<p class="text-danger">Error: ${result.details}</p>`;
+                        return;
                     }
+
+                    const precautionItems = result.precautions
+                        .map(p => `<li class="mb-1">${p}</li>`).join('');
+
+                    let doctorSection = '';
+                    if (result.doctor_required === 'Yes') {
+                        if (result.available_doctors_count > 0) {
+                            doctorSection = `
+                                <hr>
+                                <h6 style="font-weight:600;">Recommended Specialist</h6>
+                                <p style="color:#7c3aed;font-weight:600;">
+                                    ${result.recommended_specialty}
+                                </p>
+                                <p class="text-muted" style="font-size:13px;">
+                                    ${result.available_doctors_count} doctor(s) available
+                                </p>
+                                <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
+                                   class="btn btn-primary"
+                                   style="background:#7c3aed;border-color:#7c3aed;
+                                          border-radius:8px;font-weight:500;">
+                                   📅 Book Appointment
+                                </a>`;
+                        } else {
+                            doctorSection = `
+                                <hr>
+                                <h6 style="font-weight:600;">Recommended Specialist</h6>
+                                <p style="color:#7c3aed;font-weight:600;">
+                                    ${result.recommended_specialty}
+                                </p>
+                                <p class="text-muted" style="font-size:13px;">
+                                    No doctors currently available for this specialty.
+                                    Please contact us.
+                                </p>`;
+                        }
+                    }
+
+                    resultDiv.innerHTML = `
+                        <h5 style="font-weight:700;margin-bottom:16px;">
+                            Prediction Result
+                        </h5>
+                        <p>
+                            <strong>Predicted Disease:</strong>
+                            <span style="color:#7c3aed;font-weight:600;font-size:16px;">
+                                ${result.disease}
+                            </span>
+                        </p>
+                        <p>
+                            <strong>Doctor Required:</strong>
+                            <span class="badge badge-${result.doctor_required === 'Yes' ? 'danger' : 'success'}"
+                                  style="font-size:13px;">
+                                ${result.doctor_required}
+                            </span>
+                        </p>
+                        <strong>Precautions:</strong>
+                        <ul class="mt-2 mb-3">${precautionItems}</ul>
+                        ${doctorSection}
+                        <hr>
+                        <small class="text-muted">${result.note}</small>
+                        <br><br>
+                        <a href="/my-appointments"
+                           class="btn btn-sm btn-outline-secondary"
+                           style="border-radius:8px;">
+                            View my appointments
+                        </a>
+                    `;
+
+                } catch (err) {
+                    console.error(err);
+                    resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
                 }
-
-                resultDiv.innerHTML = `
-                    <h4>Prediction Result</h4>
-                    <p><strong>Predicted Disease:</strong>
-                        <span style="color:#7c3aed;font-weight:600">${result.disease}</span>
-                    </p>
-                    <p><strong>Doctor Required:</strong>
-                        <span class="badge badge-${result.doctor_required === 'Yes' ? 'danger' : 'success'}">
-                            ${result.doctor_required}
-                        </span>
-                    </p>
-                    <strong>Precautions:</strong>
-                    <ul class="mt-2">${precautionItems}</ul>
-                    ${doctorSection}
-                    <hr>
-                    <small class="text-muted">${result.note}</small>
-                    <br><br>
-                    <a href="/my-appointments"
-                       class="btn btn-sm btn-outline-secondary">
-                        View my appointments
-                    </a>
-                `;
-
-            } catch (err) {
-                console.error('Fetch error:', err);
-                resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
-            }
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
