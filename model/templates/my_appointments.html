@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Appointments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f2f2f2; padding: 30px; }
+        .card { border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body>
+<div class="container" style="max-width:800px;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 style="font-weight:600;">My Appointments</h2>
+        <a href="/" class="btn btn-sm btn-outline-secondary">Back to Home</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% if appointments %}
+    <div class="card">
+        <table class="table table-hover mb-0">
+            <thead style="background:#ede9fe;">
+                <tr>
+                    <th>#</th>
+                    <th>Doctor</th>
+                    <th>Specialty</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for apt in appointments %}
+                <tr>
+                    <td>{{ apt.id }}</td>
+                    <td>{{ apt.doctor.name }}</td>
+                    <td>{{ apt.doctor.specialty }}</td>
+                    <td>{{ apt.date }}</td>
+                    <td>{{ apt.time }}</td>
+                    <td>{{ apt.reason or '—' }}</td>
+                    <td>
+                        <span class="badge badge-{{
+                            'success' if apt.status == 'Approved'
+                            else 'danger' if apt.status == 'Rejected'
+                            else 'warning' }}">
+                            {{ apt.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="card p-4 text-center">
+        <p class="text-muted">You have no appointments yet.</p>
+        <a href="/symptom" class="btn btn-primary"
+           style="background:#7c3aed;border-color:#7c3aed;">
+           Check your symptoms
+        </a>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

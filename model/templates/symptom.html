@@ -3,83 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <title>Healthcare Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <style>
-        body { font-family: Arial, sans-serif; padding: 30px; background: #f2f2f2; }
-        h1 { text-align: center; }
-        form { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
-        input, textarea, select { width: 100%; padding: 10px; margin: 5px 0 15px 0; border-radius: 5px; border: 1px solid #ccc; }
-        button { padding: 10px 20px; border: none; border-radius: 5px; background: #4CAF50; color: white; cursor: pointer; }
-        button:hover { background: #45a049; }
-        #result { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f2f2f2; padding: 30px; }
+        h1 { text-align: center; margin-bottom: 24px; }
+        .form-card { max-width: 620px; margin: auto; background: white; padding: 28px; border-radius: 12px; box-shadow: 0 0 10px #ccc; }
+        #result { max-width: 620px; margin: 24px auto; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 0 10px #ccc; display: none; }
+        .precaution-list li { margin-bottom: 6px; }
+        .tag { display: inline-block; background: #ede9fe; color: #5b21b6; border-radius: 999px; padding: 3px 10px; font-size: 12px; margin: 3px; cursor: pointer; }
+        .tag:hover { background: #7c3aed; color: white; }
+        #symptom-hint { font-size: 12px; color: #888; margin-top: 4px; }
     </style>
 </head>
 <body>
     <h1>Healthcare Prediction</h1>
-    <form id="healthForm">
-        <label>Age:</label>
-        <input type="number" name="age" required>
 
-        <label>Gender:</label>
-        <select name="gender" required>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-            <option value="O">Other</option>
-        </select>
+    <div class="form-card">
+        <form id="healthForm">
+            <div class="form-group">
+                <label><strong>Enter your symptoms</strong></label>
+                <input type="text" class="form-control" id="symptoms" name="symptoms"
+                    placeholder="e.g. itching, skin_rash, fatigue" required>
+                <small id="symptom-hint">Separate multiple symptoms with commas. Use underscores for multi-word symptoms (e.g. skin_rash).</small>
+            </div>
 
-        <label>Height (cm):</label>
-        <input type="number" name="height" required>
+            <!-- Quick symptom tags -->
+            <div class="mb-3">
+                <small class="text-muted d-block mb-1">Common symptoms — click to add:</small>
+                {% set common = ['itching', 'fever', 'cough', 'fatigue', 'nausea', 'vomiting',
+                                 'chest_pain', 'headache', 'skin_rash', 'abdominal_pain',
+                                 'back_pain', 'chills', 'joint_pain', 'loss_of_appetite'] %}
+                {% for s in common %}
+                <span class="tag" onclick="addSymptom('{{ s }}')">{{ s.replace('_', ' ') }}</span>
+                {% endfor %}
+            </div>
 
-        <label>Weight (kg):</label>
-        <input type="number" name="weight" required>
-
-        <label>Previous Medical Conditions:</label>
-        <input type="text" name="previous_conditions" placeholder="e.g., Diabetes, Hypertension">
-
-        <label>Current Medical Conditions:</label>
-        <input type="text" name="current_conditions" placeholder="e.g., None, Fever">
-
-        <label>Symptoms:</label>
-        <textarea name="symptoms" placeholder="e.g., cough, sneezing" required></textarea>
-
-        <button type="submit">Predict</button>
-    </form>
+            <button type="submit" class="btn btn-block btn-primary"
+                style="background:#7c3aed;border-color:#7c3aed;">Predict</button>
+        </form>
+    </div>
 
     <div id="result"></div>
 
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('healthForm');
         const resultDiv = document.getElementById('result');
 
-        form.addEventListener('submit', async (e) => {
+        if (!form) {
+            console.error('Form not found');
+            return;
+        }
+
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
+            e.stopPropagation();
 
-            const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => data[key] = value);
+            const symptoms = document.getElementById('symptoms').value.trim();
 
-            resultDiv.innerHTML = "Predicting...";
+            if (!symptoms) {
+                alert('Please enter at least one symptom.');
+                return;
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '<p class="text-center text-muted">Analyzing symptoms...</p>';
 
             try {
-                const response = await fetch('http://127.0.0.1:5000//symptom', {
+                const response = await fetch('/symptom', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({ symptoms: symptoms })
                 });
 
+                if (!response.ok) {
+                    throw new Error('Server returned ' + response.status);
+                }
+
                 const result = await response.json();
+                console.log('Result:', result);
+
+                if (result.error) {
+                    resultDiv.innerHTML = `<p class="text-danger">Error: ${result.details}</p>`;
+                    return;
+                }
+
+                const precautionItems = result.precautions
+                    .map(p => `<li>${p}</li>`).join('');
+
+                let doctorSection = '';
+                if (result.doctor_required === 'Yes') {
+                    if (result.available_doctors_count > 0) {
+                        doctorSection = `
+                            <hr>
+                            <h5>Recommended Specialist:
+                                <span style="color:#7c3aed">${result.recommended_specialty}</span>
+                            </h5>
+                            <p>${result.available_doctors_count} doctor(s) available.</p>
+                            <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
+                               class="btn btn-primary"
+                               style="background:#7c3aed;border-color:#7c3aed;">
+                               📅 Book Appointment
+                            </a>`;
+                    } else {
+                        doctorSection = `
+                            <hr>
+                            <h5>Recommended Specialist:
+                                <span style="color:#7c3aed">${result.recommended_specialty}</span>
+                            </h5>
+                            <p class="text-muted">No doctors currently available.
+                            Please contact us.</p>`;
+                    }
+                }
 
                 resultDiv.innerHTML = `
-                    <h2>Prediction Result:</h2>
-                    <p><strong>Disease:</strong> ${result.disease}</p>
-                    <p><strong>Home Remedy:</strong> ${result.home_remedy}</p>
-                    <p><strong>Medicine:</strong> ${result.medicine}</p>
-                    <p><strong>Doctor Required:</strong> ${result.doctor_required}</p>
-                    <p><strong>Note:</strong> ${result.note}</p>
+                    <h4>Prediction Result</h4>
+                    <p><strong>Predicted Disease:</strong>
+                        <span style="color:#7c3aed;font-weight:600">${result.disease}</span>
+                    </p>
+                    <p><strong>Doctor Required:</strong>
+                        <span class="badge badge-${result.doctor_required === 'Yes' ? 'danger' : 'success'}">
+                            ${result.doctor_required}
+                        </span>
+                    </p>
+                    <strong>Precautions:</strong>
+                    <ul class="mt-2">${precautionItems}</ul>
+                    ${doctorSection}
+                    <hr>
+                    <small class="text-muted">${result.note}</small>
+                    <br><br>
+                    <a href="/my-appointments"
+                       class="btn btn-sm btn-outline-secondary">
+                        View my appointments
+                    </a>
                 `;
+
             } catch (err) {
-                resultDiv.innerHTML = "Error connecting to backend. Make sure Flask is running.";
+                console.error('Fetch error:', err);
+                resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
             }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
