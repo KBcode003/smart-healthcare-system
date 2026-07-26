@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Healthcare Prediction</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f2f2f2; padding: 30px; }
         h1 { text-align: center; margin-bottom: 24px; font-weight: 700; color: #3b0764; }
-        .form-card {
-            max-width: 680px; margin: auto; background: white;
-            padding: 28px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+        .form-card, #result {
+            max-width: 680px; margin: 0 auto 24px;
+            background: white; padding: 28px;
+            border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-        #result {
-            max-width: 680px; margin: 24px auto; padding: 24px;
-            background: white; border-radius: 14px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: none;
-        }
+        #result { display: none; }
+
         .tag {
             display: inline-block; background: #f5f3ff; color: #5b21b6;
             border: 1px solid #ede9fe; border-radius: 999px;
@@ -25,16 +24,16 @@
         }
         .tag:hover { background: #7c3aed; color: white; border-color: #7c3aed; }
         .tag.selected { background: #7c3aed; color: white; border-color: #7c3aed; }
-        #symptoms {
-            font-size: 14px;
-        }
+
         .autocomplete-list {
-            position: absolute; background: white; border: 1px solid #e5e7eb;
-            border-radius: 8px; z-index: 999; max-height: 200px;
-            overflow-y: auto; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: absolute; background: white;
+            border: 1px solid #e5e7eb; border-radius: 8px;
+            z-index: 999; max-height: 200px; overflow-y: auto;
+            width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .autocomplete-item {
-            padding: 8px 14px; font-size: 13px; cursor: pointer; color: #374151;
+            padding: 8px 14px; font-size: 13px;
+            cursor: pointer; color: #374151;
         }
         .autocomplete-item:hover { background: #f5f3ff; color: #7c3aed; }
         .symptom-wrapper { position: relative; }
@@ -43,19 +42,87 @@
             text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
         }
 
-        @media (max-width: 576px) {
-    body { padding: 16px; }
-    h1 { font-size: 22px; }
-    .form-card { padding: 20px 16px; }
-    #result { padding: 20px 16px; }
-    .tag { font-size: 11px; padding: 4px 10px; }
-}
+        /* ── Probability bars ── */
+        .disease-option {
+            border: 2px solid #e5e7eb; border-radius: 12px;
+            padding: 16px; margin-bottom: 12px;
+            transition: border-color .2s, box-shadow .2s;
+            cursor: default;
+        }
+        .disease-option.top { border-color: #7c3aed; box-shadow: 0 0 0 3px #ede9fe; }
+        .disease-option.confirmed {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px #d1fae5;
+            background: #f0fdf4;
+        }
+        .disease-name { font-weight: 600; font-size: 15px; color: #111827; }
+        .disease-name.top { color: #7c3aed; }
+        .disease-name.confirmed { color: #065f46; }
+        .prob-bar-wrap {
+            background: #f3f4f6; border-radius: 999px;
+            height: 8px; margin: 8px 0 4px; overflow: hidden;
+        }
+        .prob-bar {
+            height: 100%; border-radius: 999px;
+            background: #c4b5fd; transition: width .6s ease;
+        }
+        .prob-bar.top { background: #7c3aed; }
+        .prob-bar.confirmed { background: #10b981; }
+        .prob-label { font-size: 12px; color: #6b7280; }
+        .badge-top {
+            display: inline-block; background: #ede9fe; color: #5b21b6;
+            font-size: 11px; padding: 2px 10px; border-radius: 999px;
+            margin-left: 8px; font-weight: 500; vertical-align: middle;
+        }
+        .badge-confirmed {
+            display: inline-block; background: #d1fae5; color: #065f46;
+            font-size: 11px; padding: 2px 10px; border-radius: 999px;
+            margin-left: 8px; font-weight: 500; vertical-align: middle;
+        }
 
+        /* ── Refine prompt ── */
+        .refine-box {
+            background: #faf5ff; border: 1px solid #e9d5ff;
+            border-radius: 12px; padding: 20px; margin-top: 20px;
+        }
+        .refine-box label { font-weight: 600; color: #3b0764; }
+        .refine-box small { color: #7c3aed; }
+
+        /* ── Final result ── */
+        .result-header {
+            background: linear-gradient(135deg, #3b0764, #7c3aed);
+            color: white; border-radius: 10px; padding: 20px; margin-bottom: 20px;
+        }
+        .result-header h5 { color: white; font-weight: 700; margin-bottom: 4px; }
+        .result-header p { color: #e9d5ff; font-size: 13px; margin: 0; }
+
+        .btn-purple {
+            background: #7c3aed; color: #fff; border: none;
+            border-radius: 10px; padding: 10px 24px;
+            font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: background .15s;
+        }
+        .btn-purple:hover { background: #6d28d9; }
+        .btn-outline-purple {
+            background: transparent; color: #7c3aed;
+            border: 1.5px solid #7c3aed; border-radius: 10px;
+            padding: 10px 24px; font-size: 14px; font-weight: 600;
+            cursor: pointer; transition: all .15s;
+        }
+        .btn-outline-purple:hover { background: #7c3aed; color: #fff; }
+
+        @media (max-width: 576px) {
+            body { padding: 16px; }
+            h1 { font-size: 22px; }
+            .form-card, #result { padding: 20px 16px; }
+            .tag { font-size: 11px; padding: 4px 10px; }
+        }
     </style>
 </head>
 <body>
     <h1>🔍 Healthcare Prediction</h1>
 
+    <!-- ── Input form ── -->
     <div class="form-card">
         <form id="healthForm">
             <div class="form-group">
@@ -72,7 +139,6 @@
                 </small>
             </div>
 
-            <!-- Common symptom tags -->
             <div class="mb-4">
                 <div class="section-label">Common symptoms — click to add</div>
                 {% set common_symptoms = [
@@ -89,112 +155,377 @@
                 {% endfor %}
             </div>
 
-            <button type="submit" class="btn btn-block btn-primary"
-                style="background:#7c3aed;border-color:#7c3aed;
-                       border-radius:10px;font-weight:600;padding:12px;">
-                Predict
-            </button>
+            <button type="submit" class="btn-purple w-100">Predict</button>
         </form>
     </div>
 
+    <!-- ── Result area ── -->
     <div id="result"></div>
 
     <script>
-        // ── All symptoms from dataset (underscores replaced with spaces) ──
         const allSymptoms = {{ all_symptoms | tojson }}.map(s => s.replace(/_/g, ' '));
-
         const input = document.getElementById('symptoms');
         const autocompleteList = document.getElementById('autocompleteList');
         const resultDiv = document.getElementById('result');
         const tags = document.querySelectorAll('.tag');
 
-        // ── Helper: get current symptoms as array ──
+        // ── Track state ──
+        let initialSymptoms = [];
+        let stage = 'initial'; // 'initial' or 'final'
+
+        // ── Helpers ──
         function getCurrentSymptoms() {
-            return input.value.split(',')
-                .map(s => s.trim())
-                .filter(s => s.length > 0);
+            return input.value.split(',').map(s => s.trim()).filter(s => s.length > 0);
         }
 
-        // ── Helper: set symptoms array back to input ──
         function setSymptoms(arr) {
             input.value = arr.join(', ');
         }
 
-        // ── Tag click — add/remove symptom ──
+        function symptomsToBackend(raw) {
+            return raw.split(',')
+                .map(s => s.trim().replace(/ /g, '_').toLowerCase())
+                .filter(s => s.length > 0)
+                .join(', ');
+        }
+
+        function updateTagStates() {
+            const current = getCurrentSymptoms();
+            tags.forEach(tag => {
+                const sym = tag.getAttribute('data-symptom');
+                if (current.includes(sym)) {
+                    tag.classList.add('selected');
+                } else {
+                    tag.classList.remove('selected');
+                }
+            });
+        }
+
+        // ── Tag click ──
         tags.forEach(tag => {
             tag.addEventListener('click', function() {
                 const sym = this.getAttribute('data-symptom');
                 let current = getCurrentSymptoms();
-
                 if (current.includes(sym)) {
-                    // Remove if already added
                     current = current.filter(s => s !== sym);
-                    this.classList.remove('selected');
                 } else {
-                    // Add
                     current.push(sym);
-                    this.classList.add('selected');
                 }
                 setSymptoms(current);
+                updateTagStates();
                 input.focus();
             });
         });
 
-        // ── Autocomplete while typing ──
+        // ── Autocomplete ──
         input.addEventListener('input', function() {
+            updateTagStates();
             const parts = this.value.split(',');
             const lastPart = parts[parts.length - 1].trim().toLowerCase();
-
             if (lastPart.length < 2) {
                 autocompleteList.style.display = 'none';
                 return;
             }
-
-            const matches = allSymptoms.filter(s =>
-                s.toLowerCase().includes(lastPart)
-            ).slice(0, 8);
-
+            const matches = allSymptoms
+                .filter(s => s.toLowerCase().includes(lastPart))
+                .slice(0, 8);
             if (matches.length === 0) {
                 autocompleteList.style.display = 'none';
                 return;
             }
-
             autocompleteList.innerHTML = matches.map(m =>
                 `<div class="autocomplete-item" data-value="${m}">${m}</div>`
             ).join('');
             autocompleteList.style.display = 'block';
         });
 
-        // ── Click autocomplete item ──
         autocompleteList.addEventListener('click', function(e) {
             const item = e.target.closest('.autocomplete-item');
             if (!item) return;
-
             const chosen = item.getAttribute('data-value');
             const parts = input.value.split(',');
             parts[parts.length - 1] = ' ' + chosen;
             input.value = parts.join(',').replace(/^,\s*/, '') + ', ';
             autocompleteList.style.display = 'none';
             input.focus();
-
-            // Highlight matching tag if exists
-            tags.forEach(tag => {
-                if (tag.getAttribute('data-symptom') === chosen) {
-                    tag.classList.add('selected');
-                }
-            });
+            updateTagStates();
         });
 
-        // ── Close autocomplete on outside click ──
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.symptom-wrapper')) {
                 autocompleteList.style.display = 'none';
             }
         });
 
-        // ── Form submit ──
+        // ── Render probability bars ──
+        function renderTop3(top3, confirmedDisease = null) {
+            return top3.map((item, index) => {
+                const isTop = index === 0 && !confirmedDisease;
+                const isConfirmed = confirmedDisease &&
+                    item.disease.toLowerCase() === confirmedDisease.toLowerCase();
+                const cardClass = isConfirmed ? 'confirmed' :
+                                  (isTop ? 'top' : '');
+                const nameClass = isConfirmed ? 'confirmed' :
+                                  (isTop ? 'top' : '');
+                const barClass = isConfirmed ? 'confirmed' :
+                                 (isTop ? 'top' : '');
+                const badge = isConfirmed
+                    ? '<span class="badge-confirmed">✓ Best match</span>'
+                    : (isTop ? '<span class="badge-top">Most likely</span>' : '');
+
+                return `
+                <div class="disease-option ${cardClass}">
+                    <div class="disease-name ${nameClass}">
+                        ${item.disease} ${badge}
+                    </div>
+                    <div class="prob-bar-wrap">
+                        <div class="prob-bar ${barClass}"
+                             style="width: ${item.confidence}%"></div>
+                    </div>
+                    <div class="prob-label">${item.confidence}% probability</div>
+                </div>`;
+            }).join('');
+        }
+
+        // ── Initial result (1 symptom) ──
+        function showInitialResult(data) {
+            initialSymptoms = data.entered_symptoms;
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <h5 style="font-weight:700;margin-bottom:4px;">
+                    Possible conditions
+                </h5>
+                <p class="text-muted mb-4" style="font-size:13px;">
+                    Based on <strong>${initialSymptoms.map(s =>
+                        s.replace(/_/g, ' ')).join(', ')}</strong>
+                    — these are the most probable conditions.
+                    Add more symptoms to narrow down the diagnosis.
+                </p>
+
+                ${renderTop3(data.top3)}
+
+                <div class="refine-box mt-3">
+                    <label>Add more symptoms to refine the prediction</label>
+                    <small class="d-block mb-2">
+                        The more symptoms you add, the more accurate the result.
+                    </small>
+                    <div class="symptom-wrapper mb-2" style="position:relative;">
+                        <input type="text" class="form-control" id="refineInput"
+                            autocomplete="off"
+                            placeholder="e.g. fatigue, fever, nausea">
+                        <div class="autocomplete-list" id="refineAutocomplete"
+                             style="display:none;"></div>
+                    </div>
+                    <small class="text-muted d-block mb-3">
+                        Your original symptom (${initialSymptoms.map(s =>
+                            s.replace(/_/g, ' ')).join(', ')})
+                        will be included automatically.
+                    </small>
+                    <button class="btn-purple" onclick="refineSymptoms()">
+                        Refine diagnosis
+                    </button>
+                    <button class="btn-outline-purple ml-2"
+                            onclick="skipRefine('${data.top3[0].disease}')">
+                        Skip — use top result
+                    </button>
+                </div>
+            `;
+
+            // Setup autocomplete for refine input
+            setupRefineAutocomplete();
+        }
+
+        // ── Refine autocomplete ──
+        function setupRefineAutocomplete() {
+            const refineInput = document.getElementById('refineInput');
+            const refineAuto = document.getElementById('refineAutocomplete');
+            if (!refineInput) return;
+
+            refineInput.addEventListener('input', function() {
+                const parts = this.value.split(',');
+                const lastPart = parts[parts.length - 1].trim().toLowerCase();
+                if (lastPart.length < 2) {
+                    refineAuto.style.display = 'none';
+                    return;
+                }
+                const matches = allSymptoms
+                    .filter(s => s.toLowerCase().includes(lastPart))
+                    .slice(0, 8);
+                if (matches.length === 0) {
+                    refineAuto.style.display = 'none';
+                    return;
+                }
+                refineAuto.innerHTML = matches.map(m =>
+                    `<div class="autocomplete-item" data-value="${m}">${m}</div>`
+                ).join('');
+                refineAuto.style.display = 'block';
+            });
+
+            refineAuto.addEventListener('click', function(e) {
+                const item = e.target.closest('.autocomplete-item');
+                if (!item) return;
+                const chosen = item.getAttribute('data-value');
+                const parts = refineInput.value.split(',');
+                parts[parts.length - 1] = ' ' + chosen;
+                refineInput.value = parts.join(',').replace(/^,\s*/, '') + ', ';
+                refineAuto.style.display = 'none';
+                refineInput.focus();
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#refineInput') &&
+                    !e.target.closest('#refineAutocomplete')) {
+                    refineAuto.style.display = 'none';
+                }
+            });
+        }
+
+        // ── Refine with more symptoms ──
+        async function refineSymptoms() {
+            const refineInput = document.getElementById('refineInput');
+            const newSymptoms = refineInput.value.split(',')
+                .map(s => s.trim().replace(/ /g, '_').toLowerCase())
+                .filter(s => s.length > 0);
+
+            if (newSymptoms.length === 0) {
+                alert('Please enter at least one more symptom.');
+                return;
+            }
+
+            // Combine initial + new symptoms
+            const combined = [...new Set([...initialSymptoms, ...newSymptoms])];
+            const combinedStr = combined.join(', ');
+
+            // Update main input to show all symptoms
+            input.value = combined.map(s => s.replace(/_/g, ' ')).join(', ');
+            updateTagStates();
+
+            resultDiv.innerHTML = '<p class="text-center text-muted py-3">Refining prediction...</p>';
+
+            try {
+                const response = await fetch('/symptom', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ symptoms: combinedStr })
+                });
+                const result = await response.json();
+                if (result.error) {
+                    resultDiv.innerHTML = `<p class="text-danger">${result.error}</p>`;
+                    return;
+                }
+                showFinalResult(result, combined);
+            } catch (err) {
+                resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
+            }
+        }
+
+        // ── Skip refine — use top result directly ──
+        async function skipRefine(diseaseName) {
+            const combinedStr = initialSymptoms.join(', ');
+            resultDiv.innerHTML = '<p class="text-center text-muted py-3">Loading...</p>';
+            try {
+                const response = await fetch('/symptom', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ symptoms: combinedStr })
+                });
+                const result = await response.json();
+                showFinalResult(result, initialSymptoms);
+            } catch (err) {
+                resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
+            }
+        }
+
+        // ── Final result ──
+        function showFinalResult(result, usedSymptoms) {
+            const precautionItems = result.precautions
+                .map(p => `<li class="mb-1">${p}</li>`).join('');
+
+            let doctorSection = '';
+            if (result.doctor_required === 'Yes') {
+                if (result.available_doctors_count > 0) {
+                    doctorSection = `
+                        <hr>
+                        <h6 style="font-weight:600;">Recommended Specialist</h6>
+                        <p style="color:#7c3aed;font-weight:600;margin-bottom:4px;">
+                            ${result.recommended_specialty}
+                        </p>
+                        <p class="text-muted" style="font-size:13px;">
+                            ${result.available_doctors_count} doctor(s) available
+                        </p>
+                        <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
+                           class="btn-purple d-inline-block text-decoration-none">
+                           📅 Book Appointment
+                        </a>`;
+                } else {
+                    doctorSection = `
+                        <hr>
+                        <h6 style="font-weight:600;">Recommended Specialist</h6>
+                        <p style="color:#7c3aed;font-weight:600;">
+                            ${result.recommended_specialty}
+                        </p>
+                        <p class="text-muted" style="font-size:13px;">
+                            No doctors currently available. Please contact us.
+                        </p>`;
+                }
+            }
+
+            const symptomsUsed = usedSymptoms
+                .map(s => s.replace(/_/g, ' ')).join(', ');
+
+            resultDiv.innerHTML = `
+                <div class="result-header">
+                    <h5>Diagnosis Result</h5>
+                    <p>Based on: ${symptomsUsed}</p>
+                </div>
+
+                <p style="font-size:13px;color:#6b7280;margin-bottom:12px;">
+                    Probabilities among top conditions:
+                </p>
+                ${renderTop3(result.top3, result.disease)}
+
+                <hr>
+                <p>
+                    <strong>Doctor Required:</strong>
+                    <span class="badge badge-${result.doctor_required === 'Yes'
+                        ? 'danger' : 'success'}" style="font-size:13px;">
+                        ${result.doctor_required}
+                    </span>
+                </p>
+                <strong>Precautions:</strong>
+                <ul class="mt-2 mb-3">${precautionItems}</ul>
+                ${doctorSection}
+                <hr>
+                <small class="text-muted">${result.note}</small>
+                <br><br>
+                <button class="btn-outline-purple"
+                        onclick="resetForm()">
+                    Start new assessment
+                </button>
+                <a href="/my-appointments"
+                   class="btn btn-sm btn-outline-secondary ml-2"
+                   style="border-radius:8px;">
+                    My appointments
+                </a>
+            `;
+        }
+
+        // ── Reset ──
+        function resetForm() {
+            input.value = '';
+            updateTagStates();
+            resultDiv.style.display = 'none';
+            resultDiv.innerHTML = '';
+            stage = 'initial';
+            initialSymptoms = [];
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ── Main form submit ──
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('healthForm').addEventListener('submit', async function(e) {
+            document.getElementById('healthForm')
+                .addEventListener('submit', async function(e) {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -204,101 +535,50 @@
                     return;
                 }
 
-                // Convert spaces back to underscores for the backend
-                const backendSymptoms = rawSymptoms
-                    .split(',')
-                    .map(s => s.trim().replace(/ /g, '_').toLowerCase())
-                    .filter(s => s.length > 0)
-                    .join(', ');
+                const backendSymptoms = symptomsToBackend(rawSymptoms);
+                const symptomCount = backendSymptoms.split(',')
+                    .filter(s => s.trim()).length;
 
                 resultDiv.style.display = 'block';
-                resultDiv.innerHTML = '<p class="text-center text-muted py-3">Analyzing symptoms...</p>';
+                resultDiv.innerHTML =
+                    '<p class="text-center text-muted py-3">Analyzing symptoms...</p>';
 
                 try {
-                    const response = await fetch('/symptom', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ symptoms: backendSymptoms })
-                    });
-
-                    if (!response.ok) throw new Error('Server error ' + response.status);
-
-                    const result = await response.json();
-                    console.log('Result:', result);
-
-                    if (result.error) {
-                        resultDiv.innerHTML = `<p class="text-danger">Error: ${result.details}</p>`;
-                        return;
-                    }
-
-                    const precautionItems = result.precautions
-                        .map(p => `<li class="mb-1">${p}</li>`).join('');
-
-                    let doctorSection = '';
-                    if (result.doctor_required === 'Yes') {
-                        if (result.available_doctors_count > 0) {
-                            doctorSection = `
-                                <hr>
-                                <h6 style="font-weight:600;">Recommended Specialist</h6>
-                                <p style="color:#7c3aed;font-weight:600;">
-                                    ${result.recommended_specialty}
-                                </p>
-                                <p class="text-muted" style="font-size:13px;">
-                                    ${result.available_doctors_count} doctor(s) available
-                                </p>
-                                <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
-                                   class="btn btn-primary"
-                                   style="background:#7c3aed;border-color:#7c3aed;
-                                          border-radius:8px;font-weight:500;">
-                                   📅 Book Appointment
-                                </a>`;
-                        } else {
-                            doctorSection = `
-                                <hr>
-                                <h6 style="font-weight:600;">Recommended Specialist</h6>
-                                <p style="color:#7c3aed;font-weight:600;">
-                                    ${result.recommended_specialty}
-                                </p>
-                                <p class="text-muted" style="font-size:13px;">
-                                    No doctors currently available for this specialty.
-                                    Please contact us.
-                                </p>`;
+                    if (symptomCount === 1) {
+                        // Single symptom — show top 3 + ask for more
+                        const response = await fetch('/symptom/initial', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ symptoms: backendSymptoms })
+                        });
+                        const result = await response.json();
+                        if (result.error) {
+                            resultDiv.innerHTML =
+                                `<p class="text-danger">${result.error}</p>`;
+                            return;
                         }
+                        showInitialResult(result);
+                    } else {
+                        // Multiple symptoms — go straight to final result
+                        const response = await fetch('/symptom', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ symptoms: backendSymptoms })
+                        });
+                        const result = await response.json();
+                        if (result.error) {
+                            resultDiv.innerHTML =
+                                `<p class="text-danger">${result.error}</p>`;
+                            return;
+                        }
+                        const entered = backendSymptoms.split(',')
+                            .map(s => s.trim()).filter(s => s);
+                        showFinalResult(result, entered);
                     }
-
-                    resultDiv.innerHTML = `
-                        <h5 style="font-weight:700;margin-bottom:16px;">
-                            Prediction Result
-                        </h5>
-                        <p>
-                            <strong>Predicted Disease:</strong>
-                            <span style="color:#7c3aed;font-weight:600;font-size:16px;">
-                                ${result.disease}
-                            </span>
-                        </p>
-                        <p>
-                            <strong>Doctor Required:</strong>
-                            <span class="badge badge-${result.doctor_required === 'Yes' ? 'danger' : 'success'}"
-                                  style="font-size:13px;">
-                                ${result.doctor_required}
-                            </span>
-                        </p>
-                        <strong>Precautions:</strong>
-                        <ul class="mt-2 mb-3">${precautionItems}</ul>
-                        ${doctorSection}
-                        <hr>
-                        <small class="text-muted">${result.note}</small>
-                        <br><br>
-                        <a href="/my-appointments"
-                           class="btn btn-sm btn-outline-secondary"
-                           style="border-radius:8px;">
-                            View my appointments
-                        </a>
-                    `;
-
                 } catch (err) {
                     console.error(err);
-                    resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
+                    resultDiv.innerHTML =
+                        `<p class="text-danger">Error: ${err.message}</p>`;
                 }
             });
         });

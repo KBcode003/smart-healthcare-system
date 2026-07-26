@@ -151,7 +151,6 @@ def logout():
     return redirect(url_for('auth.login'))
 
 # ── Symptom assessment ─────────────────────────────────────────────────────────
-
 @auth.route('/symptom')
 @login_required
 def symptom():
@@ -164,6 +163,47 @@ def symptom():
     all_symptoms = sorted(list(all_symptoms))
     return render_template('symptom.html', all_symptoms=all_symptoms)
 
+
+# ── NEW: initial check for single symptom ──────────────────────────
+@auth.route("/symptom/initial", methods=["POST"])
+@login_required
+def analyze_initial():
+    try:
+        req = request.json
+        symptoms_input = req.get("symptoms", "").lower().strip()
+        entered = [
+            s.strip().replace(' ', '_')
+            for s in symptoms_input.split(',')
+            if s.strip()
+        ]
+
+        if not entered:
+            return jsonify({"error": "Please enter at least one symptom."})
+
+        X_input = mlb.transform([entered])
+        proba = model.predict_proba(X_input)[0]
+
+        top3_indices = proba.argsort()[-3:][::-1]
+        top3 = [
+            {
+                "disease": label_encoder.classes_[i].strip(),
+                "confidence": round(float(proba[i]) * 100, 1)
+            }
+            for i in top3_indices
+            if proba[i] > 0.01
+        ]
+
+        return jsonify({
+            "stage": "initial",
+            "top3": top3,
+            "entered_symptoms": entered
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+
+# ── UPDATED: full prediction with top3 + precautions ───────────────
 @auth.route("/symptom", methods=["POST"])
 @login_required
 def analyze():
@@ -175,10 +215,24 @@ def analyze():
             for s in symptoms_input.split(',')
             if s.strip()
         ]
+
+        if not entered:
+            return jsonify({"error": "Please enter at least one symptom."})
+
         X_input = mlb.transform([entered])
-        pred = model.predict(X_input)
-        disease_name = label_encoder.inverse_transform(pred)[0]
-        disease_clean = disease_name.strip()
+        proba = model.predict_proba(X_input)[0]
+
+        top3_indices = proba.argsort()[-3:][::-1]
+        top3 = [
+            {
+                "disease": label_encoder.classes_[i].strip(),
+                "confidence": round(float(proba[i]) * 100, 1)
+            }
+            for i in top3_indices
+            if proba[i] > 0.01
+        ]
+
+        disease_clean = top3[0]["disease"]
 
         pre_row = pre_df[pre_df['Disease'] == disease_clean]
         if not pre_row.empty:
@@ -192,19 +246,21 @@ def analyze():
 
         doctor_required = "Yes" if disease_clean in HIGH_SEVERITY else "No"
         specialty = DISEASE_SPECIALTY_MAP.get(disease_clean, "General Physician")
-
         available_count = Doctor.query.filter_by(
             specialty=specialty, available=True
         ).count()
 
         return jsonify({
+            "stage": "final",
             "disease": disease_clean,
+            "top3": top3,
             "precautions": precautions,
             "doctor_required": doctor_required,
             "recommended_specialty": specialty,
             "available_doctors_count": available_count,
             "note": "Predicted using ML trained on a real symptom dataset."
         })
+
     except Exception as e:
         return jsonify({"error": "Something went wrong", "details": str(e)})
 
