@@ -23,6 +23,173 @@ except Exception as e:
     print("❌ Error loading models:", e)
     exit(1)
 
+DISEASE_INFO = {
+    "GERD": {
+        "simple_name": "Acid Reflux",
+        "description": "Your stomach acid flows back into your food pipe causing heartburn and discomfort."
+    },
+    "Impetigo": {
+        "simple_name": "Skin Infection (Impetigo)",
+        "description": "A highly contagious bacterial skin infection causing red sores that burst and form a crust."
+    },
+    "Dimorphic hemmorhoids(piles)": {
+        "simple_name": "Piles (Hemorrhoids)",
+        "description": "Swollen veins in the lower rectum causing pain, bleeding, or discomfort during bowel movements."
+    },
+    "Cervical spondylosis": {
+        "simple_name": "Neck Joint Wear (Cervical Spondylosis)",
+        "description": "Age-related wear on the neck joints causing pain, stiffness, and sometimes numbness in arms."
+    },
+    "Osteoarthristis": {
+        "simple_name": "Joint Pain (Osteoarthritis)",
+        "description": "Cartilage in your joints breaks down causing pain and stiffness, commonly in knees and hips."
+    },
+    "Paralysis (brain hemorrhage)": {
+        "simple_name": "Brain Stroke / Paralysis",
+        "description": "Bleeding in the brain causing sudden weakness or loss of movement in parts of the body."
+    },
+    "(vertigo) Paroymsal  Positional Vertigo": {
+        "simple_name": "Vertigo (Dizziness Disorder)",
+        "description": "A condition causing sudden spinning sensations and dizziness triggered by head movements."
+    },
+    "Peptic ulcer diseae": {
+        "simple_name": "Stomach Ulcer",
+        "description": "Open sores in the lining of your stomach or small intestine causing burning pain and nausea."
+    },
+    "Chronic cholestasis": {
+        "simple_name": "Bile Flow Problem",
+        "description": "A condition where bile cannot flow properly from the liver causing itching and yellowing of skin."
+    },
+    "Alcoholic hepatitis": {
+        "simple_name": "Liver Inflammation (Alcohol-related)",
+        "description": "Inflammation of the liver caused by heavy alcohol use, causing yellowing of skin and pain."
+    },
+    "Bronchial Asthma": {
+        "simple_name": "Asthma",
+        "description": "A condition where airways narrow and swell making it hard to breathe, causing wheezing and coughing."
+    },
+    "Varicose veins": {
+        "simple_name": "Swollen Veins",
+        "description": "Twisted and enlarged veins usually in the legs causing aching pain and visible bulging."
+    },
+    "Hypoglycemia": {
+        "simple_name": "Low Blood Sugar",
+        "description": "Blood sugar drops too low causing dizziness, shakiness, sweating, and confusion."
+    },
+    "Hypothyroidism": {
+        "simple_name": "Underactive Thyroid",
+        "description": "Your thyroid gland does not produce enough hormones causing fatigue, weight gain, and cold sensitivity."
+    },
+    "Hyperthyroidism": {
+        "simple_name": "Overactive Thyroid",
+        "description": "Your thyroid produces too many hormones causing rapid heartbeat, weight loss, and anxiety."
+    },
+    "Fungal infection": {
+        "simple_name": "Fungal Skin Infection",
+        "description": "A common skin infection caused by fungi causing itching, redness, and rash in affected areas."
+    },
+    "Urinary tract infection": {
+        "simple_name": "Urine Infection (UTI)",
+        "description": "A bacterial infection in the urinary system causing burning sensation while urinating and frequent urge to urinate."
+    },
+    "hepatitis A": {
+        "simple_name": "Hepatitis A (Liver Infection)",
+        "description": "A viral liver infection spread through contaminated food or water causing jaundice and fatigue."
+    },
+    "Hepatitis B": {
+        "simple_name": "Hepatitis B (Liver Infection)",
+        "description": "A serious viral liver infection spread through blood or body fluids that can become chronic."
+    },
+    "Hepatitis C": {
+        "simple_name": "Hepatitis C (Liver Infection)",
+        "description": "A viral infection that attacks the liver spread through blood contact, often causing long-term damage."
+    },
+    "Hepatitis D": {
+        "simple_name": "Hepatitis D (Liver Infection)",
+        "description": "A liver infection that only occurs alongside Hepatitis B, making it more severe."
+    },
+    "Hepatitis E": {
+        "simple_name": "Hepatitis E (Liver Infection)",
+        "description": "A liver infection caused by contaminated water, common in areas with poor sanitation."
+    },
+    "Dengue": {
+        "simple_name": "Dengue Fever",
+        "description": "A mosquito-borne viral fever causing high temperature, severe joint pain, and rash."
+    },
+    "Malaria": {
+        "simple_name": "Malaria",
+        "description": "A mosquito-borne disease causing recurring fever, chills, and flu-like symptoms."
+    },
+    "Typhoid": {
+        "simple_name": "Typhoid Fever",
+        "description": "A bacterial infection from contaminated food or water causing prolonged fever and stomach pain."
+    },
+    "Tuberculosis": {
+        "simple_name": "TB (Tuberculosis)",
+        "description": "A serious bacterial infection mainly affecting the lungs causing persistent cough, weight loss, and night sweats."
+    },
+    "AIDS": {
+        "simple_name": "AIDS (HIV)",
+        "description": "A condition caused by HIV virus that weakens the immune system making the body vulnerable to infections."
+    },
+    "Pneumonia": {
+        "simple_name": "Lung Infection (Pneumonia)",
+        "description": "An infection that inflames air sacs in the lungs causing cough with phlegm, fever, and difficulty breathing."
+    },
+    "Heart attack": {
+        "simple_name": "Heart Attack",
+        "description": "Blood flow to the heart is blocked causing chest pain, shortness of breath, and requires immediate medical attention."
+    },
+    "Hypertension ": {
+        "simple_name": "High Blood Pressure",
+        "description": "Blood pressure is consistently too high putting strain on the heart and blood vessels."
+    },
+    "Diabetes ": {
+        "simple_name": "Diabetes",
+        "description": "Your body cannot properly regulate blood sugar levels causing frequent urination, thirst, and fatigue."
+    },
+    "Migraine": {
+        "simple_name": "Migraine",
+        "description": "Intense recurring headaches often with nausea and sensitivity to light and sound."
+    },
+    "Allergy": {
+        "simple_name": "Allergy",
+        "description": "Your immune system reacts to harmless substances like pollen or dust causing sneezing, rash, or itchy eyes."
+    },
+    "Common Cold": {
+        "simple_name": "Common Cold",
+        "description": "A viral infection of the nose and throat causing runny nose, sneezing, and mild fever."
+    },
+    "Chicken pox": {
+        "simple_name": "Chickenpox",
+        "description": "A highly contagious viral infection causing itchy blisters all over the body, common in children."
+    },
+    "Acne": {
+        "simple_name": "Acne (Pimples)",
+        "description": "Skin condition where hair follicles get clogged with oil and dead skin causing pimples and blackheads."
+    },
+    "Psoriasis": {
+        "simple_name": "Psoriasis (Skin Condition)",
+        "description": "A skin condition causing red, flaky patches covered in silvery scales, often on elbows and knees."
+    },
+    "Gastroenteritis": {
+        "simple_name": "Stomach Flu",
+        "description": "Inflammation of the stomach and intestines causing vomiting, diarrhea, and stomach cramps."
+    },
+    "Arthritis": {
+        "simple_name": "Joint Inflammation (Arthritis)",
+        "description": "Inflammation in one or more joints causing pain, swelling, and stiffness."
+    },
+    "Drug Reaction": {
+        "simple_name": "Medicine Side Effect / Reaction",
+        "description": "An unwanted reaction your body has to a medication causing rash, itching, or other symptoms."
+    },
+    "Jaundice": {
+        "simple_name": "Jaundice (Yellow Skin)",
+        "description": "A condition causing yellowing of the skin and eyes due to high levels of bilirubin in the blood."
+    },
+}
+
 # ── Specialty mapping ──────────────────────────────────────────────────────────
 DISEASE_SPECIALTY_MAP = {
     "Fungal infection": "Dermatologist",
@@ -73,6 +240,16 @@ HIGH_SEVERITY = [
     "Tuberculosis", "Hepatitis B", "Hepatitis C", "Hepatitis D",
     "Hepatitis E", "Dengue", "Malaria", "Typhoid", "Pneumonia",
     "Alcoholic hepatitis"
+]
+
+MEDIUM_SEVERITY = [
+    "Diabetes ", "Hypertension ", "Bronchial Asthma",
+    "Hypothyroidism", "Hyperthyroidism", "Migraine",
+    "Varicose veins", "Jaundice", "hepatitis A",
+    "Hepatitis E", "Urinary tract infection", "GERD",
+    "Chronic cholestasis", "Peptic ulcer diseae",
+    "Cervical spondylosis", "Gastroenteritis",
+    "Chicken pox", "Psoriasis", "Impetigo"
 ]
 
 # ── Patient auth routes ────────────────────────────────────────────────────────
@@ -151,6 +328,7 @@ def logout():
     return redirect(url_for('auth.login'))
 
 # ── Symptom assessment ─────────────────────────────────────────────────────────
+
 @auth.route('/symptom')
 @login_required
 def symptom():
@@ -164,7 +342,6 @@ def symptom():
     return render_template('symptom.html', all_symptoms=all_symptoms)
 
 
-# ── NEW: initial check for single symptom ──────────────────────────
 @auth.route("/symptom/initial", methods=["POST"])
 @login_required
 def analyze_initial():
@@ -193,17 +370,20 @@ def analyze_initial():
             if proba[i] > 0.01
         ]
 
+        disease_info = DISEASE_INFO.get(top3[0]["disease"], {})
+
         return jsonify({
             "stage": "initial",
             "top3": top3,
-            "entered_symptoms": entered
+            "entered_symptoms": entered,
+            "simple_name": disease_info.get("simple_name", top3[0]["disease"]),
+            "description": disease_info.get("description", "")
         })
 
     except Exception as e:
         return jsonify({"error": str(e)})
 
 
-# ── UPDATED: full prediction with top3 + precautions ───────────────
 @auth.route("/symptom", methods=["POST"])
 @login_required
 def analyze():
@@ -233,6 +413,19 @@ def analyze():
         ]
 
         disease_clean = top3[0]["disease"]
+        disease_info = DISEASE_INFO.get(disease_clean, {})
+        simple_name = disease_info.get("simple_name", disease_clean)
+        description = disease_info.get("description", "")
+
+        if disease_clean in HIGH_SEVERITY:
+            severity = "High"
+            severity_note = "Please see a doctor as soon as possible."
+        elif disease_clean in MEDIUM_SEVERITY:
+            severity = "Medium"
+            severity_note = "Consider consulting a doctor within a few days."
+        else:
+            severity = "Low"
+            severity_note = "This can likely be managed at home with precautions."
 
         pre_row = pre_df[pre_df['Disease'] == disease_clean]
         if not pre_row.empty:
@@ -244,7 +437,6 @@ def analyze():
         else:
             precautions = ["Consult a doctor for proper diagnosis"]
 
-        doctor_required = "Yes" if disease_clean in HIGH_SEVERITY else "No"
         specialty = DISEASE_SPECIALTY_MAP.get(disease_clean, "General Physician")
         available_count = Doctor.query.filter_by(
             specialty=specialty, available=True
@@ -253,9 +445,12 @@ def analyze():
         return jsonify({
             "stage": "final",
             "disease": disease_clean,
+            "simple_name": simple_name,
+            "description": description,
             "top3": top3,
+            "severity": severity,
+            "severity_note": severity_note,
             "precautions": precautions,
-            "doctor_required": doctor_required,
             "recommended_specialty": specialty,
             "available_doctors_count": available_count,
             "note": "Predicted using ML trained on a real symptom dataset."
@@ -273,14 +468,14 @@ def book_appointment(specialty):
 
     if request.method == 'POST':
         doctor_id = request.form.get('doctor_id')
-        appointment_date = request.form.get('date')      # ← renamed
-        appointment_time = request.form.get('time')      # ← renamed for consistency
+        appointment_date = request.form.get('date')
+        appointment_time = request.form.get('time')
         reason = request.form.get('reason')
 
         existing = Appointment.query.filter_by(
             doctor_id=doctor_id,
-            date=appointment_date,                      
-            time=appointment_time                       
+            date=appointment_date,
+            time=appointment_time
         ).filter(Appointment.status != 'Rejected').first()
 
         if existing:
@@ -289,8 +484,8 @@ def book_appointment(specialty):
             appointment = Appointment(
                 patient_id=current_user.id,
                 doctor_id=int(doctor_id),
-                date=appointment_date,                   
-                time=appointment_time,                  
+                date=appointment_date,
+                time=appointment_time,
                 reason=reason,
                 status='Pending'
             )
@@ -302,7 +497,7 @@ def book_appointment(specialty):
     return render_template('book_appointment.html',
                            doctors=doctors,
                            specialty=specialty,
-                           today=date.today().isoformat())  
+                           today=date.today().isoformat())
 
 @auth.route('/my-appointments')
 @login_required
@@ -383,40 +578,82 @@ def admin_login():
             flash('Incorrect admin password.', category='error')
     return render_template('admin_login.html')
 
-@auth.route('/admin/portal', methods=['GET', 'POST'])
+@auth.route('/admin/portal')
 def admin_portal():
+    if not session.get('is_admin'):
+        return redirect(url_for('auth.admin_login'))
+    total_patients = User.query.count()
+    total_doctors = Doctor.query.count()
+    total_appointments = Appointment.query.count()
+    pending = Appointment.query.filter_by(status='Pending').count()
+    return render_template('admin_portal.html',
+                           total_patients=total_patients,
+                           total_doctors=total_doctors,
+                           total_appointments=total_appointments,
+                           pending=pending)
+
+@auth.route('/admin/doctors')
+def admin_doctors():
+    if not session.get('is_admin'):
+        return redirect(url_for('auth.admin_login'))
+    doctors = Doctor.query.all()
+    return render_template('admin_doctors.html', doctors=doctors)
+
+@auth.route('/admin/add-doctor', methods=['GET', 'POST'])
+def admin_add_doctor():
     if not session.get('is_admin'):
         return redirect(url_for('auth.admin_login'))
     if request.method == 'POST':
         name = request.form.get('name')
-        specialty = request.form.get('specialty')
         email = request.form.get('email')
         password = request.form.get('password')
+        specialty = request.form.get('specialty')
+        qualification = request.form.get('qualification')
+        experience = request.form.get('experience')
+        phone = request.form.get('phone')
+        fee = request.form.get('fee')
+        available_days = request.form.get('available_days')
+        bio = request.form.get('bio')
+
         existing = Doctor.query.filter_by(email=email).first()
         if existing:
             flash('A doctor with that email already exists.', category='error')
         else:
             new_doctor = Doctor(
                 name=name,
-                specialty=specialty,
                 email=email,
-                password=generate_password_hash(password, method="pbkdf2:sha256")
+                password=generate_password_hash(
+                    password, method="pbkdf2:sha256"),
+                specialty=specialty,
+                qualification=qualification,
+                experience=int(experience) if experience else 0,
+                phone=phone,
+                fee=int(fee) if fee else 0,
+                available_days=available_days,
+                bio=bio,
+                available=True
             )
             db.session.add(new_doctor)
             db.session.commit()
             flash('Doctor added successfully!', category='success')
-    patients = User.query.all()
-    doctors = Doctor.query.all()
-    all_appointments = Appointment.query.order_by(Appointment.id.desc()).all()
-    return render_template('admin_portal.html',
-                           patients=patients,
-                           doctors=doctors,
-                           all_appointments=all_appointments)
+            return redirect(url_for('auth.admin_doctors'))
+    return render_template('admin_add_doctor.html')
 
-@auth.route('/admin/logout')
-def admin_logout():
-    session.pop('is_admin', None)
-    return redirect(url_for('auth.admin_login'))
+@auth.route('/admin/patients')
+def admin_patients():
+    if not session.get('is_admin'):
+        return redirect(url_for('auth.admin_login'))
+    patients = User.query.all()
+    return render_template('admin_patients.html', patients=patients)
+
+@auth.route('/admin/appointments')
+def admin_appointments():
+    if not session.get('is_admin'):
+        return redirect(url_for('auth.admin_login'))
+    appointments = Appointment.query.order_by(
+        Appointment.id.desc()).all()
+    return render_template('admin_appointments.html',
+                           appointments=appointments)
 
 @auth.route('/admin/delete_doctor/<int:doctor_id>')
 def delete_doctor(doctor_id):
@@ -426,4 +663,9 @@ def delete_doctor(doctor_id):
     db.session.delete(doctor)
     db.session.commit()
     flash('Doctor removed.', category='success')
-    return redirect(url_for('auth.admin_portal'))
+    return redirect(url_for('auth.admin_doctors'))
+
+@auth.route('/admin/logout')
+def admin_logout():
+    session.pop('is_admin', None)
+    return redirect(url_for('auth.admin_login'))

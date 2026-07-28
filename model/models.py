@@ -11,9 +11,15 @@ class User(db.Model, UserMixin):
 class Doctor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
-    specialty = db.Column(db.String(150))
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
+    specialty = db.Column(db.String(150))
+    qualification = db.Column(db.String(150))
+    experience = db.Column(db.Integer)
+    phone = db.Column(db.String(20))
+    fee = db.Column(db.Integer)
+    available_days = db.Column(db.String(100))
+    bio = db.Column(db.String(500))
     available = db.Column(db.Boolean, default=True)
     appointments = db.relationship('Appointment', backref='doctor', lazy=True)
 

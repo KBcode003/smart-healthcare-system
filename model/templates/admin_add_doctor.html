@@ -1,0 +1,133 @@
+{% extends "admin_base.html" %}
+{% block title %}Add Doctor{% endblock %}
+
+{% block body %}
+<div class="page-header">
+    <h2>Add Doctor</h2>
+    <a href="{{ url_for('auth.admin_doctors') }}"
+       class="btn btn-sm btn-outline-secondary"
+       style="border-radius:8px;">
+        ← Back to Doctors
+    </a>
+</div>
+
+<div class="page-body">
+    <div class="section-card" style="max-width:700px;">
+        <form method="POST">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">Full Name</label>
+                        <input type="text" class="form-control" name="name"
+                               placeholder="Dr. John Smith" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">Email</label>
+                        <input type="email" class="form-control" name="email"
+                               placeholder="doctor@email.com" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">Login Password</label>
+                        <input type="text" class="form-control" name="password"
+                               placeholder="Set a login password" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">Phone Number</label>
+                        <input type="text" class="form-control" name="phone"
+                               placeholder="98XXXXXXXX">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">Specialty</label>
+                        <select class="form-control" name="specialty" required>
+                            <option value="">Select specialty</option>
+                            <option>General Physician</option>
+                            <option>Cardiologist</option>
+                            <option>Dermatologist</option>
+                            <option>ENT Specialist</option>
+                            <option>Gastroenterologist</option>
+                            <option>Infectious Disease Specialist</option>
+                            <option>Neurologist</option>
+                            <option>Orthopedic Specialist</option>
+                            <option>Pulmonologist</option>
+                            <option>Urologist</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">Qualification</label>
+                        <input type="text" class="form-control" name="qualification"
+                               placeholder="e.g. MBBS, MD, MS">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">Years of Experience</label>
+                        <input type="number" class="form-control" name="experience"
+                               placeholder="e.g. 10" min="0">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label style="font-weight:600;">
+                            Consultation Fee (NPR)
+                        </label>
+                        <input type="number" class="form-control" name="fee"
+                               placeholder="e.g. 1000" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:600;">Available Days</label>
+                <select class="form-control" name="available_days">
+                    <option>Monday - Friday</option>
+                    <option>Monday - Saturday</option>
+                    <option>Sunday - Friday</option>
+                    <option>Weekdays only</option>
+                    <option>All days</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:600;">Bio / About</label>
+                <textarea class="form-control" name="bio" rows="3"
+                    placeholder="Brief description of the doctor's background and expertise">
+                </textarea>
+            </div>
+
+            <div class="d-flex gap-2" style="gap:12px;">
+                <button type="submit" class="btn btn-primary"
+                    style="background:#7c3aed;border-color:#7c3aed;
+                           border-radius:8px;font-weight:600;padding:10px 28px;">
+                    Add Doctor
+                </button>
+                <a href="{{ url_for('auth.admin_doctors') }}"
+                   class="btn btn-outline-secondary"
+                   style="border-radius:8px;padding:10px 20px;">
+                    Cancel
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

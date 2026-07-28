@@ -1,0 +1,117 @@
+{% extends "admin_base.html" %}
+{% block title %}Doctors{% endblock %}
+
+{% block body %}
+<div class="page-header">
+    <h2>Doctors ({{ doctors|length }})</h2>
+    <a href="{{ url_for('auth.admin_add_doctor') }}"
+       class="btn btn-primary"
+       style="background:#7c3aed;border-color:#7c3aed;
+              border-radius:8px;font-weight:600;">
+        + Add Doctor
+    </a>
+</div>
+
+<div class="page-body">
+    {% if doctors %}
+    <div class="row">
+        {% for doctor in doctors %}
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="section-card h-100 d-flex flex-column">
+
+                <!-- Header -->
+                <div style="display:flex;align-items:center;
+                            gap:14px;margin-bottom:16px;">
+                    <div style="width:52px;height:52px;border-radius:50%;
+                                background:#ede9fe;display:flex;
+                                align-items:center;justify-content:center;
+                                font-size:22px;flex-shrink:0;">
+                        👨‍⚕️
+                    </div>
+                    <div>
+                        <div style="font-weight:700;font-size:15px;
+                                    color:#1f0a3c;">
+                            {{ doctor.name }}
+                        </div>
+                        <div style="font-size:13px;color:#7c3aed;
+                                    font-weight:500;">
+                            {{ doctor.specialty }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info rows -->
+                <div style="font-size:13px;color:#374151;flex:1;">
+                    {% if doctor.qualification %}
+                    <div class="mb-1">
+                        🎓 <strong>Qualification:</strong>
+                        {{ doctor.qualification }}
+                    </div>
+                    {% endif %}
+                    {% if doctor.experience %}
+                    <div class="mb-1">
+                        💼 <strong>Experience:</strong>
+                        {{ doctor.experience }} years
+                    </div>
+                    {% endif %}
+                    {% if doctor.phone %}
+                    <div class="mb-1">
+                        📞 <strong>Phone:</strong> {{ doctor.phone }}
+                    </div>
+                    {% endif %}
+                    <div class="mb-1">
+                        ✉️ <strong>Email:</strong> {{ doctor.email }}
+                    </div>
+                    {% if doctor.fee %}
+                    <div class="mb-1">
+                        💰 <strong>Fee:</strong> NPR {{ doctor.fee }}
+                    </div>
+                    {% endif %}
+                    {% if doctor.available_days %}
+                    <div class="mb-1">
+                        📆 <strong>Available:</strong>
+                        {{ doctor.available_days }}
+                    </div>
+                    {% endif %}
+                    {% if doctor.bio %}
+                    <div class="mt-2" style="color:#6b7280;
+                                font-style:italic;font-size:12px;">
+                        "{{ doctor.bio }}"
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Status + Remove -->
+                <div style="margin-top:16px;padding-top:14px;
+                            border-top:1px solid #f3f4f6;
+                            display:flex;justify-content:space-between;
+                            align-items:center;">
+                    <span class="badge badge-{{ 'success' if doctor.available else 'secondary' }}"
+                          style="font-size:12px;">
+                        {{ 'Available' if doctor.available else 'Unavailable' }}
+                    </span>
+                    <a href="{{ url_for('auth.delete_doctor', doctor_id=doctor.id) }}"
+                       class="btn btn-sm btn-outline-danger"
+                       style="border-radius:6px;font-size:12px;"
+                       onclick="return confirm('Remove Dr. {{ doctor.name }}?')">
+                        Remove
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="section-card text-center py-5">
+        <div style="font-size:40px;margin-bottom:12px;">👨‍⚕️</div>
+        <p class="text-muted mb-3">No doctors added yet.</p>
+        <a href="{{ url_for('auth.admin_add_doctor') }}"
+           class="btn btn-primary"
+           style="background:#7c3aed;border-color:#7c3aed;border-radius:8px;">
+            Add your first doctor
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

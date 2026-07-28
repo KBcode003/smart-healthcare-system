@@ -71,6 +71,52 @@
         </div>
     </div>
 
+    <!-- My Profile section -->
+<div class="section-card mb-4">
+    <h5>👤 My Profile</h5>
+    <div class="row">
+        <div class="col-sm-6">
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Name:</strong> {{ doctor.name }}
+            </p>
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Specialty:</strong> {{ doctor.specialty }}
+            </p>
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Email:</strong> {{ doctor.email }}
+            </p>
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Phone:</strong>
+                {{ doctor.phone or 'Not provided' }}
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Qualification:</strong>
+                {{ doctor.qualification or 'Not provided' }}
+            </p>
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Experience:</strong>
+                {{ doctor.experience or '—' }} years
+            </p>
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Consultation Fee:</strong>
+                NPR {{ doctor.fee or '—' }}
+            </p>
+            <p style="font-size:13px;margin-bottom:6px;">
+                <strong>Available Days:</strong>
+                {{ doctor.available_days or 'Not specified' }}
+            </p>
+        </div>
+        {% if doctor.bio %}
+        <div class="col-12 mt-2">
+            <p style="font-size:13px;color:#6b7280;font-style:italic;">
+                "{{ doctor.bio }}"
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>
     <!-- Appointments table -->
     <div class="section-card">
         <h5>📋 Appointments</h5>
