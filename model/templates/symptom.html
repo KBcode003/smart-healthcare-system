@@ -596,184 +596,170 @@
         }
 
         // ── Final result ──
+        // (This was previously a duplicate nested function — that's what
+        // broke the whole script. It's now a single, top-level function.)
         function showFinalResult(result, usedSymptoms) {
-            function showFinalResult(result, usedSymptoms) {
+            const precautionItems = result.precautions
+                .map(p => `<li class="mb-1">${p}</li>`).join('');
 
-    const precautionItems = result.precautions
-        .map(p => `<li class="mb-1">${p}</li>`).join('');
+            const severityColor = {
+                'High': 'danger',
+                'Medium': 'warning',
+                'Low': 'success'
+            }[result.severity] || 'secondary';
 
-    const severityColor = {
-        'High': 'danger',
-        'Medium': 'warning',
-        'Low': 'success'
-    }[result.severity] || 'secondary';
-
-    // Always show recommended specialist + appointment button
-    let doctorSection = `
-        <hr>
-
-        <h6 style="font-weight:600;">
-            Recommended Specialist
-        </h6>
-
-        <p style="color:#7c3aed;font-weight:600;">
-            ${result.recommended_specialty}
-        </p>
-
-        <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
-           class="btn-purple d-inline-block text-decoration-none">
-            📅 Book Appointment
-        </a>
-    `;
-
-    const symptomsUsed = usedSymptoms
-        .map(s => s.replace(/_/g, ' '))
-        .join(', ');
+            // Always show recommended specialist + appointment button
+            let doctorSection = `
+                <hr>
+                <h6 style="font-weight:600;">
+                    Recommended Specialist
+                </h6>
+                <p style="color:#7c3aed;font-weight:600;">
+                    ${result.recommended_specialty}
+                </p>
+                <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
+                   class="btn-purple d-inline-block text-decoration-none">
+                    📅 Book Appointment
+                </a>
+            `;
 
             resultDiv.innerHTML = `
-<h5 style="font-weight:700;margin-bottom:16px;">
-    Diagnosis Result
-</h5>
+                <h5 style="font-weight:700;margin-bottom:16px;">
+                    Diagnosis Result
+                </h5>
 
-<p>
-    <strong>Predicted Condition:</strong>
-    <span style="color:#7c3aed;font-weight:700;font-size:16px;">
-        ${result.simple_name}
-    </span>
-    <span style="font-size:12px;color:#9ca3af;">
-        (${result.disease})
-    </span>
-</p>
+                <p>
+                    <strong>Predicted Condition:</strong>
+                    <span style="color:#7c3aed;font-weight:700;font-size:16px;">
+                        ${result.simple_name}
+                    </span>
+                    <span style="font-size:12px;color:#9ca3af;">
+                        (${result.disease})
+                    </span>
+                </p>
 
-${result.description ? `
-<p style="background:#f5f3ff;
-          border-radius:8px;
-          padding:12px;
-          font-size:13px;
-          color:#374151;
-          margin-top:4px;">
-    ℹ️ ${result.description}
-</p>
-` : ''}
+                ${result.description ? `
+                <p style="background:#f5f3ff;
+                          border-radius:8px;
+                          padding:12px;
+                          font-size:13px;
+                          color:#374151;
+                          margin-top:4px;">
+                    ℹ️ ${result.description}
+                </p>
+                ` : ''}
 
-${renderTop3(result.top3, result.disease)}
+                ${renderTop3(result.top3, result.disease)}
 
-<hr>
+                <hr>
 
-<p>
-    <strong>Severity:</strong>
+                <p>
+                    <strong>Severity:</strong>
+                    <span class="badge badge-${severityColor}" style="font-size:13px;">
+                        ${result.severity}
+                    </span>
+                    <span style="font-size:13px;color:#6b7280;margin-left:8px;">
+                        ${result.severity_note}
+                    </span>
+                </p>
 
-    <span class="badge badge-${severityColor}"
-          style="font-size:13px;">
-        ${result.severity}
-    </span>
+                <strong>Precautions:</strong>
+                <ul class="mt-2 mb-3">
+                    ${precautionItems}
+                </ul>
 
-    <span style="font-size:13px;
-                 color:#6b7280;
-                 margin-left:8px;">
-        ${result.severity_note}
-    </span>
-</p>
+                ${doctorSection}
 
-<strong>Precautions:</strong>
+                <hr>
 
-<ul class="mt-2 mb-3">
-    ${precautionItems}
-</ul>
+                <small class="text-muted">
+                    ${result.note}
+                </small>
 
-${doctorSection}
+                <br><br>
 
-<hr>
+                <button class="btn-outline-purple" onclick="resetForm()">
+                    Start new assessment
+                </button>
 
-<small class="text-muted">
-    ${result.note}
-</small>
-
-<br><br>
-
-<button class="btn-outline-purple"
-        onclick="resetForm()">
-    Start new assessment
-</button>
-
-<a href="/my-appointments"
-   class="btn btn-sm btn-outline-secondary ml-2"
-   style="border-radius:8px;">
-    My appointments
-</a>
-`;
+                <a href="/my-appointments"
+                   class="btn btn-sm btn-outline-secondary ml-2"
+                   style="border-radius:8px;">
+                    My appointments
+                </a>
+            `;
         }
 
-                        // ── Reset ──
-                        function resetForm() {
-                            input.value = '';
-                        updateTagStates();
-                        resultDiv.style.display = 'none';
-                        resultDiv.innerHTML = '';
-                        stage = 'initial';
-                        initialSymptoms = [];
-                        window.scrollTo({top: 0, behavior: 'smooth' });
+        // ── Reset ──
+        function resetForm() {
+            input.value = '';
+            updateTagStates();
+            resultDiv.style.display = 'none';
+            resultDiv.innerHTML = '';
+            stage = 'initial';
+            initialSymptoms = [];
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-                        // ── Main form submit ──
-                        document.addEventListener('DOMContentLoaded', function() {
-                            document.getElementById('healthForm')
-                                .addEventListener('submit', async function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
+        // ── Main form submit ──
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('healthForm')
+                .addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
 
-                                    const rawSymptoms = input.value.trim();
-                                    if (!rawSymptoms) {
-                                        alert('Please enter at least one symptom.');
-                                        return;
-                                    }
+                    const rawSymptoms = input.value.trim();
+                    if (!rawSymptoms) {
+                        alert('Please enter at least one symptom.');
+                        return;
+                    }
 
-                                    const backendSymptoms = symptomsToBackend(rawSymptoms);
-                                    const symptomCount = backendSymptoms.split(',')
-                                        .filter(s => s.trim()).length;
+                    const backendSymptoms = symptomsToBackend(rawSymptoms);
+                    const symptomCount = backendSymptoms.split(',')
+                        .filter(s => s.trim()).length;
 
-                                    resultDiv.style.display = 'block';
-                                    resultDiv.innerHTML =
-                                        '<p class="text-center text-muted py-3">Analyzing symptoms...</p>';
+                    resultDiv.style.display = 'block';
+                    resultDiv.innerHTML =
+                        '<p class="text-center text-muted py-3">Analyzing symptoms...</p>';
 
-                                    try {
-                                        if (symptomCount === 1) {
-                                            // Single symptom — show top 3 + ask for more
-                                            const response = await fetch('/symptom/initial', {
-                                                method: 'POST',
-                                                headers: { 'Content-Type': 'application/json' },
-                                                body: JSON.stringify({ symptoms: backendSymptoms })
-                                            });
-                                            const result = await response.json();
-                                            if (result.error) {
-                                                resultDiv.innerHTML =
-                                                    `<p class="text-danger">${result.error}</p>`;
-                                                return;
-                                            }
-                                            showInitialResult(result);
-                                        } else {
-                                            // Multiple symptoms — go straight to final result
-                                            const response = await fetch('/symptom', {
-                                                method: 'POST',
-                                                headers: { 'Content-Type': 'application/json' },
-                                                body: JSON.stringify({ symptoms: backendSymptoms })
-                                            });
-                                            const result = await response.json();
-                                            if (result.error) {
-                                                resultDiv.innerHTML =
-                                                    `<p class="text-danger">${result.error}</p>`;
-                                                return;
-                                            }
-                                            const entered = backendSymptoms.split(',')
-                                                .map(s => s.trim()).filter(s => s);
-                                            showFinalResult(result, entered);
-                                        }
-                                    } catch (err) {
-                                        console.error(err);
-                                        resultDiv.innerHTML =
-                                            `<p class="text-danger">Error: ${err.message}</p>`;
-                                    }
-                                });
+                    try {
+                        if (symptomCount === 1) {
+                            // Single symptom — show top 3 + ask for more
+                            const response = await fetch('/symptom/initial', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ symptoms: backendSymptoms })
+                            });
+                            const result = await response.json();
+                            if (result.error) {
+                                resultDiv.innerHTML =
+                                    `<p class="text-danger">${result.error}</p>`;
+                                return;
+                            }
+                            showInitialResult(result);
+                        } else {
+                            // Multiple symptoms — go straight to final result
+                            const response = await fetch('/symptom', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ symptoms: backendSymptoms })
+                            });
+                            const result = await response.json();
+                            if (result.error) {
+                                resultDiv.innerHTML =
+                                    `<p class="text-danger">${result.error}</p>`;
+                                return;
+                            }
+                            const entered = backendSymptoms.split(',')
+                                .map(s => s.trim()).filter(s => s);
+                            showFinalResult(result, entered);
+                        }
+                    } catch (err) {
+                        console.error(err);
+                        resultDiv.innerHTML =
+                            `<p class="text-danger">Error: ${err.message}</p>`;
+                    }
+                });
         });
     </script>
 </body>
