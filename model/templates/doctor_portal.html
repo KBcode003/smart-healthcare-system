@@ -1,175 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Doctor Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <style>
-        body { background: #f4f6f9; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .navbar { background-color: teal; }
-        .section-card {
-            background: white; border-radius: 10px; padding: 24px;
-            margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-        }
-        .navbar-brand, .nav-link { color: white !important; }
-
-        @media (max-width: 576px) {
-    .section-card { padding: 16px; }
-    .navbar-brand { font-size: 14px; }
-}
-
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg">
-    <span class="navbar-brand">👨‍⚕️ Dr. {{ doctor.name }} — {{ doctor.specialty }}</span>
-    <div class="ml-auto">
-        <a href="{{ url_for('auth.doctor_logout') }}"
-           class="btn btn-sm btn-outline-light">Logout</a>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg" style="background-color: teal;">
+        <span class="navbar-brand text-white">👨‍⚕️ Dr. {{ doctor.name }} — {{ doctor.specialty }}</span>
+        <div class="ml-auto">
+            <a href="{{ url_for('auth.doctor_logout') }}" class="btn btn-sm btn-outline-light">Logout</a>
+        </div>
+    </nav>
 
-{% with messages = get_flashed_messages(with_categories=true) %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-        {% for category, message in messages %}
-        <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} mx-4 mt-3">
-            {{ message }}
-        </div>
-        {% endfor %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} mx-3 mx-md-4 mt-3">
+        {{ message }}
+    </div>
+    {% endfor %}
     {% endif %}
-{% endwith %}
+    {% endwith %}
 
-<div class="container mt-4">
+    <div class="container-fluid px-3 px-md-4 mt-4">
 
-    <!-- Stats -->
-    <div class="row mb-4">
-        <div class="col-12 col-sm-4">
-            <div class="section-card text-center">
-                <h2 style="color:#7c3aed;font-weight:600;">
-                    {{ appointments|length }}
-                </h2>
-                <p class="text-muted mb-0">Total appointments</p>
+        <!-- Stats -->
+        <div class="row mb-4">
+            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                <div class="section-card text-center">
+                    <h2 style="color:#7c3aed;font-weight:600;">
+                        {{ appointments|length }}
+                    </h2>
+                    <p class="text-muted mb-0">Total appointments</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                <div class="section-card text-center">
+                    <h2 style="color:#f59e0b;font-weight:600;">
+                        {{ appointments|selectattr('status','equalto','Pending')|list|length }}
+                    </h2>
+                    <p class="text-muted mb-0">Pending</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="section-card text-center">
+                    <h2 style="color:#10b981;font-weight:600;">
+                        {{ appointments|selectattr('status','equalto','Approved')|list|length }}
+                    </h2>
+                    <p class="text-muted mb-0">Approved</p>
+                </div>
             </div>
         </div>
-        <div class="col-12 col-sm-4">
-            <div class="section-card text-center">
-                <h2 style="color:#f59e0b;font-weight:600;">
-                    {{ appointments|selectattr('status','equalto','Pending')|list|length }}
-                </h2>
-                <p class="text-muted mb-0">Pending</p>
-            </div>
-        </div>
-        <div class="col-12 col-sm-4">
-            <div class="section-card text-center">
-                <h2 style="color:#10b981;font-weight:600;">
-                    {{ appointments|selectattr('status','equalto','Approved')|list|length }}
-                </h2>
-                <p class="text-muted mb-0">Approved</p>
-            </div>
-        </div>
-    </div>
 
-    <!-- My Profile section -->
-<div class="section-card mb-4">
-    <h5>👤 My Profile</h5>
-    <div class="row">
-        <div class="col-sm-6">
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Name:</strong> {{ doctor.name }}
-            </p>
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Specialty:</strong> {{ doctor.specialty }}
-            </p>
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Email:</strong> {{ doctor.email }}
-            </p>
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Phone:</strong>
-                {{ doctor.phone or 'Not provided' }}
-            </p>
+        <!-- My Profile section -->
+        <div class="section-card mb-4">
+            <h5>👤 My Profile</h5>
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Name:</strong> {{ doctor.name }}
+                    </p>
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Specialty:</strong> {{ doctor.specialty }}
+                    </p>
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Email:</strong> {{ doctor.email }}
+                    </p>
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Phone:</strong>
+                        {{ doctor.phone or 'Not provided' }}
+                    </p>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Qualification:</strong>
+                        {{ doctor.qualification or 'Not provided' }}
+                    </p>
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Experience:</strong>
+                        {{ doctor.experience or '—' }} years
+                    </p>
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Consultation Fee:</strong>
+                        NPR {{ doctor.fee or '—' }}
+                    </p>
+                    <p style="font-size:13px;margin-bottom:6px;">
+                        <strong>Available Days:</strong>
+                        {{ doctor.available_days or 'Not specified' }}
+                    </p>
+                </div>
+                {% if doctor.bio %}
+                <div class="col-12 mt-2">
+                    <p style="font-size:13px;color:#6b7280;font-style:italic;">
+                        "{{ doctor.bio }}"
+                    </p>
+                </div>
+                {% endif %}
+            </div>
         </div>
-        <div class="col-sm-6">
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Qualification:</strong>
-                {{ doctor.qualification or 'Not provided' }}
-            </p>
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Experience:</strong>
-                {{ doctor.experience or '—' }} years
-            </p>
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Consultation Fee:</strong>
-                NPR {{ doctor.fee or '—' }}
-            </p>
-            <p style="font-size:13px;margin-bottom:6px;">
-                <strong>Available Days:</strong>
-                {{ doctor.available_days or 'Not specified' }}
-            </p>
-        </div>
-        {% if doctor.bio %}
-        <div class="col-12 mt-2">
-            <p style="font-size:13px;color:#6b7280;font-style:italic;">
-                "{{ doctor.bio }}"
-            </p>
-        </div>
-        {% endif %}
-    </div>
-</div>
-    <!-- Appointments table -->
-    <div class="section-card">
-        <h5>📋 Appointments</h5>
-        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+
+        <!-- Appointments table -->
+        <div class="section-card mb-4">
+            <h5>📋 Appointments</h5>
             {% if appointments %}
-<table class="table table-hover" style="min-width: 650px;">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Patient</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Reason</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for apt in appointments %}
-                <tr>
-                    <td>{{ apt.id }}</td>
-                    <td>{{ apt.patient.first_name }}</td>
-                    <td>{{ apt.date }}</td>
-                    <td>{{ apt.time }}</td>
-                    <td>{{ apt.reason or '—' }}</td>
-                    <td>
-                        <span class="badge badge-{{
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Patient</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for apt in appointments %}
+                        <tr>
+                            <td>{{ apt.id }}</td>
+                            <td>{{ apt.patient.first_name }}</td>
+                            <td>{{ apt.date }}</td>
+                            <td>{{ apt.time }}</td>
+                            <td>{{ apt.reason or '—' }}</td>
+                            <td>
+                                <span class="badge badge-{{
                             'success' if apt.status == 'Approved'
                             else 'danger' if apt.status == 'Rejected'
                             else 'warning' }}">
-                            {{ apt.status }}
-                        </span>
-                    </td>
-                    <td>
-                        {% if apt.status == 'Pending' %}
-                        <a href="{{ url_for('auth.approve_appointment', appointment_id=apt.id) }}"
-                           class="btn btn-sm btn-success">Approve</a>
-                        <a href="{{ url_for('auth.reject_appointment', appointment_id=apt.id) }}"
-                           class="btn btn-sm btn-danger ml-1"
-                           onclick="return confirm('Reject this appointment?')">Reject</a>
-                        {% else %}
-                        <span class="text-muted">—</span>
-                        {% endif %}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        {% else %}
-        <p class="text-muted">No appointments yet.</p>
-        {% endif %}
+                                    {{ apt.status }}
+                                </span>
+                            </td>
+                            <td>
+                                {% if apt.status == 'Pending' %}
+                                <a href="{{ url_for('auth.approve_appointment', appointment_id=apt.id) }}"
+                                    class="btn btn-sm btn-success">Approve</a>
+                                <a href="{{ url_for('auth.reject_appointment', appointment_id=apt.id) }}"
+                                    class="btn btn-sm btn-danger ml-1"
+                                    onclick="return confirm('Reject this appointment?')">Reject</a>
+                                {% else %}
+                                <span class="text-muted">—</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="text-muted">No appointments yet.</p>
+            {% endif %}
+        </div>
     </div>
-</div>
 </body>
+
 </html>

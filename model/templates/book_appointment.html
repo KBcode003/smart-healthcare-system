@@ -1,179 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Book Appointment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f2f2f2; padding: 30px; }
-        .card { border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
-        h2 { font-weight: 600; }
-
-        @media (max-width: 576px) {
-    body { padding: 16px; }
-    .card { padding: 20px 16px !important; }
-    h2 { font-size: 20px; }
-}
-
-.doctor-select-card {
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 14px;
-    transition: border-color .15s, box-shadow .15s;
-    background: #fff;
-}
-.doctor-select-card:hover {
-    border-color: #a78bfa;
-    box-shadow: 0 2px 8px rgba(124,58,237,0.1);
-}
-.doctor-select-card.selected {
-    border-color: #7c3aed;
-    box-shadow: 0 0 0 3px #ede9fe;
-}
-
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-<div class="container" style="max-width:650px;">
-    <h2 class="mb-1">Book an Appointment</h2>
-    <p class="text-muted mb-4">Specialty: <strong style="color:#7c3aed">{{ specialty }}</strong></p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 col-xl-7">
+                <h2 class="mb-1">Book an Appointment</h2>
+                <p class="text-muted mb-4">Specialty: <strong style="color:#7c3aed">{{ specialty }}</strong></p>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}">
-                {{ message }}
-            </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-   {% if doctors %}
-<div class="card p-4">
-    <form method="POST">
-
-        <!-- Doctor selection as cards -->
-        <div class="form-group">
-            <label style="font-weight:600;">Select a Doctor</label>
-            <div class="row mt-2">
-                {% for doctor in doctors %}
-                <div class="col-12 col-sm-6 mb-3">
-                    <label for="doc{{ doctor.id }}" style="cursor:pointer;width:100%;">
-                        <div class="doctor-select-card" id="card{{ doctor.id }}">
-                            <div style="display:flex;align-items:center;
-                                        gap:12px;margin-bottom:10px;">
-                                <div style="width:44px;height:44px;border-radius:50%;
-                                            background:#ede9fe;display:flex;
-                                            align-items:center;justify-content:center;
-                                            font-size:18px;flex-shrink:0;">
-                                    👨‍⚕️
-                                </div>
-                                <div>
-                                    <div style="font-weight:700;font-size:14px;
-                                                color:#1f0a3c;">
-                                        {{ doctor.name }}
-                                    </div>
-                                    <div style="font-size:12px;color:#7c3aed;">
-                                        {{ doctor.specialty }}
-                                    </div>
-                                </div>
-                                <input type="radio" id="doc{{ doctor.id }}"
-                                       name="doctor_id" value="{{ doctor.id }}"
-                                       class="ml-auto" required
-                                       onchange="highlightCard({{ doctor.id }})">
-                            </div>
-                            <div style="font-size:12px;color:#374151;">
-                                {% if doctor.qualification %}
-                                <span>🎓 {{ doctor.qualification }}</span> &nbsp;
-                                {% endif %}
-                                {% if doctor.experience %}
-                                <span>💼 {{ doctor.experience }} yrs exp</span>
-                                {% endif %}
-                            </div>
-                            {% if doctor.fee %}
-                            <div style="font-size:12px;color:#6b7280;margin-top:4px;">
-                                💰 NPR {{ doctor.fee }} consultation fee
-                            </div>
-                            {% endif %}
-                            {% if doctor.available_days %}
-                            <div style="font-size:12px;color:#6b7280;margin-top:2px;">
-                                📆 {{ doctor.available_days }}
-                            </div>
-                            {% endif %}
-                            {% if doctor.bio %}
-                            <div style="font-size:11px;color:#9ca3af;
-                                        margin-top:6px;font-style:italic;">
-                                "{{ doctor.bio }}"
-                            </div>
-                            {% endif %}
-                        </div>
-                    </label>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}">
+                    {{ message }}
                 </div>
                 {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                {% if doctors %}
+                <div class="card p-3 p-md-4">
+                    <form method="POST">
+
+                        <!-- Doctor selection as cards -->
+                        <div class="form-group">
+                            <label style="font-weight:600;">Select a Doctor</label>
+                            <div class="row mt-2">
+                                {% for doctor in doctors %}
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="doc{{ doctor.id }}" style="cursor:pointer;width:100%;">
+                                        <div class="doctor-select-card" id="card{{ doctor.id }}">
+                                            <div class="d-flex align-items-center mb-2" style="gap:12px;">
+                                                <div style="width:44px;height:44px;border-radius:50%;
+                                                    background:#ede9fe;display:flex;
+                                                    align-items:center;justify-content:center;
+                                                    font-size:18px;flex-shrink:0;">
+                                                    👨‍⚕️
+                                                </div>
+                                                <div>
+                                                    <div style="font-weight:700;font-size:14px;
+                                                        color:#1f0a3c;">
+                                                        {{ doctor.name }}
+                                                    </div>
+                                                    <div style="font-size:12px;color:#7c3aed;">
+                                                        {{ doctor.specialty }}
+                                                    </div>
+                                                </div>
+                                                <input type="radio" id="doc{{ doctor.id }}" name="doctor_id"
+                                                    value="{{ doctor.id }}" class="ml-auto" required
+                                                    onchange="highlightCard({{ doctor.id }})">
+                                            </div>
+                                            <div style="font-size:12px;color:#374151;">
+                                                {% if doctor.qualification %}
+                                                <span>🎓 {{ doctor.qualification }}</span> &nbsp;
+                                                {% endif %}
+                                                {% if doctor.experience %}
+                                                <span>💼 {{ doctor.experience }} yrs exp</span>
+                                                {% endif %}
+                                            </div>
+                                            {% if doctor.fee %}
+                                            <div style="font-size:12px;color:#6b7280;margin-top:4px;">
+                                                💰 NPR {{ doctor.fee }} consultation fee
+                                            </div>
+                                            {% endif %}
+                                            {% if doctor.available_days %}
+                                            <div style="font-size:12px;color:#6b7280;margin-top:2px;">
+                                                📆 {{ doctor.available_days }}
+                                            </div>
+                                            {% endif %}
+                                            {% if doctor.bio %}
+                                            <div style="font-size:11px;color:#9ca3af;
+                                                margin-top:6px;font-style:italic;">
+                                                "{{ doctor.bio }}"
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="font-weight:600;">Preferred Date</label>
+                            <input type="date" class="form-control" name="date" min="{{ today }}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="font-weight:600;">Preferred Time</label>
+                            <select class="form-control" name="time" required>
+                                <option value="">Select a time slot</option>
+                                <option>09:00 AM</option>
+                                <option>09:30 AM</option>
+                                <option>10:00 AM</option>
+                                <option>10:30 AM</option>
+                                <option>11:00 AM</option>
+                                <option>11:30 AM</option>
+                                <option>12:00 PM</option>
+                                <option>02:00 PM</option>
+                                <option>02:30 PM</option>
+                                <option>03:00 PM</option>
+                                <option>03:30 PM</option>
+                                <option>04:00 PM</option>
+                                <option>04:30 PM</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="font-weight:600;">Reason for visit</label>
+                            <textarea class="form-control" name="reason" rows="3"
+                                placeholder="Briefly describe your symptoms or reason"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" style="background:#7c3aed;border-color:#7c3aed;
+                               border-radius:8px;font-weight:600;">
+                            Confirm Appointment
+                        </button>
+                        <a href="/symptom" class="btn btn-outline-secondary btn-block mt-2" style="border-radius:8px;">
+                            Back to Symptom Check
+                        </a>
+                    </form>
+                </div>
+                {% else %}
+                <div class="card p-3 p-md-4 text-center">
+                    <p class="text-muted">No doctors are currently available for
+                        <strong>{{ specialty }}</strong>.
+                    </p>
+                    <a href="/symptom" class="btn btn-outline-secondary">Back</a>
+                </div>
+                {% endif %}
             </div>
         </div>
-
-        <div class="form-group">
-            <label style="font-weight:600;">Preferred Date</label>
-            <input type="date" class="form-control" name="date"
-                   min="{{ today }}" required>
-        </div>
-
-        <div class="form-group">
-            <label style="font-weight:600;">Preferred Time</label>
-            <select class="form-control" name="time" required>
-                <option value="">Select a time slot</option>
-                <option>09:00 AM</option>
-                <option>09:30 AM</option>
-                <option>10:00 AM</option>
-                <option>10:30 AM</option>
-                <option>11:00 AM</option>
-                <option>11:30 AM</option>
-                <option>12:00 PM</option>
-                <option>02:00 PM</option>
-                <option>02:30 PM</option>
-                <option>03:00 PM</option>
-                <option>03:30 PM</option>
-                <option>04:00 PM</option>
-                <option>04:30 PM</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label style="font-weight:600;">Reason for visit</label>
-            <textarea class="form-control" name="reason" rows="3"
-                placeholder="Briefly describe your symptoms or reason">
-            </textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block"
-            style="background:#7c3aed;border-color:#7c3aed;
-                   border-radius:8px;font-weight:600;">
-            Confirm Appointment
-        </button>
-        <a href="/symptom"
-           class="btn btn-outline-secondary btn-block mt-2"
-           style="border-radius:8px;">
-            Back to Symptom Check
-        </a>
-    </form>
-</div>
-    {% else %}
-    <div class="card p-4 text-center">
-        <p class="text-muted">No doctors are currently available for
-            <strong>{{ specialty }}</strong>.</p>
-        <a href="/symptom" class="btn btn-outline-secondary">Back</a>
     </div>
-    {% endif %}
-</div>
-<script>
-function highlightCard(docId) {
-    document.querySelectorAll('.doctor-select-card')
-        .forEach(c => c.classList.remove('selected'));
-    document.getElementById('card' + docId)
-        .classList.add('selected');
-}
-</script>
+    <script>
+        function highlightCard(docId) {
+            document.querySelectorAll('.doctor-select-card')
+                .forEach(c => c.classList.remove('selected'));
+            document.getElementById('card' + docId)
+                .classList.add('selected');
+        }
+    </script>
 </body>
+
 </html>

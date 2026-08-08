@@ -369,6 +369,24 @@ def analyze_initial():
             for i in top3_indices
             if proba[i] > 0.01
         ]
+        symptom_count = len(entered)
+
+        filtered_top3 = []
+        for item in top3:
+            # Skip high severity if less than 3 symptoms entered
+            if item["disease"] in HIGH_SEVERITY and symptom_count < 3:
+                continue
+            # Skip if confidence below 20%
+            if item["confidence"] < 20:
+                continue
+            filtered_top3.append(item)
+
+        # If filtering removed everything, keep top result regardless
+        if not filtered_top3:
+            filtered_top3 = [top3[0]]
+
+        top3 = filtered_top3
+        disease_clean = top3[0]["disease"]
 
         disease_info = DISEASE_INFO.get(top3[0]["disease"], {})
 
@@ -411,6 +429,25 @@ def analyze():
             for i in top3_indices
             if proba[i] > 0.01
         ]
+
+        symptom_count = len(entered)
+
+        filtered_top3 = []
+        for item in top3:
+            # Skip high severity if less than 3 symptoms entered
+            if item["disease"] in HIGH_SEVERITY and symptom_count < 3:
+                continue
+            # Skip if confidence below 20%
+            if item["confidence"] < 20:
+                continue
+            filtered_top3.append(item)
+
+        # If filtering removed everything, keep top result regardless
+        if not filtered_top3:
+            filtered_top3 = [top3[0]]
+
+        top3 = filtered_top3
+        disease_clean = top3[0]["disease"]
 
         disease_clean = top3[0]["disease"]
         disease_info = DISEASE_INFO.get(disease_clean, {})

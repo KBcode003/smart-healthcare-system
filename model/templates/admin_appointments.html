@@ -2,15 +2,15 @@
 {% block title %}Appointments{% endblock %}
 
 {% block body %}
-<div class="page-header">
+<div class="page-header d-flex justify-content-between align-items-center flex-wrap px-3 px-md-4 pt-3 pt-md-4">
     <h2>Appointment Log ({{ appointments|length }})</h2>
 </div>
 
-<div class="page-body">
+<div class="page-body px-3 px-md-4 py-3 py-md-4">
     <div class="section-card">
         {% if appointments %}
-        <div style="overflow-x:auto;">
-        <table class="table table-hover mb-0" style="min-width:700px;">
+        <div class="table-responsive">
+        <table class="table table-hover mb-0">
             <thead style="background:#f5f3ff;">
                 <tr>
                     <th>#</th>

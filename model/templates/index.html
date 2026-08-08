@@ -1,189 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <title>{% block title %}Smart Healthcare System with Symptom Assessment & Doctor Recommendation{% endblock %}</title>
+    <title>{% block title %}Smart Healthcare System with Symptom Assessment & Doctor Recommendation{% endblock %}
+    </title>
     <style>
-        * { box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8f9fb; margin: 0; }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f8f9fb;
+            margin: 0;
+        }
 
         /* ── Navbar ── */
-        .navbar { background-color: #fff; border-bottom: 1px solid #e5e7eb; padding: 10px 24px; }
-        .navbar-brand { font-weight: 700; font-size: 18px; color: #3b0764 !important; }
-        .nav-link { color: #374151 !important; font-size: 14px; }
-        .nav-link:hover { color: #7c3aed !important; }
-        .btn-nav-login { background: #7c3aed; color: #fff !important; border-radius: 8px; padding: 6px 16px; font-size: 13px; }
-        .btn-nav-login:hover { background: #6d28d9; }
-        .btn-nav-outline { border: 1px solid #7c3aed; color: #7c3aed !important; border-radius: 8px; padding: 6px 16px; font-size: 13px; }
+        .navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 10px 24px;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 18px;
+            color: #3b0764 !important;
+        }
+
+        .nav-link {
+            color: #374151 !important;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            color: #7c3aed !important;
+        }
+
+        .btn-nav-login {
+            background: #7c3aed;
+            color: #fff !important;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-size: 13px;
+        }
+
+        .btn-nav-login:hover {
+            background: #6d28d9;
+        }
+
+        .btn-nav-outline {
+            border: 1px solid #7c3aed;
+            color: #7c3aed !important;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-size: 13px;
+        }
+
         .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%237c3aed' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-.navbar-toggler {
-    border-color: #7c3aed;
-}
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%237c3aed' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .navbar-toggler {
+            border-color: #7c3aed;
+        }
+
+        .hero h1 {
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
 
         /* ── Hero ── */
         .hero {
             background: linear-gradient(135deg, #3b0764 0%, #6d28d9 50%, #7c3aed 100%);
             color: white;
-            padding: 72px 24px 60px;
             text-align: center;
         }
+
         .hero-badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            background: rgba(255,255,255,0.15); color: #e9d5ff;
-            font-size: 12px; padding: 5px 14px; border-radius: 999px;
-            margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #e9d5ff;
+            font-size: 12px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 14px; line-height: 1.25; }
-        .hero p { font-size: 16px; color: #e9d5ff; max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
-        .hero-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+        .hero h1 {
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+
+        .hero p {
+            color: #e9d5ff;
+            line-height: 1.7;
+        }
+
         .btn-hero-primary {
-            background: #fff; color: #7c3aed; font-weight: 600;
-            border: none; border-radius: 10px; padding: 12px 28px;
-            font-size: 15px; text-decoration: none;
+            background: #fff;
+            color: #7c3aed;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 28px;
+            font-size: 15px;
+            text-decoration: none;
         }
-        .btn-hero-primary:hover { background: #f3f4f6; color: #6d28d9; text-decoration: none; }
+
+        .btn-hero-primary:hover {
+            background: #f3f4f6;
+            color: #6d28d9;
+            text-decoration: none;
+        }
+
         .btn-hero-outline {
-            background: transparent; color: #fff; font-weight: 500;
-            border: 1.5px solid rgba(255,255,255,0.5); border-radius: 10px;
-            padding: 12px 28px; font-size: 15px; text-decoration: none;
+            background: transparent;
+            color: #fff;
+            font-weight: 500;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 12px 28px;
+            font-size: 15px;
+            text-decoration: none;
         }
-        .btn-hero-outline:hover { background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
+
+        .btn-hero-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+        }
 
         /* ── Stats strip ── */
-        .stats-strip { background: #fff; border-bottom: 1px solid #e5e7eb; }
-        .stat-item { text-align: center; padding: 20px 12px; border-right: 1px solid #e5e7eb; }
-        .stat-item:last-child { border-right: none; }
-        .stat-num { font-size: 24px; font-weight: 700; color: #7c3aed; }
-        .stat-label { font-size: 12px; color: #6b7280; margin-top: 2px; }
+        .stats-strip {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px 12px;
+            border-right: 1px solid #e5e7eb;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-size: 24px;
+            font-weight: 700;
+            color: #7c3aed;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
 
         /* ── Section titles ── */
-        .section-title { font-size: 22px; font-weight: 700; color: #111827; text-align: center; margin-bottom: 6px; }
-        .section-sub { font-size: 14px; color: #6b7280; text-align: center; margin-bottom: 32px; }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .section-sub {
+            font-size: 14px;
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 32px;
+        }
 
         /* ── Feature cards ── */
         .feature-card {
-            background: #fff; border: 1px solid #e5e7eb; border-radius: 14px;
-            padding: 24px; height: 100%; display: flex; flex-direction: column;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             transition: border-color .15s, box-shadow .15s;
         }
-        .feature-card:hover { border-color: #a78bfa; box-shadow: 0 4px 16px rgba(124,58,237,0.1); }
+
+        .feature-card:hover {
+            border-color: #a78bfa;
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);
+        }
+
         .feature-icon {
-            width: 44px; height: 44px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px; margin-bottom: 14px;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 14px;
         }
-        .feature-card h5 { font-size: 15px; font-weight: 600; color: #111827; margin-bottom: 8px; }
-        .feature-card p { font-size: 13px; color: #6b7280; line-height: 1.6; flex: 1; }
-        .feature-card .mt-auto { padding-top: 16px; text-align: center; }
+
+        .feature-card h5 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.6;
+            flex: 1;
+        }
+
         .btn-feature {
-            background: #7c3aed; color: #fff; border: none;
-            border-radius: 8px; padding: 8px 20px; font-size: 13px;
-            font-weight: 500; text-decoration: none; display: inline-block;
+            background: #7c3aed;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
         }
-        .btn-feature:hover { background: #6d28d9; color: #fff; text-decoration: none; }
+
+        .btn-feature:hover {
+            background: #6d28d9;
+            color: #fff;
+            text-decoration: none;
+        }
+
         .btn-feature-outline {
-            background: transparent; color: #7c3aed;
-            border: 1px solid #7c3aed; border-radius: 8px;
-            padding: 8px 20px; font-size: 13px; font-weight: 500;
-            text-decoration: none; display: inline-block;
+            background: transparent;
+            color: #7c3aed;
+            border: 1px solid #7c3aed;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
         }
-        .btn-feature-outline:hover { background: #7c3aed; color: #fff; text-decoration: none; }
+
+        .btn-feature-outline:hover {
+            background: #7c3aed;
+            color: #fff;
+            text-decoration: none;
+        }
 
         /* ── How it works ── */
-        .steps-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; }
-        .step-item { padding: 24px; border-right: 1px solid #e5e7eb; text-align: center; }
-        .step-item:last-child { border-right: none; }
-        .step-num {
-            width: 36px; height: 36px; border-radius: 50%;
-            background: #ede9fe; color: #7c3aed; font-weight: 700;
-            font-size: 15px; display: flex; align-items: center;
-            justify-content: center; margin: 0 auto 12px;
+        .steps-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
         }
-        .step-item h6 { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 6px; }
-        .step-item p { font-size: 13px; color: #6b7280; margin: 0; line-height: 1.5; }
+
+        .step-item {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #ede9fe;
+            color: #7c3aed;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+        }
+
+        .step-item h6 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .step-item p {
+            font-size: 13px;
+            color: #6b7280;
+            margin: 0;
+            line-height: 1.5;
+        }
 
         /* ── Diseases grid ── */
         .disease-badge {
-            display: inline-block; background: #f5f3ff; color: #5b21b6;
-            border: 1px solid #ede9fe; border-radius: 999px;
-            padding: 5px 14px; font-size: 12px; margin: 4px;
+            display: inline-block;
+            background: #f5f3ff;
+            color: #5b21b6;
+            border: 1px solid #ede9fe;
+            border-radius: 999px;
+            padding: 5px 14px;
+            font-size: 12px;
+            margin: 4px;
             font-weight: 500;
         }
 
         /* ── CTA ── */
         .cta-section {
             background: linear-gradient(135deg, #3b0764, #7c3aed);
-            border-radius: 16px; padding: 48px 32px; text-align: center; color: #fff;
+            border-radius: 16px;
+            text-align: center;
+            color: #fff;
         }
-        .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
-        .cta-section p { color: #e9d5ff; font-size: 15px; margin-bottom: 24px; }
+
+        .cta-section h2 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            color: #e9d5ff;
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
 
         /* ── Footer ── */
         footer {
-            background: #1f0a3c; color: #a78bfa; padding: 24px;
-            display: flex; justify-content: space-between;
-            align-items: center; flex-wrap: wrap; gap: 12px;
+            background: #1f0a3c;
+            color: #a78bfa;
         }
-        footer a { color: #a78bfa; font-size: 13px; text-decoration: none; margin-left: 16px; }
-        footer a:hover { color: #fff; }
-        .footer-brand { font-size: 15px; font-weight: 600; color: #fff; }
 
-        /* ── Flash messages ── */
-        .flash-wrap { padding: 0 16px; margin-top: 8px; }
+        footer a {
+            color: #a78bfa;
+            font-size: 13px;
+            text-decoration: none;
+        }
 
-        /* ── Responsive ── */
-@media (max-width: 576px) {
-    .hero h1 { font-size: 24px; }
-    .hero p { font-size: 14px; }
-    .btn-hero-primary, .btn-hero-outline {
-        padding: 10px 20px; font-size: 14px; width: 100%;
-        text-align: center;
-    }
-    .hero-btns { flex-direction: column; align-items: center; }
-    .stat-num { font-size: 18px; }
-    .stat-label { font-size: 11px; }
-    .section-title { font-size: 18px; }
-    .step-item { border-right: none !important;
-                 border-bottom: 1px solid #e5e7eb; }
-    .step-item:last-child { border-bottom: none; }
-    .disease-badge { font-size: 11px; padding: 4px 10px; }
-    .cta-section h2 { font-size: 20px; }
-    .cta-section { padding: 32px 20px; }
-    footer { flex-direction: column; text-align: center; }
-    footer a { margin-left: 8px; margin-right: 8px; }
-}
+        footer a:hover {
+            color: #fff;
+        }
 
-@media (max-width: 768px) {
-    .feature-card { margin-bottom: 16px; }
-    .steps-card .row { flex-direction: column; }
-}
-
+        .footer-brand {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
     </style>
 </head>
+
 <body>
 
-<!-- ── Navbar ───────────────────────────────────────────────────── -->
-<nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/">🩺 Smart Healthcare</a>
+    <!-- ── Navbar ───────────────────────────────────────────────────── -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">🩺 Smart Healthcare</a>
 
-    <button class="navbar-toggler" type="button"
-            data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/symptom">Check Symptoms</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/symptom">Check Symptoms</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            </ul>
 
-        <ul class="navbar-nav ml-auto align-items-center">
-            {% if current_user.is_authenticated %}
+            <ul class="navbar-nav ml-auto align-items-lg-center">
+                {% if current_user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         👤 {{ current_user.first_name }}
@@ -194,11 +389,10 @@
                         📅 My Appointments
                     </a>
                 </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link btn-nav-outline"
-                       href="{{ url_for('auth.logout') }}">Logout</a>
+                <li class="nav-item ml-lg-2">
+                    <a class="nav-link btn-nav-outline" href="{{ url_for('auth.logout') }}">Logout</a>
                 </li>
-            {% else %}
+                {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('auth.signup') }}">
                         Sign up
@@ -209,265 +403,266 @@
                         Patient login
                     </a>
                 </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link btn-nav-login"
-                       href="{{ url_for('auth.doctor_login') }}">
+                <li class="nav-item ml-lg-2">
+                    <a class="nav-link btn-nav-login" href="{{ url_for('auth.doctor_login') }}">
                         Doctor login
                     </a>
                 </li>
-            {% endif %}
-        </ul>
-    </div>
-</nav>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
 
-<!-- ── Flash messages ───────────────────────────────────────────── -->
-<div class="flash-wrap">
-    {% with messages = get_flashed_messages(with_categories=true) %}
+    <!-- ── Flash messages ───────────────────────────────────────────── -->
+    <div class="px-3">
+        {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-            {% for category, message in messages %}
-            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}
                         alert-dismissible fade show mt-2" role="alert">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
-            </div>
-            {% endfor %}
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+        </div>
+        {% endfor %}
         {% endif %}
-    {% endwith %}
-</div>
+        {% endwith %}
+    </div>
 
-{% block trending %}
+    {% block trending %}
 
-<!-- ── Hero ─────────────────────────────────────────────────────── -->
-<section class="hero">
-    <h1>Your smart health companion,<br>anytime you need it</h1>
-    <p>Describe your symptoms, get an instant AI-powered assessment,
-       find the right specialist, and book an appointment — all in one place.</p>
-    <div class="hero-btns">
-        {% if current_user.is_authenticated %}
+    <!-- ── Hero ─────────────────────────────────────────────────────── -->
+    <section class="hero py-5 px-3 px-md-4">
+        <h1 class="display-4">Your smart health companion,<br>anytime you need it</h1>
+        <p class="mx-auto" style="max-width:480px;">Describe your symptoms, get an instant assessment,
+            find the right specialist, and book an appointment — all in one place.</p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center" style="gap:12px;">
+            {% if current_user.is_authenticated %}
             <a href="{{ url_for('auth.symptom') }}" class="btn-hero-primary">
                 🔍 Check your symptoms
             </a>
             <a href="{{ url_for('auth.my_appointments') }}" class="btn-hero-outline">
                 📅 My appointments
             </a>
-        {% else %}
+            {% else %}
             <a href="{{ url_for('auth.signup') }}" class="btn-hero-primary">
                 Get started free
             </a>
             <a href="{{ url_for('auth.login') }}" class="btn-hero-outline">
                 Patient login
             </a>
-        {% endif %}
-    </div>
-</section>
+            {% endif %}
+        </div>
+    </section>
 
-<!-- ── Stats strip ───────────────────────────────────────────────── -->
-<div class="stats-strip">
-    <div class="row no-gutters">
-        <div class="col-6 col-sm-3 stat-item">
-            <div class="stat-num">41</div>
-            <div class="stat-label">Diseases covered</div>
-        </div>
-        <div class="col-6 col-sm-3 stat-item">
-            <div class="stat-num">{{ total_symptoms }}+</div>
-            <div class="stat-label">Unique symptoms</div>
-        </div>
-        <div class="col-6 col-sm-3 stat-item">
-            <div class="stat-num">{{ total_doctors }}</div>
-            <div class="stat-label">Available doctors</div>
-        </div>
-        <div class="col-6 col-sm-3 stat-item">
-            <div class="stat-num">Free</div>
-            <div class="stat-label">For patients</div>
-        </div>
-    </div>
-</div>
-
-<!-- ── Features ──────────────────────────────────────────────────── -->
-<section style="padding: 52px 24px; background: #f8f9fb;">
-    <div class="section-title">Everything you need in one place</div>
-    <div class="section-sub">From symptom check to confirmed appointment</div>
-
-    <div class="row">
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-            <div class="feature-card">
-                <div class="feature-icon" style="background:#ede9fe;">🔍</div>
-                <h5>Symptom Assessment</h5>
-                <p>Enter your symptoms and get an instant AI prediction
-                   of possible conditions with precautions and next steps.</p>
-                <div class="mt-auto">
-                    {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('auth.symptom') }}" class="btn-feature">
-                        Check symptoms
-                    </a>
-                    {% else %}
-                    <a href="{{ url_for('auth.login') }}" class="btn-feature">
-                        Login to check
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-            <div class="feature-card">
-                <div class="feature-icon" style="background:#dcfce7;">👨‍⚕️</div>
-                <h5>Doctor Recommendation</h5>
-                <p>Based on your predicted condition, we match you with
-                   the right specialist — cardiologist, neurologist, and more.</p>
-                <div class="mt-auto">
-                    {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('auth.symptom') }}" class="btn-feature">
-                        Get recommended
-                    </a>
-                    {% else %}
-                    <a href="{{ url_for('auth.login') }}" class="btn-feature">
-                        Login to start
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-            <div class="feature-card">
-                <div class="feature-icon" style="background:#fef9c3;">📅</div>
-                <h5>Book Appointment</h5>
-                <p>Pick a doctor, choose your preferred date and time slot,
-                   and confirm your appointment directly through the platform.</p>
-                <div class="mt-auto">
-                    {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('auth.my_appointments') }}"
-                       class="btn-feature-outline">
-                        View appointments
-                    </a>
-                    {% else %}
-                    <a href="{{ url_for('auth.login') }}" class="btn-feature">
-                        Login to book
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 mb-4">
-            <div class="feature-card">
-                <div class="feature-icon" style="background:#fee2e2;">💊</div>
-                <h5>Precautions & Remedies</h5>
-                <p>Receive medically sourced precautions for your predicted
-                   condition so you know what to do while waiting for care.</p>
-                <div class="mt-auto">
-                    {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('auth.symptom') }}" class="btn-feature">
-                        Check symptoms
-                    </a>
-                    {% else %}
-                    <a href="{{ url_for('auth.signup') }}" class="btn-feature">
-                        Sign up free
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ── How it works ───────────────────────────────────────────────── -->
-<section style="padding: 0 24px 52px;">
-    <div class="section-title">How it works</div>
-    <div class="section-sub">Get from symptoms to specialist in four simple steps</div>
-    <div class="steps-card">
+    <!-- ── Stats strip ───────────────────────────────────────────────── -->
+    <div class="stats-strip">
         <div class="row no-gutters">
-            <div class="col-6 col-sm-3 step-item">
-                <div class="step-num">1</div>
-                <h6>Create account</h6>
-                <p>Sign up as a patient in seconds with just your email and name.</p>
+            <div class="col-6 col-md-3 stat-item">
+                <div class="stat-num">41</div>
+                <div class="stat-label">Diseases covered</div>
             </div>
-            <div class="col-6 col-sm-3 step-item">
-                <div class="step-num">2</div>
-                <h6>Enter symptoms</h6>
-                <p>Type your symptoms into the assessment form and hit Predict.</p>
+            <div class="col-6 col-md-3 stat-item">
+                <div class="stat-num">{{ total_symptoms }}+</div>
+                <div class="stat-label">Unique symptoms</div>
             </div>
-            <div class="col-6 col-sm-3 step-item">
-                <div class="step-num">3</div>
-                <h6>Get diagnosis</h6>
-                <p>Our ML model predicts your condition and recommends a specialist.</p>
+            <div class="col-6 col-md-3 stat-item">
+                <div class="stat-num">{{ total_doctors }}</div>
+                <div class="stat-label">Available doctors</div>
             </div>
-            <div class="col-6 col-sm-3 step-item" style="border-right:none;">
-                <div class="step-num">4</div>
-                <h6>Book appointment</h6>
-                <p>Pick a doctor, choose a time slot, and confirm your visit.</p>
+            <div class="col-6 col-md-3 stat-item">
+                <div class="stat-num">Free</div>
+                <div class="stat-label">For patients</div>
             </div>
         </div>
     </div>
-</section>
 
-<!-- ── Diseases we cover ──────────────────────────────────────────── -->
-<section style="padding: 0 24px 52px; background: #f8f9fb;">
-    <div class="section-title">Diseases we can identify</div>
-    <div class="section-sub">
-        Our ML model is trained to detect {{ diseases|length }} conditions
-    </div>
-    <div style="background:#fff; border:1px solid #e5e7eb;
+    <!-- ── Features ──────────────────────────────────────────────────── -->
+    <section class="py-5 px-3 px-md-4" style="background: #f8f9fb;">
+        <div class="section-title">Everything you need in one place</div>
+        <div class="section-sub">From symptom check to confirmed appointment</div>
+
+        <div class="row">
+            <div class="col-6 col-md-3 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:#ede9fe;">🔍</div>
+                    <h5>Symptom Assessment</h5>
+                    <p>Enter your symptoms and get an instant AI prediction
+                        of possible conditions with precautions and next steps.</p>
+                    <div class="text-center pt-3">
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.symptom') }}" class="btn-feature">
+                            Check symptoms
+                        </a>
+                        {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="btn-feature">
+                            Login to check
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:#dcfce7;">👨‍⚕️</div>
+                    <h5>Doctor Recommendation</h5>
+                    <p>Based on your predicted condition, we match you with
+                        the right specialist — cardiologist, neurologist, and more.</p>
+                    <div class="text-center pt-3">
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.symptom') }}" class="btn-feature">
+                            Get recommended
+                        </a>
+                        {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="btn-feature">
+                            Login to start
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:#fef9c3;">📅</div>
+                    <h5>Book Appointment</h5>
+                    <p>Pick a doctor, choose your preferred date and time slot,
+                        and confirm your appointment directly through the platform.</p>
+                    <div class="text-center pt-3">
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.my_appointments') }}" class="btn-feature-outline">
+                            View appointments
+                        </a>
+                        {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="btn-feature">
+                            Login to book
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:#fee2e2;">💊</div>
+                    <h5>Precautions & Remedies</h5>
+                    <p>Receive medically sourced precautions for your predicted
+                        condition so you know what to do while waiting for care.</p>
+                    <div class="text-center pt-3">
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.symptom') }}" class="btn-feature">
+                            Check symptoms
+                        </a>
+                        {% else %}
+                        <a href="{{ url_for('auth.signup') }}" class="btn-feature">
+                            Sign up free
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── How it works ───────────────────────────────────────────────── -->
+    <section class="px-3 px-md-4 pb-5">
+        <div class="section-title">How it works</div>
+        <div class="section-sub">Get from symptoms to specialist in four simple steps</div>
+        <div class="steps-card">
+            <div class="row no-gutters">
+                <div class="col-12 col-sm-6 col-md-3 step-item">
+                    <div class="step-num">1</div>
+                    <h6>Create account</h6>
+                    <p>Sign up as a patient in seconds with just your email and name.</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 step-item">
+                    <div class="step-num">2</div>
+                    <h6>Enter symptoms</h6>
+                    <p>Type your symptoms into the assessment form and hit Predict.</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 step-item">
+                    <div class="step-num">3</div>
+                    <h6>Get diagnosis</h6>
+                    <p>Our ML model predicts your condition and recommends a specialist.</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 step-item">
+                    <div class="step-num">4</div>
+                    <h6>Book appointment</h6>
+                    <p>Pick a doctor, choose a time slot, and confirm your visit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Diseases we cover ──────────────────────────────────────────── -->
+    <section class="px-3 px-md-4 pb-5" style="background: #f8f9fb;">
+        <div class="section-title">Diseases we can identify</div>
+        <div class="section-sub">
+            Our ML model is trained to detect {{ diseases|length }} conditions
+        </div>
+        <div style="background:#fff; border:1px solid #e5e7eb;
                 border-radius:14px; padding:28px; text-align:center;">
-        {% for disease in diseases %}
-        <span class="disease-badge">{{ disease }}</span>
-        {% endfor %}
-    </div>
-</section>
-
-<!-- ── CTA ───────────────────────────────────────────────────────── -->
-<section style="padding: 0 24px 52px;">
-    <div class="cta-section">
-        {% if current_user.is_authenticated %}
-        <h2>Ready to check your symptoms?</h2>
-        <p>You're logged in as {{ current_user.first_name }}.
-           Start your health assessment now.</p>
-        <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-            <a href="{{ url_for('auth.symptom') }}" class="btn-hero-primary">
-                Check symptoms now
-            </a>
-            <a href="{{ url_for('auth.my_appointments') }}" class="btn-hero-outline">
-                View my appointments
-            </a>
+            {% for disease in diseases %}
+            <span class="disease-badge">{{ disease }}</span>
+            {% endfor %}
         </div>
-        {% else %}
-        <h2>Take control of your health today</h2>
-        <p>Join patients using AI-powered care guidance.
-           Free to sign up, no credit card needed.</p>
-        <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-            <a href="{{ url_for('auth.signup') }}" class="btn-hero-primary">
-                Create free account
-            </a>
-            <a href="{{ url_for('auth.login') }}" class="btn-hero-outline">
-                Already have an account?
-            </a>
+    </section>
+
+    <!-- ── CTA ───────────────────────────────────────────────────────── -->
+    <section class="px-3 px-md-4 pb-5">
+        <div class="cta-section p-4 p-md-5">
+            {% if current_user.is_authenticated %}
+            <h2>Ready to check your symptoms?</h2>
+            <p>You're logged in as {{ current_user.first_name }}.
+                Start your health assessment now.</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center" style="gap:12px;">
+                <a href="{{ url_for('auth.symptom') }}" class="btn-hero-primary">
+                    Check symptoms now
+                </a>
+                <a href="{{ url_for('auth.my_appointments') }}" class="btn-hero-outline">
+                    View my appointments
+                </a>
+            </div>
+            {% else %}
+            <h2>Take control of your health today</h2>
+            <p>Join patients using AI-powered care guidance.
+                Free to sign up, no credit card needed.</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center" style="gap:12px;">
+                <a href="{{ url_for('auth.signup') }}" class="btn-hero-primary">
+                    Create free account
+                </a>
+                <a href="{{ url_for('auth.login') }}" class="btn-hero-outline">
+                    Already have an account?
+                </a>
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
-</section>
+    </section>
 
-{% endblock %}
+    {% endblock %}
 
-<div class="container">{% block content %}{% endblock %}</div>
+    <div class="container">{% block content %}{% endblock %}</div>
 
-<!-- ── Footer ────────────────────────────────────────────────────── -->
-<footer>
-    <span class="footer-brand">🩺 Smart Healthcare</span>
-    <div>
-        <a href="/">Home</a>
-        <a href="/symptom">Check Symptoms</a>
-        <a href="/my-appointments">My Appointments</a>
-        <a href="/contact">Contact</a>
-        <a href="/admin">Admin</a>
-    </div>
-    <span style="font-size:12px;">AI-powered health assistant</span>
-</footer>
+    <!-- ── Footer ────────────────────────────────────────────────────── -->
+    <footer
+        class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-left px-3 px-md-4 py-3"
+        style="gap:12px;">
+        <span class="footer-brand">🩺 Smart Healthcare</span>
+        <div class="d-flex flex-wrap justify-content-center" style="gap:16px;">
+            <a href="/">Home</a>
+            <a href="/symptom">Check Symptoms</a>
+            <a href="/my-appointments">My Appointments</a>
+            <a href="/contact">Contact</a>
+            <a href="/admin">Admin</a>
+        </div>
+        <span style="font-size:12px;">AI-powered health assistant</span>
+    </footer>
 
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>

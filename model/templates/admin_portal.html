@@ -2,33 +2,33 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block body %}
-<div class="page-header">
+<div class="page-header d-flex justify-content-between align-items-center flex-wrap px-3 px-md-4 pt-3 pt-md-4">
     <h2>Dashboard</h2>
 </div>
 
-<div class="page-body">
+<div class="page-body px-3 px-md-4 py-3 py-md-4">
 
     <!-- Stats row -->
     <div class="row mb-4">
-        <div class="col-6 col-sm-3 mb-3">
+        <div class="col-6 col-md-3 mb-3">
             <div class="stat-card text-center">
                 <div class="stat-num">{{ total_patients }}</div>
                 <div class="stat-label">Registered patients</div>
             </div>
         </div>
-        <div class="col-6 col-sm-3 mb-3">
+        <div class="col-6 col-md-3 mb-3">
             <div class="stat-card text-center">
                 <div class="stat-num">{{ total_doctors }}</div>
                 <div class="stat-label">Doctors</div>
             </div>
         </div>
-        <div class="col-6 col-sm-3 mb-3">
+        <div class="col-6 col-md-3 mb-3">
             <div class="stat-card text-center">
                 <div class="stat-num">{{ total_appointments }}</div>
                 <div class="stat-label">Total appointments</div>
             </div>
         </div>
-        <div class="col-6 col-sm-3 mb-3">
+        <div class="col-6 col-md-3 mb-3">
             <div class="stat-card text-center">
                 <div class="stat-num" style="color:#f59e0b;">{{ pending }}</div>
                 <div class="stat-label">Pending appointments</div>
@@ -39,12 +39,8 @@
     <!-- Navigation cards -->
     <div class="row">
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-            <a href="{{ url_for('auth.admin_doctors') }}"
-               style="text-decoration:none;">
-                <div class="section-card text-center" style="cursor:pointer;
-                     transition: box-shadow .15s;"
-                     onmouseover="this.style.boxShadow='0 4px 16px rgba(124,58,237,0.15)'"
-                     onmouseout="this.style.boxShadow=''">
+            <a href="{{ url_for('auth.admin_doctors') }}" class="text-decoration-none">
+                <div class="section-card text-center shadow-sm" style="cursor:pointer;">
                     <div style="font-size:32px;margin-bottom:12px;">👨‍⚕️</div>
                     <h5 style="font-weight:600;color:#1f0a3c;">Doctors</h5>
                     <p style="font-size:13px;color:#6b7280;margin:0;">
@@ -54,12 +50,8 @@
             </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-            <a href="{{ url_for('auth.admin_add_doctor') }}"
-               style="text-decoration:none;">
-                <div class="section-card text-center" style="cursor:pointer;
-                     transition: box-shadow .15s;"
-                     onmouseover="this.style.boxShadow='0 4px 16px rgba(124,58,237,0.15)'"
-                     onmouseout="this.style.boxShadow=''">
+            <a href="{{ url_for('auth.admin_add_doctor') }}" class="text-decoration-none">
+                <div class="section-card text-center shadow-sm" style="cursor:pointer;">
                     <div style="font-size:32px;margin-bottom:12px;">➕</div>
                     <h5 style="font-weight:600;color:#1f0a3c;">Add Doctor</h5>
                     <p style="font-size:13px;color:#6b7280;margin:0;">
@@ -69,12 +61,8 @@
             </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-            <a href="{{ url_for('auth.admin_patients') }}"
-               style="text-decoration:none;">
-                <div class="section-card text-center" style="cursor:pointer;
-                     transition: box-shadow .15s;"
-                     onmouseover="this.style.boxShadow='0 4px 16px rgba(124,58,237,0.15)'"
-                     onmouseout="this.style.boxShadow=''">
+            <a href="{{ url_for('auth.admin_patients') }}" class="text-decoration-none">
+                <div class="section-card text-center shadow-sm" style="cursor:pointer;">
                     <div style="font-size:32px;margin-bottom:12px;">🧑‍🤝‍🧑</div>
                     <h5 style="font-weight:600;color:#1f0a3c;">Patients</h5>
                     <p style="font-size:13px;color:#6b7280;margin:0;">
@@ -84,12 +72,8 @@
             </a>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 mb-3">
-            <a href="{{ url_for('auth.admin_appointments') }}"
-               style="text-decoration:none;">
-                <div class="section-card text-center" style="cursor:pointer;
-                     transition: box-shadow .15s;"
-                     onmouseover="this.style.boxShadow='0 4px 16px rgba(124,58,237,0.15)'"
-                     onmouseout="this.style.boxShadow=''">
+            <a href="{{ url_for('auth.admin_appointments') }}" class="text-decoration-none">
+                <div class="section-card text-center shadow-sm" style="cursor:pointer;">
                     <div style="font-size:32px;margin-bottom:12px;">📅</div>
                     <h5 style="font-weight:600;color:#1f0a3c;">Appointments</h5>
                     <p style="font-size:13px;color:#6b7280;margin:0;">
