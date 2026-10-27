@@ -1,337 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Healthcare Prediction</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #f2f2f2;
-            padding: 30px;
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f2f2f2; padding: 30px; }
+        h1 { text-align: center; margin-bottom: 24px; font-weight: 700; color: #3b0764; }
+        .form-card, #result {
+            max-width: 680px; margin: 0 auto 24px;
+            background: white; padding: 28px;
+            border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 24px;
-            font-weight: 700;
-            color: #3b0764;
-        }
-
-        .form-card,
-        #result {
-            max-width: 680px;
-            margin: 0 auto 24px;
-            background: white;
-            padding: 28px;
-            border-radius: 14px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        #result {
-            display: none;
-        }
-
+        #result { display: none; }
         .tag {
-            display: inline-block;
-            background: #f5f3ff;
-            color: #5b21b6;
-            border: 1px solid #ede9fe;
-            border-radius: 999px;
-            padding: 5px 13px;
-            font-size: 12px;
-            margin: 3px;
-            cursor: pointer;
-            transition: all .15s;
-            user-select: none;
+            display: inline-block; background: #f5f3ff; color: #5b21b6;
+            border: 1px solid #ede9fe; border-radius: 999px;
+            padding: 5px 13px; font-size: 12px; margin: 3px;
+            cursor: pointer; transition: all .15s; user-select: none;
         }
-
-        .tag:hover {
-            background: #7c3aed;
-            color: white;
-            border-color: #7c3aed;
-        }
-
-        .tag.selected {
-            background: #7c3aed;
-            color: white;
-            border-color: #7c3aed;
-        }
-
+        .tag:hover { background: #7c3aed; color: white; border-color: #7c3aed; }
+        .tag.selected { background: #7c3aed; color: white; border-color: #7c3aed; }
         .autocomplete-list {
-            position: absolute;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            z-index: 999;
-            max-height: 200px;
-            overflow-y: auto;
-            width: 100%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: absolute; background: white;
+            border: 1px solid #e5e7eb; border-radius: 8px;
+            z-index: 999; max-height: 200px; overflow-y: auto;
+            width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
         .autocomplete-item {
-            padding: 8px 14px;
-            font-size: 13px;
-            cursor: pointer;
-            color: #374151;
+            padding: 8px 14px; font-size: 13px; cursor: pointer; color: #374151;
         }
-
-        .autocomplete-item:hover {
-            background: #f5f3ff;
-            color: #7c3aed;
-        }
-
-        .symptom-wrapper {
-            position: relative;
-        }
-
+        .autocomplete-item:hover { background: #f5f3ff; color: #7c3aed; }
+        .symptom-wrapper { position: relative; }
         .section-label {
-            font-size: 12px;
-            font-weight: 600;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
+            font-size: 12px; font-weight: 600; color: #6b7280;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
         }
-
-        /* ── Probability bars ── */
-        .disease-option {
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 12px;
-            transition: border-color .2s, box-shadow .2s;
-            cursor: default;
-        }
-
-        .disease-option.top {
-            border-color: #7c3aed;
-            box-shadow: 0 0 0 3px #ede9fe;
-        }
-
-        .disease-option.confirmed {
-            border-color: #10b981;
-            box-shadow: 0 0 0 3px #d1fae5;
-            background: #f0fdf4;
-        }
-
-        .disease-name {
-            font-weight: 600;
-            font-size: 15px;
-            color: #111827;
-        }
-
-        .disease-name.top {
-            color: #7c3aed;
-        }
-
-        .disease-name.confirmed {
-            color: #065f46;
-        }
-
-        .prob-bar-wrap {
-            background: #f3f4f6;
-            border-radius: 999px;
-            height: 8px;
-            margin: 8px 0 4px;
-            overflow: hidden;
-        }
-
-        .prob-bar {
-            height: 100%;
-            border-radius: 999px;
-            background: #c4b5fd;
-            transition: width .6s ease;
-        }
-
-        .prob-bar.top {
-            background: #7c3aed;
-        }
-
-        .prob-bar.confirmed {
-            background: #10b981;
-        }
-
-        .prob-label {
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .badge-top {
-            display: inline-block;
-            background: #ede9fe;
-            color: #5b21b6;
-            font-size: 11px;
-            padding: 2px 10px;
-            border-radius: 999px;
-            margin-left: 8px;
-            font-weight: 500;
-            vertical-align: middle;
-        }
-
-        .badge-confirmed {
-            display: inline-block;
-            background: #d1fae5;
-            color: #065f46;
-            font-size: 11px;
-            padding: 2px 10px;
-            border-radius: 999px;
-            margin-left: 8px;
-            font-weight: 500;
-            vertical-align: middle;
-        }
-
-        /* ── Refine prompt ── */
-        .refine-box {
-            background: #faf5ff;
-            border: 1px solid #e9d5ff;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .refine-box label {
-            font-weight: 600;
-            color: #3b0764;
-        }
-
-        .refine-box small {
-            color: #7c3aed;
-        }
-
-        /* ── Final result ── */
         .result-header {
             background: linear-gradient(135deg, #3b0764, #7c3aed);
-            color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+            color: white; border-radius: 10px; padding: 20px; margin-bottom: 20px;
         }
-
-        .result-header h5 {
-            color: white;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .result-header h5 { color: white; font-weight: 700; margin-bottom: 4px; }
+        .result-header p { color: #e9d5ff; font-size: 13px; margin: 0; }
+        .confidence-bar-wrap {
+            background: #f3f4f6; border-radius: 999px;
+            height: 10px; margin: 10px 0 4px; overflow: hidden;
         }
-
-        .result-header p {
-            color: #e9d5ff;
-            font-size: 13px;
-            margin: 0;
+        .confidence-bar {
+            height: 100%; border-radius: 999px;
+            background: linear-gradient(90deg, #7c3aed, #a78bfa);
+            transition: width .8s ease;
         }
-
+        .refine-box {
+            background: #faf5ff; border: 1px solid #e9d5ff;
+            border-radius: 12px; padding: 20px; margin-top: 20px;
+        }
+        .refine-box label { font-weight: 600; color: #3b0764; }
         .btn-purple {
-            background: #7c3aed;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            padding: 10px 24px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background .15s;
+            background: #7c3aed; color: #fff; border: none;
+            border-radius: 10px; padding: 10px 24px;
+            font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: background .15s; display: inline-block;
+            text-decoration: none;
         }
-
-        .btn-purple:hover {
-            background: #6d28d9;
+        .btn-purple:hover { background: #6d28d9; color: #fff; text-decoration: none; }
+        .btn-purple:disabled,
+        .btn-purple[disabled] {
+            background: #c4b5fd; cursor: not-allowed; opacity: .8;
         }
-
+        .btn-purple:disabled:hover { background: #c4b5fd; }
         .btn-outline-purple {
-            background: transparent;
-            color: #7c3aed;
-            border: 1.5px solid #7c3aed;
-            border-radius: 10px;
-            padding: 10px 24px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all .15s;
+            background: transparent; color: #7c3aed;
+            border: 1.5px solid #7c3aed; border-radius: 10px;
+            padding: 10px 24px; font-size: 14px; font-weight: 600;
+            cursor: pointer; transition: all .15s; display: inline-block;
+            text-decoration: none;
         }
-
-        .btn-outline-purple:hover {
-            background: #7c3aed;
-            color: #fff;
+        .btn-outline-purple:hover { background: #7c3aed; color: #fff; text-decoration: none; }
+        .invalid-symptom-alert {
+            background: #fef2f2; border: 1px solid #fecaca;
+            border-radius: 10px; padding: 14px 16px;
+            color: #991b1b; font-size: 13px;
         }
-
+        #symptomCounterMsg {
+            font-size: 12px; font-weight: 600; margin-top: 8px;
+            transition: color .15s;
+        }
+        .rank-badge {
+            font-size: 11px; font-weight: 700; letter-spacing: .5px;
+            text-transform: uppercase; margin-bottom: 4px;
+        }
         @media (max-width: 576px) {
-            body {
-                padding: 16px;
-            }
-
-            h1 {
-                font-size: 22px;
-            }
-
-            .form-card,
-            #result {
-                padding: 20px 16px;
-            }
-
-            .tag {
-                font-size: 11px;
-                padding: 4px 10px;
-            }
+            body { padding: 16px; }
+            h1 { font-size: 22px; }
+            .form-card, #result { padding: 20px 16px; }
+            .tag { font-size: 11px; padding: 4px 10px; }
         }
     </style>
 </head>
-
 <body>
     <h1>🔍 Healthcare Prediction</h1>
 
-    <!-- ── Input form ── -->
     <div class="form-card">
         <form id="healthForm">
             <div class="form-group">
                 <label style="font-weight:600;">Enter your symptoms</label>
                 <div class="symptom-wrapper">
-                    <input type="text" class="form-control" id="symptoms" name="symptoms" autocomplete="off"
-                        placeholder="Type a symptom, e.g. fever, headache, skin rash">
+                    <input type="text" class="form-control" id="symptoms"
+                        name="symptoms" autocomplete="off"
+                        placeholder="Type a symptom, e.g. itching, headache, fever">
                     <div class="autocomplete-list" id="autocompleteList" style="display:none;"></div>
                 </div>
                 <small class="text-muted mt-1 d-block">
-                    Separate multiple symptoms with commas, or click the tags below.
+                    Only symptoms from the dataset are accepted. Use the autocomplete or click tags below.
                 </small>
             </div>
 
             <div class="mb-4">
                 <div class="section-label">Common symptoms — click to add</div>
                 {% set common_symptoms = [
-                'itching', 'skin rash', 'fever', 'cough', 'fatigue',
-                'nausea', 'vomiting', 'headache', 'chest pain',
-                'abdominal pain', 'back pain', 'chills', 'joint pain',
-                'loss of appetite', 'sweating', 'breathlessness',
-                'dizziness', 'yellowish skin', 'dark urine', 'weight loss',
-                'muscle weakness', 'runny nose', 'sore throat',
-                'blurred vision', 'swelling'
+                    'itching', 'skin rash', 'fatigue', 'cough', 'high fever',
+                    'nausea', 'vomiting', 'chest pain','stomach pain','acidity',
+                    'abdominal pain', 'back pain', 'chills', 'joint pain',
+                    'loss of appetite', 'sweating', 'breathlessness',
+                    'dizziness', 'yellowish skin', 'dark urine', 'weight loss',
+                    'diarrhoea', 'throat irritation','continuous sneezing','runny nose','sinus pressure', 'headache',
+                    'blurred and distorted vision', 'bladder discomfort', 'continuous feel of urine' 
                 ] %}
                 {% for sym in common_symptoms %}
                 <span class="tag" data-symptom="{{ sym }}">{{ sym }}</span>
                 {% endfor %}
             </div>
 
-            <button type="submit" class="btn-purple w-100">Predict</button>
+            <button type="submit" class="btn-purple w-100" id="predictBtn" disabled>Predict</button>
+            <div id="symptomCounterMsg" class="text-center"></div>
         </form>
     </div>
 
-    <!-- ── Result area ── -->
     <div id="result"></div>
 
     <script>
+        // MIN_SYMPTOMS is rendered from the backend (auth.py's MIN_SYMPTOMS
+        // constant) via symptom(), so the frontend and backend can never
+        // drift out of sync. Falls back to 3 if it's ever missing.
+        const MIN_SYMPTOMS = {{ (min_symptoms if min_symptoms is defined else 3) | tojson }};
+
         const allSymptoms = {{ all_symptoms | tojson }}.map(s => s.replace(/_/g, ' '));
+        const allSymptomsSet = new Set(allSymptoms);
         const input = document.getElementById('symptoms');
         const autocompleteList = document.getElementById('autocompleteList');
         const resultDiv = document.getElementById('result');
         const tags = document.querySelectorAll('.tag');
+        const predictBtn = document.getElementById('predictBtn');
+        const counterMsg = document.getElementById('symptomCounterMsg');
 
-        // ── Track state ──
-        let initialSymptoms = [];
-        let stage = 'initial'; // 'initial' or 'final'
+        // Tracks the symptoms behind whatever result is currently shown,
+        // so the "add more symptoms" box on the result screen can combine
+        // them with newly added ones and re-predict.
+        let currentUsedSymptoms = [];
 
-        // ── Helpers ──
         function getCurrentSymptoms() {
             return input.value.split(',').map(s => s.trim()).filter(s => s.length > 0);
         }
@@ -347,21 +175,32 @@
                 .join(', ');
         }
 
+        // ── Enable/disable the Predict button based on symptom count ──
+        function updateButtonState() {
+            const count = getCurrentSymptoms().length;
+            if (count >= MIN_SYMPTOMS) {
+                predictBtn.disabled = false;
+                counterMsg.textContent = `${count} symptom${count > 1 ? 's' : ''} added — ready to predict.`;
+                counterMsg.style.color = '#16a34a';
+            } else {
+                predictBtn.disabled = true;
+                counterMsg.textContent = `Add at least ${MIN_SYMPTOMS} symptoms to continue (${count}/${MIN_SYMPTOMS})`;
+                counterMsg.style.color = '#6b7280';
+            }
+        }
+
         function updateTagStates() {
             const current = getCurrentSymptoms();
             tags.forEach(tag => {
                 const sym = tag.getAttribute('data-symptom');
-                if (current.includes(sym)) {
-                    tag.classList.add('selected');
-                } else {
-                    tag.classList.remove('selected');
-                }
+                tag.classList.toggle('selected', current.includes(sym));
             });
+            updateButtonState();
         }
 
         // ── Tag click ──
         tags.forEach(tag => {
-            tag.addEventListener('click', function () {
+            tag.addEventListener('click', function() {
                 const sym = this.getAttribute('data-symptom');
                 let current = getCurrentSymptoms();
                 if (current.includes(sym)) {
@@ -375,8 +214,8 @@
             });
         });
 
-        // ── Autocomplete ──
-        input.addEventListener('input', function () {
+        // ── Autocomplete — only show valid dataset symptoms ──
+        input.addEventListener('input', function() {
             updateTagStates();
             const parts = this.value.split(',');
             const lastPart = parts[parts.length - 1].trim().toLowerCase();
@@ -397,7 +236,7 @@
             autocompleteList.style.display = 'block';
         });
 
-        autocompleteList.addEventListener('click', function (e) {
+        autocompleteList.addEventListener('click', function(e) {
             const item = e.target.closest('.autocomplete-item');
             if (!item) return;
             const chosen = item.getAttribute('data-value');
@@ -409,118 +248,67 @@
             updateTagStates();
         });
 
-        document.addEventListener('click', function (e) {
+        document.addEventListener('click', function(e) {
             if (!e.target.closest('.symptom-wrapper')) {
                 autocompleteList.style.display = 'none';
             }
         });
 
-        // ── Render probability bars ──
-        function renderTop3(top3, confirmedDisease = null) {
-            return top3.map((item, index) => {
-                const isTop = index === 0 && !confirmedDisease;
-                const isConfirmed = confirmedDisease &&
-                    item.disease.toLowerCase() === confirmedDisease.toLowerCase();
-                const cardClass = isConfirmed ? 'confirmed' :
-                    (isTop ? 'top' : '');
-                const nameClass = isConfirmed ? 'confirmed' :
-                    (isTop ? 'top' : '');
-                const barClass = isConfirmed ? 'confirmed' :
-                    (isTop ? 'top' : '');
-                const badge = isConfirmed
-                    ? '<span class="badge-confirmed">✓ Best match</span>'
-                    : (isTop ? '<span class="badge-top">Most likely</span>' : '');
+        // ── Validate symptoms on the frontend too ──
+        function validateSymptoms(rawInput) {
+            const entered = rawInput.split(',').map(s => s.trim()).filter(s => s.length > 0);
+            const invalid = entered.filter(s => !allSymptomsSet.has(s));
+            return { entered, invalid };
+        }
 
-                return `
-                <div class="disease-option ${cardClass}">
-                    <div class="disease-name ${nameClass}">
-                        ${item.disease} ${badge}
+        // ── Render a single ranked-prediction card with a probability bar ──
+        // Called once per item in result.top3 (up to 3 candidates). The
+        // first item (isConfirmed = true) is the model's primary pick and
+        // gets the "Most likely" styling; the rest are shown as "Possible
+        // match" so the patient can see how close the runner-up diseases
+        // were, instead of only ever seeing a single answer.
+        function renderResult(item, isConfirmed = false) {
+            const cardColor = isConfirmed ? '#10b981' : '#7c3aed';
+            const bgColor = isConfirmed ? '#f0fdf4' : '#faf5ff';
+            const label = isConfirmed ? 'Most likely' : 'Possible match';
+            return `
+                <div style="border: 2px solid ${cardColor};
+                            border-radius: 12px; padding: 18px;
+                            background: ${bgColor}; margin-bottom: 12px;">
+                    <div class="rank-badge" style="color:${cardColor};">${label}</div>
+                    <div style="font-weight:700;font-size:16px;color:${cardColor};">
+                        ${item.simple_name || item.disease}
                     </div>
-                    <div class="prob-bar-wrap">
-                        <div class="prob-bar ${barClass}"
-                             style="width: ${item.confidence}%"></div>
+                    <div class="confidence-bar-wrap">
+                        <div class="confidence-bar" style="width:${item.confidence}%;
+                             background: linear-gradient(90deg, ${cardColor}, ${cardColor}88);">
+                        </div>
                     </div>
-                    <div class="prob-label">${item.confidence}% probability</div>
+                    <div style="font-size:12px;color:#6b7280;">
+                        Confidence: <strong>${item.confidence}%</strong>
+                    </div>
                 </div>`;
-            }).join('');
         }
 
-        // ── Initial result (1 symptom) ──
-        function showInitialResult(data) {
-            initialSymptoms = data.entered_symptoms;
-
-            resultDiv.style.display = 'block';
-            resultDiv.innerHTML = `
-                <h5 style="font-weight:700;margin-bottom:4px;">
-                    Possible conditions
-                </h5>
-                <p class="text-muted mb-4" style="font-size:13px;">
-                    Based on <strong>${initialSymptoms.map(s =>
-                s.replace(/_/g, ' ')).join(', ')}</strong>
-                    — these are the most probable conditions.
-                    Add more symptoms to narrow down the diagnosis.
-                </p>
-
-                ${renderTop3(data.top3)}
-
-                <div class="refine-box mt-3">
-                    <label>Add more symptoms to refine the prediction</label>
-                    <small class="d-block mb-2">
-                        The more symptoms you add, the more accurate the result.
-                    </small>
-                    <div class="symptom-wrapper mb-2" style="position:relative;">
-                        <input type="text" class="form-control" id="refineInput"
-                            autocomplete="off"
-                            placeholder="e.g. fatigue, fever, nausea">
-                        <div class="autocomplete-list" id="refineAutocomplete"
-                             style="display:none;"></div>
-                    </div>
-                    <small class="text-muted d-block mb-3">
-                        Your original symptom (${initialSymptoms.map(s =>
-                    s.replace(/_/g, ' ')).join(', ')})
-                        will be included automatically.
-                    </small>
-                    <button class="btn-purple" onclick="refineSymptoms()">
-                        Refine diagnosis
-                    </button>
-                    <button class="btn-outline-purple ml-2"
-                            onclick="skipRefine('${data.top3[0].disease}')">
-                        Skip — use top result
-                    </button>
-                </div>
-            `;
-
-            // Setup autocomplete for refine input
-            setupRefineAutocomplete();
-        }
-
-        // ── Refine autocomplete ──
+        // ── "Add more symptoms" autocomplete on the result screen ──
         function setupRefineAutocomplete() {
             const refineInput = document.getElementById('refineInput');
             const refineAuto = document.getElementById('refineAutocomplete');
             if (!refineInput) return;
 
-            refineInput.addEventListener('input', function () {
+            refineInput.addEventListener('input', function() {
                 const parts = this.value.split(',');
                 const lastPart = parts[parts.length - 1].trim().toLowerCase();
-                if (lastPart.length < 2) {
-                    refineAuto.style.display = 'none';
-                    return;
-                }
-                const matches = allSymptoms
-                    .filter(s => s.toLowerCase().includes(lastPart))
-                    .slice(0, 8);
-                if (matches.length === 0) {
-                    refineAuto.style.display = 'none';
-                    return;
-                }
+                if (lastPart.length < 2) { refineAuto.style.display = 'none'; return; }
+                const matches = allSymptoms.filter(s => s.toLowerCase().includes(lastPart)).slice(0, 8);
+                if (!matches.length) { refineAuto.style.display = 'none'; return; }
                 refineAuto.innerHTML = matches.map(m =>
                     `<div class="autocomplete-item" data-value="${m}">${m}</div>`
                 ).join('');
                 refineAuto.style.display = 'block';
             });
 
-            refineAuto.addEventListener('click', function (e) {
+            refineAuto.addEventListener('click', function(e) {
                 const item = e.target.closest('.autocomplete-item');
                 if (!item) return;
                 const chosen = item.getAttribute('data-value');
@@ -531,43 +319,46 @@
                 refineInput.focus();
             });
 
-            document.addEventListener('click', function (e) {
-                if (!e.target.closest('#refineInput') &&
-                    !e.target.closest('#refineAutocomplete')) {
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#refineInput') && !e.target.closest('#refineAutocomplete')) {
                     refineAuto.style.display = 'none';
                 }
             });
         }
 
-        // ── Refine with more symptoms ──
-        async function refineSymptoms() {
+        // ── Add more symptoms to an already-shown result and re-predict ──
+        async function refineFurther() {
             const refineInput = document.getElementById('refineInput');
-            const newSymptoms = refineInput.value.split(',')
-                .map(s => s.trim().replace(/ /g, '_').toLowerCase())
-                .filter(s => s.length > 0);
+            const newRaw = refineInput.value.split(',')
+                .map(s => s.trim()).filter(s => s.length > 0);
 
-            if (newSymptoms.length === 0) {
+            if (!newRaw.length) {
                 alert('Please enter at least one more symptom.');
                 return;
             }
 
-            // Combine initial + new symptoms
-            const combined = [...new Set([...initialSymptoms, ...newSymptoms])];
-            const combinedStr = combined.join(', ');
+            const invalidNew = newRaw.filter(s => !allSymptomsSet.has(s));
+            if (invalidNew.length) {
+                alert(`Please enter valid symptoms only. Not recognised: ${invalidNew.join(', ')}`);
+                return;
+            }
 
-            // Update main input to show all symptoms
-            input.value = combined.map(s => s.replace(/_/g, ' ')).join(', ');
-            updateTagStates();
+            const newSymptoms = newRaw.map(s => s.replace(/ /g, '_').toLowerCase());
+            const combined = [...new Set([...currentUsedSymptoms, ...newSymptoms])];
 
-            resultDiv.innerHTML = '<p class="text-center text-muted py-3">Refining prediction...</p>';
+            resultDiv.innerHTML = '<p class="text-center text-muted py-3">Updating prediction...</p>';
 
             try {
                 const response = await fetch('/symptom', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ symptoms: combinedStr })
+                    body: JSON.stringify({ symptoms: combined.join(', ') })
                 });
                 const result = await response.json();
+                if (result.error === 'invalid_symptoms' || result.error === 'min_symptoms') {
+                    resultDiv.innerHTML = `<div class="invalid-symptom-alert">⚠️ ${result.message}</div>`;
+                    return;
+                }
                 if (result.error) {
                     resultDiv.innerHTML = `<p class="text-danger">${result.error}</p>`;
                     return;
@@ -578,83 +369,60 @@
             }
         }
 
-        // ── Skip refine — use top result directly ──
-        async function skipRefine(diseaseName) {
-            const combinedStr = initialSymptoms.join(', ');
-            resultDiv.innerHTML = '<p class="text-center text-muted py-3">Loading...</p>';
-            try {
-                const response = await fetch('/symptom', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ symptoms: combinedStr })
-                });
-                const result = await response.json();
-                showFinalResult(result, initialSymptoms);
-            } catch (err) {
-                resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
-            }
-        }
-
         // ── Final result ──
-        // (This was previously a duplicate nested function — that's what
-        // broke the whole script. It's now a single, top-level function.)
+        // result.top3 now holds up to 3 ranked candidates, each with a
+        // confidence that's been renormalized (by the backend) to sum to
+        // 100% across the shown candidates. All 3 are rendered as cards
+        // with probability bars; the rest of the panel (description,
+        // severity, precautions, booking) is driven by the primary
+        // (top3[0]) prediction.
         function showFinalResult(result, usedSymptoms) {
+            currentUsedSymptoms = usedSymptoms;
+
+            const items = result.top3;
+            const top3Html = items
+                .map((item, idx) => renderResult(item, idx === 0))
+                .join('');
+
             const precautionItems = result.precautions
                 .map(p => `<li class="mb-1">${p}</li>`).join('');
 
             const severityColor = {
-                'High': 'danger',
-                'Medium': 'warning',
-                'Low': 'success'
+                'High': 'danger', 'Medium': 'warning', 'Low': 'success'
             }[result.severity] || 'secondary';
 
-            // Always show recommended specialist + appointment button
-            let doctorSection = `
+            const doctorSection = `
                 <hr>
-                <h6 style="font-weight:600;">
-                    Recommended Specialist
-                </h6>
-                <p style="color:#7c3aed;font-weight:600;">
+                <h6 style="font-weight:600;">Recommended Specialist</h6>
+                <p style="color:#7c3aed;font-weight:600;margin-bottom:8px;">
                     ${result.recommended_specialty}
                 </p>
                 <a href="/book-appointment/${encodeURIComponent(result.recommended_specialty)}"
-                   class="btn-purple d-inline-block text-decoration-none">
-                    📅 Book Appointment
-                </a>
-            `;
+                   class="btn-purple">📅 Book Appointment</a>`;
 
             resultDiv.innerHTML = `
-                <h5 style="font-weight:700;margin-bottom:16px;">
-                    Diagnosis Result
-                </h5>
+                <div class="result-header">
+                    <h5>Diagnosis Result</h5>
+                    <p>Based on: ${usedSymptoms.map(s => s.replace(/_/g,' ')).join(', ')}</p>
+                </div>
 
-                <p>
-                    <strong>Predicted Condition:</strong>
+                <div class="section-label">Top ${items.length} possible conditions</div>
+                ${top3Html}
+
+                <p><strong>Most Likely Condition:</strong>
                     <span style="color:#7c3aed;font-weight:700;font-size:16px;">
                         ${result.simple_name}
                     </span>
-                    <span style="font-size:12px;color:#9ca3af;">
-                        (${result.disease})
-                    </span>
+                    <span style="font-size:12px;color:#9ca3af;">(${result.disease})</span>
                 </p>
 
                 ${result.description ? `
-                <p style="background:#f5f3ff;
-                          border-radius:8px;
-                          padding:12px;
-                          font-size:13px;
-                          color:#374151;
-                          margin-top:4px;">
+                <p style="background:#f5f3ff;border-radius:8px;padding:12px;
+                           font-size:13px;color:#374151;margin-bottom:16px;">
                     ℹ️ ${result.description}
-                </p>
-                ` : ''}
+                </p>` : ''}
 
-                ${renderTop3(result.top3, result.disease)}
-
-                <hr>
-
-                <p>
-                    <strong>Severity:</strong>
+                <p><strong>Severity:</strong>
                     <span class="badge badge-${severityColor}" style="font-size:13px;">
                         ${result.severity}
                     </span>
@@ -664,30 +432,39 @@
                 </p>
 
                 <strong>Precautions:</strong>
-                <ul class="mt-2 mb-3">
-                    ${precautionItems}
-                </ul>
+                <ul class="mt-2 mb-3">${precautionItems}</ul>
 
                 ${doctorSection}
 
+                <div class="refine-box mt-3">
+                    <label>Add more symptoms for a more precise result</label>
+                    <small class="d-block mb-2" style="color:#7c3aed;">
+                        More symptoms usually sharpen the prediction.
+                    </small>
+                    <div class="symptom-wrapper mb-2" style="position:relative;">
+                        <input type="text" class="form-control" id="refineInput"
+                            autocomplete="off" placeholder="e.g. fatigue, high fever">
+                        <div class="autocomplete-list" id="refineAutocomplete" style="display:none;"></div>
+                    </div>
+                    <button class="btn-purple" type="button" onclick="refineFurther()">
+                        Update Prediction
+                    </button>
+                </div>
+
                 <hr>
-
-                <small class="text-muted">
-                    ${result.note}
-                </small>
-
+                <small class="text-muted">${result.note}</small>
                 <br><br>
-
-                <button class="btn-outline-purple" onclick="resetForm()">
+                <button class="btn-outline-purple" type="button" onclick="resetForm()">
                     Start new assessment
                 </button>
-
                 <a href="/my-appointments"
                    class="btn btn-sm btn-outline-secondary ml-2"
                    style="border-radius:8px;">
                     My appointments
                 </a>
             `;
+
+            setupRefineAutocomplete();
         }
 
         // ── Reset ──
@@ -696,72 +473,76 @@
             updateTagStates();
             resultDiv.style.display = 'none';
             resultDiv.innerHTML = '';
-            stage = 'initial';
-            initialSymptoms = [];
+            currentUsedSymptoms = [];
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // ── Main form submit ──
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('healthForm')
-                .addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+        // Always sends the full symptom list straight to /symptom now that
+        // the Predict button can't be clicked with fewer than MIN_SYMPTOMS
+        // symptoms entered, so the old single-symptom "initial guess" path
+        // (/symptom/initial) is never triggered from this form any more.
+        document.addEventListener('DOMContentLoaded', function() {
+            updateButtonState();
 
-                    const rawSymptoms = input.value.trim();
-                    if (!rawSymptoms) {
-                        alert('Please enter at least one symptom.');
+            document.getElementById('healthForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const rawSymptoms = input.value.trim();
+                const { entered, invalid } = validateSymptoms(rawSymptoms);
+
+                // Defensive re-check even though the button should already
+                // be disabled below this threshold.
+                if (entered.length < MIN_SYMPTOMS) {
+                    resultDiv.style.display = 'block';
+                    resultDiv.innerHTML = `
+                        <div class="invalid-symptom-alert">
+                            ⚠️ Please enter at least ${MIN_SYMPTOMS} symptoms before predicting.
+                        </div>`;
+                    return;
+                }
+
+                if (invalid.length) {
+                    resultDiv.style.display = 'block';
+                    resultDiv.innerHTML = `
+                        <div class="invalid-symptom-alert">
+                            ⚠️ <strong>Unrecognised symptom${invalid.length > 1 ? 's' : ''}:</strong>
+                            "${invalid.join('", "')}"
+                            <br>Please select symptoms from the autocomplete suggestions or click the tags above.
+                        </div>`;
+                    return;
+                }
+
+                const backendSymptoms = symptomsToBackend(rawSymptoms);
+
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = '<p class="text-center text-muted py-3">Analyzing symptoms...</p>';
+
+                try {
+                    const response = await fetch('/symptom', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ symptoms: backendSymptoms })
+                    });
+                    const result = await response.json();
+
+                    if (result.error === 'invalid_symptoms' || result.error === 'min_symptoms') {
+                        resultDiv.innerHTML = `<div class="invalid-symptom-alert">⚠️ ${result.message}</div>`;
+                        return;
+                    }
+                    if (result.error) {
+                        resultDiv.innerHTML = `<p class="text-danger">${result.error}</p>`;
                         return;
                     }
 
-                    const backendSymptoms = symptomsToBackend(rawSymptoms);
-                    const symptomCount = backendSymptoms.split(',')
-                        .filter(s => s.trim()).length;
-
-                    resultDiv.style.display = 'block';
-                    resultDiv.innerHTML =
-                        '<p class="text-center text-muted py-3">Analyzing symptoms...</p>';
-
-                    try {
-                        if (symptomCount === 1) {
-                            // Single symptom — show top 3 + ask for more
-                            const response = await fetch('/symptom/initial', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ symptoms: backendSymptoms })
-                            });
-                            const result = await response.json();
-                            if (result.error) {
-                                resultDiv.innerHTML =
-                                    `<p class="text-danger">${result.error}</p>`;
-                                return;
-                            }
-                            showInitialResult(result);
-                        } else {
-                            // Multiple symptoms — go straight to final result
-                            const response = await fetch('/symptom', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ symptoms: backendSymptoms })
-                            });
-                            const result = await response.json();
-                            if (result.error) {
-                                resultDiv.innerHTML =
-                                    `<p class="text-danger">${result.error}</p>`;
-                                return;
-                            }
-                            const entered = backendSymptoms.split(',')
-                                .map(s => s.trim()).filter(s => s);
-                            showFinalResult(result, entered);
-                        }
-                    } catch (err) {
-                        console.error(err);
-                        resultDiv.innerHTML =
-                            `<p class="text-danger">Error: ${err.message}</p>`;
-                    }
-                });
+                    const entered_list = backendSymptoms.split(',').map(s => s.trim()).filter(s => s);
+                    showFinalResult(result, entered_list);
+                } catch (err) {
+                    resultDiv.innerHTML = `<p class="text-danger">Error: ${err.message}</p>`;
+                }
+            });
         });
     </script>
 </body>
-
 </html>

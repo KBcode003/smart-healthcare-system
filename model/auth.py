@@ -5,6 +5,8 @@ from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 import pickle
 import pandas as pd
+import math
+from collections import Counter
 from datetime import date
 
 auth = Blueprint('auth', __name__)
@@ -23,6 +25,91 @@ except Exception as e:
     print("❌ Error loading models:", e)
     exit(1)
 
+# ── Minimum symptoms required before a prediction is allowed ──────────────────
+# Kept in sync with the frontend's Predict-button gate in symptom.html.
+# Enforced here too so the rule can never be bypassed by calling the API
+# directly (e.g. curl/Postman) instead of using the form.
+MIN_SYMPTOMS = 3
+
+# ── How many ranked predictions to show the patient ────────────────────────────
+TOP_N_PREDICTIONS = 3
+
+# ── Raw-probability floor used only to drop near-zero noise from the ──────────
+# candidate pool before ranking. This is intentionally low: with 41 disease
+# classes, a Random Forest's predict_proba() naturally spreads vote-share
+# across several diseases that share symptoms, so the correct top match can
+# legitimately sit well under 25% raw probability. A high cutoff here was
+# previously discarding valid 2nd/3rd candidates before they ever reached
+# the top-3 selection below.
+LOW_CONFIDENCE_CUTOFF = 5
+
+# ── Build valid symptom set from dataset ───────────────────────────────────────
+symptom_cols = [c for c in sym_df.columns if c.startswith('Symptom')]
+VALID_SYMPTOMS = set()
+for col in symptom_cols:
+    VALID_SYMPTOMS.update(
+        sym_df[col].dropna().str.strip().str.replace(' ', '_').str.lower()
+    )
+
+# ── Build disease-to-required-symptoms map from dataset ───────────────────────
+# For each disease, work out its "core" symptoms — the ones a patient
+# should be reporting at least one of before this disease is considered a
+# valid match at all (see passes_core_check below).
+#
+# NOTE: this used to take the strict intersection of symptoms across every
+# training combination for a disease. That collapses to an EMPTY set as
+# soon as a disease has more than one naturally varying symptom
+# presentation (e.g. Gastroenteritis is sometimes recorded with vomiting,
+# sometimes without) — and passes_core_check() treats an empty core as "no
+# restriction, let it through." In this dataset that silently disabled the
+# core-symptom filter for 27 of the 41 diseases, which is why diseases
+# like Gastroenteritis ("Stomach Flu") could appear in the results
+# regardless of which symptoms were actually entered.
+#
+# Instead, a symptom now counts as "core" if it appears in at least half
+# of that disease's distinct symptom-set variants (majority vote rather
+# than unanimous vote). If that still comes up empty for some disease, we
+# fall back to the union of everything ever recorded for it, so the
+# filter is never accidentally disabled again.
+CORE_SYMPTOM_MIN_FREQUENCY = 0.5
+
+def build_disease_core_symptoms(min_frequency=CORE_SYMPTOM_MIN_FREQUENCY):
+    temp = sym_df.copy()
+    temp['symptom_list'] = temp.apply(
+        lambda row: [
+            str(row[c]).strip().replace(' ', '_').lower()
+            for c in symptom_cols if pd.notna(row[c])
+        ], axis=1
+    )
+    temp['symptom_str'] = temp['symptom_list'].apply(
+        lambda x: ','.join(sorted(x)))
+    temp = temp.drop_duplicates(subset=['Disease', 'symptom_str'])
+
+    core = {}
+    for disease, group in temp.groupby('Disease'):
+        all_lists = group['symptom_list'].tolist()
+
+        symptom_counts = Counter()
+        for lst in all_lists:
+            symptom_counts.update(set(lst))
+
+        n_variants = len(all_lists)
+        threshold = max(1, math.ceil(n_variants * min_frequency))
+
+        core_syms = {s for s, c in symptom_counts.items() if c >= threshold}
+
+        # Safety net: should not trigger any more given the frequency
+        # threshold above, but guarantees we never again end up with an
+        # empty (i.e. disabled) core for any disease.
+        if not core_syms:
+            core_syms = set().union(*[set(lst) for lst in all_lists])
+
+        core[disease] = core_syms
+    return core
+
+DISEASE_CORE_SYMPTOMS = build_disease_core_symptoms()
+
+# ── Disease info ───────────────────────────────────────────────────────────────
 DISEASE_INFO = {
     "GERD": {
         "simple_name": "Acid Reflux",
@@ -169,11 +256,11 @@ DISEASE_INFO = {
         "description": "Skin condition where hair follicles get clogged with oil and dead skin causing pimples and blackheads."
     },
     "Psoriasis": {
-        "simple_name": "Psoriasis (Skin Condition)",
+        "simple_name": "Psoriasis",
         "description": "A skin condition causing red, flaky patches covered in silvery scales, often on elbows and knees."
     },
     "Gastroenteritis": {
-        "simple_name": "Stomach Flu",
+        "simple_name": "Gastroenteritis",
         "description": "Inflammation of the stomach and intestines causing vomiting, diarrhea, and stomach cramps."
     },
     "Arthritis": {
@@ -235,6 +322,7 @@ DISEASE_SPECIALTY_MAP = {
     "Urinary tract infection": "Urologist",
 }
 
+# ── Severity lists ─────────────────────────────────────────────────────────────
 HIGH_SEVERITY = [
     "AIDS", "Heart attack", "Paralysis (brain hemorrhage)",
     "Tuberculosis", "Hepatitis B", "Hepatitis C", "Hepatitis D",
@@ -252,11 +340,166 @@ MEDIUM_SEVERITY = [
     "Chicken pox", "Psoriasis", "Impetigo"
 ]
 
+# ── Core filter: check if entered symptoms overlap with disease core ───────────
+def passes_core_check(disease, entered_set):
+    """
+    A disease prediction is valid only if at least ONE of the patient's
+    entered symptoms appears in that disease's core symptom set.
+    This prevents random/invalid symptoms triggering unrelated diseases.
+    """
+    core = DISEASE_CORE_SYMPTOMS.get(disease, set())
+    if not core:
+        return True
+    return bool(entered_set & core)
+
+
+# ── Severity filter ────────────────────────────────────────────────────────────
+# Manual overrides for high severity diseases — require specific symptoms
+SEVERITY_REQUIRED_SYMPTOMS = {
+    "Heart attack": {
+        "required_all": ["chest_pain", "breathlessness"],
+    },
+    "Paralysis (brain hemorrhage)": {
+        "required_all": ["weakness_of_one_body_side", "altered_sensorium"],
+    },
+    "AIDS": {
+        "required_all": ["muscle_wasting", "patches_in_throat"],
+    },
+    "Tuberculosis": {
+        "required_all": ["blood_in_sputum", "phlegm"],
+    },
+    "Hepatitis B": {
+        "required_all": ["yellowing_of_eyes", "dark_urine"],
+    },
+    "Hepatitis C": {
+        "required_all": ["yellowing_of_eyes", "dark_urine"],
+    },
+    "Hepatitis D": {
+        "required_all": ["yellowing_of_eyes", "dark_urine"],
+    },
+    "Hepatitis E": {
+        "required_all": ["acute_liver_failure", "coma"],
+    },
+    "Dengue": {
+        "required_all": ["high_fever", "pain_behind_the_eyes"],
+    },
+    "Malaria": {
+        "required_all": ["high_fever", "chills"],
+    },
+    "Typhoid": {
+        "required_any": ["high_fever", "toxic_look_(typhos)"],
+    },
+    "Pneumonia": {
+        "required_all": ["phlegm", "high_fever"],
+    },
+    "Alcoholic hepatitis": {
+        "required_all": [
+            "history_of_alcohol_consumption",
+            "distention_of_abdomen"
+        ],
+    },
+}
+
+
+def filter_predictions(predictions, entered_symptoms):
+    """
+    Filter predictions using two layers:
+    1. Core symptom check — entered symptoms must overlap with disease core
+    2. High severity check — severe diseases need specific required symptoms
+    Also removes results below LOW_CONFIDENCE_CUTOFF raw probability — this
+    is only a noise floor, not a "is this a good match" threshold, since RF
+    naturally spreads probability across several plausible diseases.
+    """
+    entered_set = set(entered_symptoms)
+    filtered = []
+
+    for item in predictions:
+        disease = item["disease"]
+
+        # Layer 1 — remove near-zero noise only
+        if item["confidence"] < LOW_CONFIDENCE_CUTOFF:
+            continue
+
+        # Layer 2 — core symptom overlap check (applies to ALL diseases)
+        if not passes_core_check(disease, entered_set):
+            continue
+
+        # Layer 3 — high severity specific requirements
+        if disease in HIGH_SEVERITY:
+            rules = SEVERITY_REQUIRED_SYMPTOMS.get(disease, {})
+            if rules:
+                required_all = rules.get("required_all", [])
+                if required_all:
+                    if not all(r in entered_set for r in required_all):
+                        continue
+                required_any = rules.get("required_any", [])
+                if required_any:
+                    if not any(r in entered_set for r in required_any):
+                        continue
+            else:
+                # No specific rules — need at least 3 symptoms for high severity
+                if len(entered_symptoms) < 3:
+                    continue
+
+        filtered.append(item)
+
+    return filtered
+
+
+def normalize_confidences(items):
+    """
+    Random Forest's predict_proba() splits its vote across all 41 disease
+    classes, so even a clearly-best match often lands well under 100% raw
+    probability once its symptoms overlap with a few other diseases. Once
+    we've narrowed candidates down to the small set we're actually going
+    to show the patient, we rescale those confidences to sum to 100%, so
+    the displayed percentage reflects each candidate's share of the
+    *shown* predictions rather than being diluted by the ~38 diseases the
+    patient never sees.
+    """
+    total = sum(item["confidence"] for item in items)
+    if total <= 0:
+        return items
+    for item in items:
+        item["confidence"] = round(item["confidence"] / total * 100, 1)
+    return items
+
+
+def select_candidates(top10, entered_symptoms, n=TOP_N_PREDICTIONS):
+    """
+    Shared ranking logic for both the /symptom and /symptom/initial routes:
+    filter the raw top-10 model output down to at most n well-matched
+    candidates, fall back gracefully if filtering removes everything,
+    renormalize their confidence to sum to 100%, and attach a
+    patient-friendly simple_name to each.
+    """
+    entered_set = set(entered_symptoms)
+    filtered = filter_predictions(top10, entered_symptoms)
+    candidates = filtered[:n]
+
+    # Fallback if everything filtered out
+    if not candidates:
+        non_severe = [
+            item for item in top10
+            if item["disease"] not in HIGH_SEVERITY
+            and passes_core_check(item["disease"], entered_set)
+        ]
+        candidates = non_severe[:n] if non_severe else top10[:n]
+
+    candidates = normalize_confidences(candidates)
+
+    for item in candidates:
+        item["simple_name"] = DISEASE_INFO.get(
+            item["disease"], {}
+        ).get("simple_name", item["disease"])
+
+    return candidates
+
+
 # ── Patient auth routes ────────────────────────────────────────────────────────
 
 @auth.route('/')
 def index():
-    symptom_cols = [c for c in sym_df.columns if c.startswith('Symptom')]
     all_symptoms = set()
     for col in symptom_cols:
         all_symptoms.update(
@@ -270,9 +513,11 @@ def index():
                            total_symptoms=total_symptoms,
                            total_doctors=total_doctors)
 
+
 @auth.route('/contact')
 def contact():
     return render_template('contact.html')
+
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -296,13 +541,15 @@ def signup():
             new_user = User(
                 email=email,
                 first_name=first_name,
-                password=generate_password_hash(password1, method="pbkdf2:sha256")
+                password=generate_password_hash(
+                    password1, method="pbkdf2:sha256")
             )
             db.session.add(new_user)
             db.session.commit()
             flash('Account created!', category='success')
             return redirect(url_for('auth.index'))
     return render_template('signup.html')
+
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -321,79 +568,87 @@ def login():
             flash('Email does not exist.', category='error')
     return render_template("login.html", user=current_user)
 
+
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+
 # ── Symptom assessment ─────────────────────────────────────────────────────────
 
 @auth.route('/symptom')
 @login_required
 def symptom():
-    symptom_cols = [c for c in sym_df.columns if c.startswith('Symptom')]
-    all_symptoms = set()
-    for col in symptom_cols:
-        all_symptoms.update(
-            sym_df[col].dropna().str.strip().str.replace(' ', '_').str.lower()
-        )
-    all_symptoms = sorted(list(all_symptoms))
-    return render_template('symptom.html', all_symptoms=all_symptoms)
+    all_symptoms = sorted(list(VALID_SYMPTOMS))
+    return render_template('symptom.html',
+                           all_symptoms=all_symptoms,
+                           min_symptoms=MIN_SYMPTOMS)
 
 
 @auth.route("/symptom/initial", methods=["POST"])
 @login_required
 def analyze_initial():
+    """
+    Kept for API completeness / backward compatibility (e.g. if something
+    other than the current symptom.html form ever calls it directly), but
+    the main UI no longer uses this route: the Predict button now stays
+    disabled until at least MIN_SYMPTOMS symptoms are entered, so the
+    single-symptom "initial guess" flow is never triggered from the form
+    any more. The same minimum-symptom rule is enforced here too so the
+    rule can't be bypassed by calling this endpoint directly.
+    """
     try:
         req = request.json
         symptoms_input = req.get("symptoms", "").lower().strip()
-        entered = [
+        entered_raw = [
             s.strip().replace(' ', '_')
             for s in symptoms_input.split(',')
             if s.strip()
         ]
 
-        if not entered:
-            return jsonify({"error": "Please enter at least one symptom."})
+        # ── Validate: only accept symptoms in the dataset ──
+        invalid = [s for s in entered_raw if s not in VALID_SYMPTOMS]
+        valid_entered = [s for s in entered_raw if s in VALID_SYMPTOMS]
 
-        X_input = mlb.transform([entered])
+        if invalid:
+            return jsonify({
+                "error": "invalid_symptoms",
+                "invalid": [s.replace('_', ' ') for s in invalid],
+                "message": f"'{', '.join(s.replace('_',' ') for s in invalid)}' is not a recognised symptom. Please select from the suggestions."
+            })
+
+        if len(valid_entered) < MIN_SYMPTOMS:
+            return jsonify({
+                "error": "min_symptoms",
+                "min_required": MIN_SYMPTOMS,
+                "message": f"Please enter at least {MIN_SYMPTOMS} symptoms for a prediction."
+            })
+
+        X_input = mlb.transform([valid_entered])
         proba = model.predict_proba(X_input)[0]
 
-        top3_indices = proba.argsort()[-3:][::-1]
-        top3 = [
+        # Get top 10 then filter
+        top10_indices = proba.argsort()[-10:][::-1]
+        top10 = [
             {
                 "disease": label_encoder.classes_[i].strip(),
                 "confidence": round(float(proba[i]) * 100, 1)
             }
-            for i in top3_indices
+            for i in top10_indices
             if proba[i] > 0.01
         ]
-        symptom_count = len(entered)
 
-        filtered_top3 = []
-        for item in top3:
-            # Skip high severity if less than 3 symptoms entered
-            if item["disease"] in HIGH_SEVERITY and symptom_count < 3:
-                continue
-            # Skip if confidence below 20%
-            if item["confidence"] < 20:
-                continue
-            filtered_top3.append(item)
-
-        # If filtering removed everything, keep top result regardless
-        if not filtered_top3:
-            filtered_top3 = [top3[0]]
-
-        top3 = filtered_top3
-        disease_clean = top3[0]["disease"]
+        # Rank down to the top candidates, with renormalized confidence
+        top3 = select_candidates(top10, valid_entered)
 
         disease_info = DISEASE_INFO.get(top3[0]["disease"], {})
 
         return jsonify({
             "stage": "initial",
             "top3": top3,
-            "entered_symptoms": entered,
+            "entered_symptoms": valid_entered,
             "simple_name": disease_info.get("simple_name", top3[0]["disease"]),
             "description": disease_info.get("description", "")
         })
@@ -408,46 +663,52 @@ def analyze():
     try:
         req = request.json
         symptoms_input = req.get("symptoms", "").lower().strip()
-        entered = [
+        entered_raw = [
             s.strip().replace(' ', '_')
             for s in symptoms_input.split(',')
             if s.strip()
         ]
 
-        if not entered:
-            return jsonify({"error": "Please enter at least one symptom."})
+        # ── Validate: only accept symptoms in the dataset ──
+        invalid = [s for s in entered_raw if s not in VALID_SYMPTOMS]
+        valid_entered = [s for s in entered_raw if s in VALID_SYMPTOMS]
 
-        X_input = mlb.transform([entered])
+        if invalid:
+            return jsonify({
+                "error": "invalid_symptoms",
+                "invalid": [s.replace('_', ' ') for s in invalid],
+                "message": f"'{', '.join(s.replace('_',' ') for s in invalid)}' is not a recognised symptom. Please select from the suggestions."
+            })
+
+        # ── Enforce the minimum-symptoms rule server-side too, so it ──
+        # can't be bypassed by calling this endpoint directly instead of
+        # going through the gated Predict button in symptom.html.
+        if len(valid_entered) < MIN_SYMPTOMS:
+            return jsonify({
+                "error": "min_symptoms",
+                "min_required": MIN_SYMPTOMS,
+                "message": f"Please enter at least {MIN_SYMPTOMS} symptoms for a prediction."
+            })
+
+        X_input = mlb.transform([valid_entered])
         proba = model.predict_proba(X_input)[0]
 
-        top3_indices = proba.argsort()[-3:][::-1]
-        top3 = [
+        # Get top 10 then filter
+        top10_indices = proba.argsort()[-10:][::-1]
+        top10 = [
             {
                 "disease": label_encoder.classes_[i].strip(),
                 "confidence": round(float(proba[i]) * 100, 1)
             }
-            for i in top3_indices
+            for i in top10_indices
             if proba[i] > 0.01
         ]
 
-        symptom_count = len(entered)
-
-        filtered_top3 = []
-        for item in top3:
-            # Skip high severity if less than 3 symptoms entered
-            if item["disease"] in HIGH_SEVERITY and symptom_count < 3:
-                continue
-            # Skip if confidence below 20%
-            if item["confidence"] < 20:
-                continue
-            filtered_top3.append(item)
-
-        # If filtering removed everything, keep top result regardless
-        if not filtered_top3:
-            filtered_top3 = [top3[0]]
-
-        top3 = filtered_top3
-        disease_clean = top3[0]["disease"]
+        # Rank down to the top candidates, with renormalized confidence.
+        # top3[0] is the primary/most-likely prediction; top3 as a whole
+        # (up to TOP_N_PREDICTIONS items) is what the UI shows as ranked
+        # possibilities with probability bars.
+        top3 = select_candidates(top10, valid_entered)
 
         disease_clean = top3[0]["disease"]
         disease_info = DISEASE_INFO.get(disease_clean, {})
@@ -474,7 +735,8 @@ def analyze():
         else:
             precautions = ["Consult a doctor for proper diagnosis"]
 
-        specialty = DISEASE_SPECIALTY_MAP.get(disease_clean, "General Physician")
+        specialty = DISEASE_SPECIALTY_MAP.get(
+            disease_clean, "General Physician")
         available_count = Doctor.query.filter_by(
             specialty=specialty, available=True
         ).count()
@@ -484,7 +746,8 @@ def analyze():
             "disease": disease_clean,
             "simple_name": simple_name,
             "description": description,
-            "top3": top3,
+            "top3": top3,  # up to TOP_N_PREDICTIONS ranked candidates, confidences renormalized to sum to 100
+            "confidence": top3[0]["confidence"],
             "severity": severity,
             "severity_note": severity_note,
             "precautions": precautions,
@@ -496,12 +759,14 @@ def analyze():
     except Exception as e:
         return jsonify({"error": "Something went wrong", "details": str(e)})
 
+
 # ── Appointment routes ─────────────────────────────────────────────────────────
 
 @auth.route('/book-appointment/<specialty>', methods=['GET', 'POST'])
 @login_required
 def book_appointment(specialty):
-    doctors = Doctor.query.filter_by(specialty=specialty, available=True).all()
+    doctors = Doctor.query.filter_by(
+        specialty=specialty, available=True).all()
 
     if request.method == 'POST':
         doctor_id = request.form.get('doctor_id')
@@ -516,7 +781,8 @@ def book_appointment(specialty):
         ).filter(Appointment.status != 'Rejected').first()
 
         if existing:
-            flash('That time slot is already booked. Please choose another.', category='error')
+            flash('That time slot is already booked. '
+                  'Please choose another.', category='error')
         else:
             appointment = Appointment(
                 patient_id=current_user.id,
@@ -536,6 +802,7 @@ def book_appointment(specialty):
                            specialty=specialty,
                            today=date.today().isoformat())
 
+
 @auth.route('/my-appointments')
 @login_required
 def my_appointments():
@@ -543,6 +810,7 @@ def my_appointments():
         patient_id=current_user.id
     ).order_by(Appointment.id.desc()).all()
     return render_template('my_appointments.html', appointments=appointments)
+
 
 # ── Doctor auth routes ─────────────────────────────────────────────────────────
 
@@ -563,11 +831,13 @@ def doctor_login():
             flash('No doctor account found with that email.', category='error')
     return render_template('doctor_login.html')
 
+
 @auth.route('/doctor-logout')
 def doctor_logout():
     session.pop('doctor_id', None)
     session.pop('doctor_name', None)
     return redirect(url_for('auth.doctor_login'))
+
 
 @auth.route('/doctor-portal')
 def doctor_portal():
@@ -578,7 +848,9 @@ def doctor_portal():
         doctor_id=doctor.id
     ).order_by(Appointment.id.desc()).all()
     return render_template('doctor_portal.html',
-                           doctor=doctor, appointments=appointments)
+                           doctor=doctor,
+                           appointments=appointments)
+
 
 @auth.route('/appointment/approve/<int:appointment_id>')
 def approve_appointment(appointment_id):
@@ -590,6 +862,7 @@ def approve_appointment(appointment_id):
     flash('Appointment approved.', category='success')
     return redirect(url_for('auth.doctor_portal'))
 
+
 @auth.route('/appointment/reject/<int:appointment_id>')
 def reject_appointment(appointment_id):
     if not session.get('doctor_id'):
@@ -600,9 +873,11 @@ def reject_appointment(appointment_id):
     flash('Appointment rejected.', category='success')
     return redirect(url_for('auth.doctor_portal'))
 
+
 # ── Admin routes ───────────────────────────────────────────────────────────────
 
 ADMIN_PASSWORD = "admin123"
+
 
 @auth.route('/admin', methods=['GET', 'POST'])
 def admin_login():
@@ -614,6 +889,7 @@ def admin_login():
         else:
             flash('Incorrect admin password.', category='error')
     return render_template('admin_login.html')
+
 
 @auth.route('/admin/portal')
 def admin_portal():
@@ -629,12 +905,14 @@ def admin_portal():
                            total_appointments=total_appointments,
                            pending=pending)
 
+
 @auth.route('/admin/doctors')
 def admin_doctors():
     if not session.get('is_admin'):
         return redirect(url_for('auth.admin_login'))
     doctors = Doctor.query.all()
     return render_template('admin_doctors.html', doctors=doctors)
+
 
 @auth.route('/admin/add-doctor', methods=['GET', 'POST'])
 def admin_add_doctor():
@@ -676,6 +954,7 @@ def admin_add_doctor():
             return redirect(url_for('auth.admin_doctors'))
     return render_template('admin_add_doctor.html')
 
+
 @auth.route('/admin/patients')
 def admin_patients():
     if not session.get('is_admin'):
@@ -683,14 +962,14 @@ def admin_patients():
     patients = User.query.all()
     return render_template('admin_patients.html', patients=patients)
 
+
 @auth.route('/admin/appointments')
 def admin_appointments():
     if not session.get('is_admin'):
         return redirect(url_for('auth.admin_login'))
-    appointments = Appointment.query.order_by(
-        Appointment.id.desc()).all()
-    return render_template('admin_appointments.html',
-                           appointments=appointments)
+    appointments = Appointment.query.order_by(Appointment.id.desc()).all()
+    return render_template('admin_appointments.html', appointments=appointments)
+
 
 @auth.route('/admin/delete_doctor/<int:doctor_id>')
 def delete_doctor(doctor_id):
@@ -701,6 +980,7 @@ def delete_doctor(doctor_id):
     db.session.commit()
     flash('Doctor removed.', category='success')
     return redirect(url_for('auth.admin_doctors'))
+
 
 @auth.route('/admin/logout')
 def admin_logout():
